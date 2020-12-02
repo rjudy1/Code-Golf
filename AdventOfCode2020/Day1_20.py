@@ -1,8 +1,11 @@
+# Advent of Code 2020 Day 1
+# Author:   Rachael Judy
+# Date:     12/1/20
 # Subset sum, 3 numbers problem
 
 import input
 
-array = input.readCSV("num.csv", '\n')
+array = input.readCSV("1num.csv", '\n')
 found = False
 for i in array:
     for j in array:
