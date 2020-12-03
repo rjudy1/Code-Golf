@@ -3,16 +3,20 @@
 # Date:     12/1/20
 # Subset sum, 3 numbers problem
 
-import input
+import parseMod
 
-array = input.readCSV("1num.csv", '\n')
+array = parseMod.readCSV("1num.csv", '\n')
 found = False
 for i in array:
     for j in array:
         for k in array:
+            #k = 0 # uncomment this for stage 1
             if i+j+k == 2020:
                 print(i, j, k, sep=',')
-                print(i*j*k)
+                if k:
+                    print(i*j*k)
+                else:
+                    print(i*j)
                 found = True
                 break
         if found:

@@ -5,6 +5,7 @@
 
 import csv
 
+
 # to break into array of numbers
 def readCSV(filename, delim=','):
     num = []
@@ -16,7 +17,8 @@ def readCSV(filename, delim=','):
     return num
 
 
-# to break into an array for each line and each item split by delimiter
+# to break into an array for each line and each item split by delimiter - used for the password one
+# multiple space separated rows puts in array by row by item
 def readCSVstr(filename, delim=' '):
     num = []
     with open(filename) as file:
@@ -28,3 +30,17 @@ def readCSVstr(filename, delim=' '):
             num.append(temp)
     return num
 
+
+# to break into an array for each line and each item split by delimiter
+#   - used for the map problem - one less layer than str
+def readCSVstrBreak(filename, delim=' '):
+    num = []
+    with open(filename) as file:
+        reader = csv.reader(file, delimiter=delim)
+        for row in reader:
+            temp = []
+            for s in row:
+                for e in s:
+                    temp.append(e)
+            num.append(temp)
+    return num

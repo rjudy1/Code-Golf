@@ -4,11 +4,11 @@
 # Author:   Rachael Judy
 # Date:     12/2/2020
 
-import input
+import parseMod
 
 
 # get array of each line, split at spaces
-pwd_list = input.readCSVstr('2pswd.csv', ' ')
+pwd_list = parseMod.readCSVstr('2pswd.csv', ' ')
 numValid = 0
 for pswd in pwd_list:
     bounds = pswd[0].split('-')
@@ -17,6 +17,7 @@ for pswd in pwd_list:
     c = pswd[1][0]      # character looking for
 
     count = 0
+    # For Part 2 - checking character position
     # XOR of occurrence at two spots
     if pswd[2][mini - 1] == c and pswd[2][maxi - 1] != c or\
             pswd[2][mini - 1] != c and pswd[2][maxi - 1] == c:

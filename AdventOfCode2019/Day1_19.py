@@ -1,4 +1,5 @@
 # solution to 2019 P1
+# not updated to use parseMod
 import csv
 
 def readCSV(filename):

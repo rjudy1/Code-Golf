@@ -5,7 +5,7 @@
 
 import csv
 
-# to break into array of numbers
+# to break into array of delim separated numbers
 def readCSV(filename, delim=','):
     num = []
     with open(filename) as file:
@@ -16,15 +16,13 @@ def readCSV(filename, delim=','):
     return num
 
 
-# to break into an array for each line and each item split by delimiter
-def readCSVstr(filename, delim=' '):
+# to break into an array for each line split by delimiter and each item
+def readCSVstr(filename, delim='\n', delim2 = ' '):
     num = []
     with open(filename) as file:
         reader = csv.reader(file, delimiter=delim)
         for row in reader:
-            temp = []
-            for s in row:
-                temp.append(s)
-            num.append(temp)
+            for el in row:
+                num.append(el)
     return num
 
