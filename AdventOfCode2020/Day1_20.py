@@ -3,7 +3,10 @@
 # Date:     12/1/20
 # Subset sum, 3 numbers problem
 
+import os, sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
+
 
 array = parseMod.readCSV("1num.csv", '\n')
 found = False

@@ -5,6 +5,9 @@
 # Purpose:  Count Trees on Descent Through L->R duplicate map
 # Note to self: try to generalize these where possible to speed up stage 2
 
+
+import os, sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
 
 
@@ -31,7 +34,7 @@ def countTrees(map, xStep, yStep):
 
 
 # read in map to array
-map = parseMod.readCSVstrBreak('3maps.csv')
+map = parseMod.readCSV_row('3maps.csv')
 
 # compute trees on given paths
 x = countTrees(map, 1, 1)
@@ -39,4 +42,5 @@ y = countTrees(map, 3, 1)  # from stage one
 z = countTrees(map, 5, 1)
 w = countTrees(map, 7, 1)
 v = countTrees(map, 1, 2)
-print(v*w*x*y*z)
+print("Single", y)
+print("Combo", v*w*x*y*z)

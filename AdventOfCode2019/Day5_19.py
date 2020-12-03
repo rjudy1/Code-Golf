@@ -4,6 +4,8 @@
 # Extended commands
 
 
+import os, sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
 
 
@@ -20,7 +22,7 @@ def setParams(array, index):
 def processInput(array):
     index = 0
 
-    while index != len(array) - 1:
+    while index < len(array):
         if array[index] % 100 == 1:  # add next two params to third
             x, y = setParams(array, index)
             array[array[index + 3]] = x + y

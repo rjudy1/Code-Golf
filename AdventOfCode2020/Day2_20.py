@@ -4,11 +4,14 @@
 # Author:   Rachael Judy
 # Date:     12/2/2020
 
+
+import os, sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
 
 
 # get array of each line, split at spaces
-pwd_list = parseMod.readCSVstr('2pswd.csv', ' ')
+pwd_list = parseMod.readCSV_rowEl('2pswd.csv', ' ')
 numValid = 0
 for pswd in pwd_list:
     bounds = pswd[0].split('-')

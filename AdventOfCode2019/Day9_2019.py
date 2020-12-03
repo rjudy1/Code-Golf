@@ -1,7 +1,8 @@
-# Advent of Code 2019 Day 7
+# Advent of Code 2019 - Day 9
+
 # Author:   Rachael Judy
-# Date Mod: 12/3/2020
-# Chained computers - modification from Day 5 to include taking input from other iterations
+# Date:     12/3/2020
+# Purpose:
 
 
 import copy

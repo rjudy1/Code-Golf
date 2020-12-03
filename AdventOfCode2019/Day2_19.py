@@ -2,11 +2,14 @@
 # Date:     12/1/2020
 # computer opcodes 1 add, 2 multiply, 99 end
 
+import os, sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
+
 
 def processInput(array):
     index = 0
-    while index != len(array) - 1:
+    while index < len(array):
         if array[index] == 1:
             array[array[index + 3]] = array[array[index+1]] + array[array[index+2]]
             index+=3
@@ -18,11 +21,11 @@ def processInput(array):
         index += 1
     return array
 
-content = parseMod.readCSV('num.csv', ',')
+content = parseMod.readCSV('2num.csv', ',')
 solution = 0
 for i in range(100):
     for j in range(100):
-        content = parseMod.readCSV('num.csv', ',')
+        content = parseMod.readCSV('2num.csv', ',')
         content[1] = i
         content[2] = j
         a=processInput(content)
@@ -31,5 +34,5 @@ for i in range(100):
             print(j)
             solution = i * 100 + j
             break
-print(a)
-print(solution)
+print("array", a)
+print("sol ", solution)

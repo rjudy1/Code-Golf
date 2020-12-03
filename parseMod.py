@@ -1,7 +1,7 @@
 # Input parsers for code golf
 # Author:   Rachael Judy
 # Written:  12/1/20
-# Modified: 12/2/20
+# Modified: 12/3/20
 
 import csv
 
@@ -17,9 +17,18 @@ def readCSV(filename, delim=','):
     return num
 
 
-# to break into an array for each line and each item split by delimiter - used for the password one
-# multiple space separated rows puts in array by row by item
-def readCSVstr(filename, delim=' '):
+# array with each row as element in string form
+def readCSV_row(filename, delim='\n', delim2 = ' '):
+    array = readCSV_rowEl(filename, delim)
+    finished = []
+    for el in array:
+        for item in el:
+            finished.append(item)
+    return finished
+
+
+# array of array of each line, split into elements on line (rowEl)
+def readCSV_rowEl(filename, delim=' '):
     num = []
     with open(filename) as file:
         reader = csv.reader(file, delimiter=delim)
@@ -31,16 +40,14 @@ def readCSVstr(filename, delim=' '):
     return num
 
 
-# to break into an array for each line and each item split by delimiter
-#   - used for the map problem - one less layer than str
-def readCSVstrBreak(filename, delim=' '):
+# reads in as one big array
+def readCSV_single(filename):
     num = []
     with open(filename) as file:
-        reader = csv.reader(file, delimiter=delim)
+        reader = csv.reader(file)
         for row in reader:
-            temp = []
             for s in row:
-                for e in s:
-                    temp.append(e)
-            num.append(temp)
+                for c in s:
+                    num.append(c)
+
     return num

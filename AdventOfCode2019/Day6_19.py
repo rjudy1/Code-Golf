@@ -3,9 +3,9 @@
 # Date Mod: 12/2/2020
 # Total Orbits
 
-
+import os, sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
-
 
 # count orbits from a single key recursively
 def countOrbits(key, num, planets):
@@ -61,7 +61,7 @@ def countTransfers(x, y, planets):
 
 
 # read from file
-orbits = parseMod.readCSVstr('6orbits.csv', '\n', ')')
+orbits = parseMod.readCSV_row('6orbits.csv', '\n')
 
 # create dictionary of relationships
 # key will be planet and value will be predecessor

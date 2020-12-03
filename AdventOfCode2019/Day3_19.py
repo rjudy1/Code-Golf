@@ -6,9 +6,11 @@
 # might eventually fix to use a function instead of duplicating code
 
 
+import os, sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
 
-import sys
+
 import numpy
 
 # on first run to get xs and ys of matches set flag to 0 - will determine shortest manhattan
@@ -82,7 +84,7 @@ if flag:
           10270, 10130, 10517, 10690]
 
 # read file in - an array of two arrays, one for each wire
-paths = parseMod.readCSVstr('3steps.csv', ',')
+paths = parseMod.readCSV_rowEl('3steps.csv', ',')
 
 # parse based on R, D, L, U etc, update grid
 grid = numpy.zeros((20000, 20000))
@@ -103,6 +105,9 @@ while ind < len(paths): # do both wires
     y = center
     # go through both wire paths
     for d in v:
+        for i in range(len(v)):
+            if v[i] == 'R':
+                print(i)
         direction = d[0]
         distance = int(d[1:])
         dir = -1 + 2*(direction == 'U' or direction == 'R') # to differentiate vertical and horizontal + and -
