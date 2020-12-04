@@ -3,7 +3,7 @@
 # Date:     12/2/20
 # Purpose:  2019 Advent of Code Problem 3 - Wiring
 # some late night slightly sketchy, possibly malfunctioning code golf
-# might eventually fix to use a function instead of duplicating code
+# the double run needs some work
 
 
 import os, sys
