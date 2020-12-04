@@ -13,15 +13,16 @@ import sys
 
 
 # set phase
-phase = 2
-
-# add space to end of every line for formatting use with parsing function
-for line in fileinput.input("4passports.csv",inplace=True):
-    sys.stdout.write("{} \n".format(line.rstrip()))
+phase = 1
+ifile = '4passports.csv'
 
 
 # array of array of each line, split into elements on line (rowEl)
 def readCSV_batch(filename, delim=' ', addsep=''):
+    # add space to end of every line for formatting use with parsing function
+    for line in fileinput.input(filename, inplace=True):
+        sys.stdout.write("{} \n".format(line.rstrip()))
+
     batches = []
     string = ''
     with open(filename) as file:
@@ -100,7 +101,7 @@ def checkValidity(details, part=1):
         return valid
 
 
-passports = readCSV_batch('4passports.csv')
+passports = readCSV_batch(ifile)
 count = 0
 for passport in passports:
     if checkValidity(passport, phase):
