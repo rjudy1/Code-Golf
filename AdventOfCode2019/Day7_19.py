@@ -8,8 +8,6 @@ import copy
 import queue
 import itertools
 
-import os, sys
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
 
 # set this for part 0 or 1 (first or second part of problem)

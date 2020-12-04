@@ -6,8 +6,6 @@
 # Note to self: try to generalize these where possible to speed up stage 2
 
 
-import os, sys
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
 
 

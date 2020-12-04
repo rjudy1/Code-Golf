@@ -18,7 +18,7 @@ def readCSV(filename, delim=','):
 
 
 # array with each row as element in string form
-def readCSV_row(filename, delim='\n', delim2 = ' '):
+def readCSV_row(filename, delim=' '):
     array = readCSV_rowEl(filename, delim)
     finished = []
     for el in array:
@@ -29,25 +29,25 @@ def readCSV_row(filename, delim='\n', delim2 = ' '):
 
 # array of array of each line, split into elements on line (rowEl)
 def readCSV_rowEl(filename, delim=' '):
-    num = []
+    rowEl = []
     with open(filename) as file:
         reader = csv.reader(file, delimiter=delim)
         for row in reader:
             temp = []
             for s in row:
                 temp.append(s)
-            num.append(temp)
-    return num
+            rowEl.append(temp)
+    return rowEl
 
 
 # reads in as one big array
 def readCSV_single(filename):
-    num = []
+    array = []
     with open(filename) as file:
         reader = csv.reader(file)
         for row in reader:
             for s in row:
                 for c in s:
-                    num.append(c)
+                    array.append(c)
 
-    return num
+    return array

@@ -2,8 +2,8 @@
 # Date:     12/1/2020
 # computer opcodes 1 add, 2 multiply, 99 end
 
-import os, sys
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+#import os, sys
+#sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
 
 
