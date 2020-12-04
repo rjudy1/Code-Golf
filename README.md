@@ -1,2 +1,3 @@
 # Code-Golf
-Speedy, not necessarily efficient or clean
+For the Advent of Code Challenges
+
