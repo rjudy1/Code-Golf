@@ -80,5 +80,5 @@ def processInput(array):
     return array
 
 
-content = parseMod.readCSV('5num.csv', ',')
+content = parseMod.readCSV('data/5num.csv', ',')
 processInput(content)

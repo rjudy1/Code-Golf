@@ -21,11 +21,11 @@ def processInput(array):
         index += 1
     return array
 
-content = parseMod.readCSV('2num.csv', ',')
+content = parseMod.readCSV('data/2num.csv', ',')
 solution = 0
 for i in range(100):
     for j in range(100):
-        content = parseMod.readCSV('2num.csv', ',')
+        content = parseMod.readCSV('data/2num.csv', ',')
         content[1] = i
         content[2] = j
         a=processInput(content)

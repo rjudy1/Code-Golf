@@ -9,7 +9,7 @@ import parseMod
 
 
 # get array of each line, split at spaces
-pwd_list = parseMod.readCSV_rowEl('2pswd.csv', ' ')
+pwd_list = parseMod.readCSV_rowEl('data/2pswd.csv', ' ')
 numValid = 0
 for pswd in pwd_list:
     bounds = pswd[0].split('-')

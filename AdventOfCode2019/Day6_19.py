@@ -60,7 +60,7 @@ def countTransfers(x, y, planets):
 
 
 # read from file
-orbits = parseMod.readCSV_row('6orbits.csv')
+orbits = parseMod.readCSV_row('data/6orbits.csv')
 
 # create dictionary of relationships
 # key will be planet and value will be predecessor

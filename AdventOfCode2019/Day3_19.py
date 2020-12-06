@@ -84,7 +84,7 @@ if flag:
           10270, 10130, 10517, 10690]
 
 # read file in - an array of two arrays, one for each wire
-paths = parseMod.readCSV_rowEl('3steps.csv', ',')
+paths = parseMod.readCSV_rowEl('data/3steps.csv', ',')
 
 # parse based on R, D, L, U etc, update grid
 grid = numpy.zeros((20000, 20000))

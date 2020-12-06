@@ -4,7 +4,8 @@
 # Modified: 12/3/20
 
 import csv
-
+import fileinput
+import sys
 
 # to break into array of numbers
 def readCSV(filename, delim=','):
@@ -51,3 +52,35 @@ def readCSV_single(filename):
                     array.append(c)
 
     return array
+
+
+# display the array as grid - for letter display
+def paintShip(display):
+    for row in display:
+        for el in row:
+            if el == 1:
+                print('}{', end='')
+            else:
+                print('  ', end='')
+        print()
+
+
+# array of array of each line, split into elements on line (rowEl)
+# NOTE: For whatever reason, doesn't read last bunch so \n\n random content must be hand added
+def readCSV_batch(filename, delim=' ', addsep=''):
+    # add space to end of every line for formatting use with parsing function
+    for line in fileinput.input(filename, inplace=True):
+        sys.stdout.write("{} \n".format(line.rstrip()))
+
+    batches = []
+    string = ''
+    with open(filename) as file:
+        reader = csv.reader(file)
+        for row in reader:  # each row of the passport
+            if row[0] != ' ':  # passports are separated by blank line with single space
+                for r in row:
+                    string += r
+            else:
+                batches.append(string)
+                string = ''
+    return batches

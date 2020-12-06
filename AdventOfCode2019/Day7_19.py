@@ -97,7 +97,7 @@ def processInput(array, inputQ, index = 0, feedback = False):
         return output, array, halt
 
 
-instructions = parseMod.readCSV('7num.csv', ',')
+instructions = parseMod.readCSV('data/7num.csv', ',')
 
 
 # loop through here

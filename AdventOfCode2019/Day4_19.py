@@ -15,6 +15,7 @@ def meetsConditions(number, stage=0):
 
     # check for increasing order and adjacent copies
     for i in range(1, 7):
+        # check decreasing
         if number[i] < prev:
             return False
 

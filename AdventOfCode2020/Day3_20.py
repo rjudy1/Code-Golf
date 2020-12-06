@@ -32,7 +32,7 @@ def countTrees(map, xStep, yStep):
 
 
 # read in map to array
-map = parseMod.readCSV_row('3maps.csv')
+map = parseMod.readCSV_row('data/3maps.csv')
 
 # compute trees on given paths
 x = countTrees(map, 1, 1)

@@ -39,7 +39,7 @@ def printImage(image):
 
 
 # read each char as own item
-pixels = parseMod.readCSV_single('8pixels.csv')
+pixels = parseMod.readCSV_single('data/8pixels.csv')
 phase = 2
 height = 6
 width = 25

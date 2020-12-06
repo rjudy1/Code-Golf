@@ -14,7 +14,7 @@ import sys
 
 # set phase
 phase = 1
-ifile = '4passports.csv'
+ifile = 'data/4passports.csv'
 
 
 # array of array of each line, split into elements on line (rowEl)
