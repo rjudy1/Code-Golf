@@ -5,6 +5,8 @@
 # Purpose:  Survey questions answered by each group (like an engagement survey)
 #               AND and OR versions
 
+import sys, os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
 
 answers = parseMod.readCSV_batch('data/6answers.csv')

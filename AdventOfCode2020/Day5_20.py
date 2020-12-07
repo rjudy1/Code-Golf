@@ -4,7 +4,8 @@
 # Date:     12/5/2020
 # Purpose:  Find the highest boarding pass ID (binary) and the missing one
 
-
+import sys, os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
 
 # get passes

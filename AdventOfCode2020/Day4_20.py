@@ -9,32 +9,14 @@
 import csv
 import re
 import fileinput
-import sys
+import sys, os
 
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import parseMod
 
 # set phase
-phase = 1
+phase = 2
 ifile = 'data/4passports.csv'
-
-
-# array of array of each line, split into elements on line (rowEl)
-def readCSV_batch(filename, delim=' ', addsep=''):
-    # add space to end of every line for formatting use with parsing function
-    for line in fileinput.input(filename, inplace=True):
-        sys.stdout.write("{} \n".format(line.rstrip()))
-
-    batches = []
-    string = ''
-    with open(filename) as file:
-        reader = csv.reader(file)
-        for row in reader:  # each row of the passport
-            if row[0] != ' ':  # passports are separated by blank line with single space
-                for r in row:
-                    string += r
-            else:
-                batches.append(string)
-                string = ''
-    return batches
 
 
 # confirm password validity
@@ -101,7 +83,7 @@ def checkValidity(details, part=1):
         return valid
 
 
-passports = readCSV_batch(ifile)
+passports = parseMod.readCSV_batch(ifile)
 count = 0
 for passport in passports:
     if checkValidity(passport, phase):

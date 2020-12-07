@@ -1,7 +1,7 @@
 # Input parsers for code golf
 # Author:   Rachael Judy
 # Written:  12/1/20
-# Modified: 12/3/20
+# Modified: 12/7/20
 
 import csv
 import fileinput
@@ -83,4 +83,14 @@ def readCSV_batch(filename, delim=' ', addsep=''):
             else:
                 batches.append(string)
                 string = ''
+        batches.append(string)  # catch the last batch
+
     return batches
+
+
+# combine array elements that are strings into string, delim separated
+def arrayToString(array, delim=' '):
+    string = ''
+    for x in array:
+        string += x + delim
+    return string
