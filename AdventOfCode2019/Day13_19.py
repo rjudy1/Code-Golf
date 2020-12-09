@@ -12,12 +12,14 @@
 # 4 - ball - green
 #
 
-import numpy as np
-import pygame
-import os, sys
+import os
 import queue
+import sys
 
 import intcodecomputer
+import numpy as np
+import pygame
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
 

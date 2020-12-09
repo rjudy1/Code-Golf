@@ -92,5 +92,5 @@ def readCSV_batch(filename, delim=' ', addsep=''):
 def arrayToString(array, delim=' '):
     string = ''
     for x in array:
-        string += x + delim
+        string += str(x) + delim
     return string
