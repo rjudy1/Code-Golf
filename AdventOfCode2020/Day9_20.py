@@ -18,7 +18,6 @@ numbers = parseMod.readCSV('data/9numbers.csv', '\n')
 
 # initial preamble
 preamble = numbers[0:25]
-mismatch = 0
 # part 1 - find number that previous 25 can't sum to
 for to_match in numbers[25:]:  # look for number that cannot be summed from the preamble
     match = False
@@ -38,10 +37,10 @@ for to_match in numbers[25:]:  # look for number that cannot be summed from the 
     preamble.pop(0)
     preamble.append(to_match)
 
+
 # part 2 - find contiguous subset to sum to toMatch
 subset_found = False
-start_index = 0
-end_index = 0
+start_index, end_index = 0, 0
 for i in range(len(numbers)):
     sum = numbers[i]
     start_index = i
