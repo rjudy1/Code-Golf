@@ -9,7 +9,7 @@ import queue
 
 class Computer:
     def __init__(self, instr):
-        self.array = instr + [0 for i in range(1000)]
+        self.array = instr + [0 for i in range(5000)]
         self.base = 0
         self.index = 0
         self.halt = 0
