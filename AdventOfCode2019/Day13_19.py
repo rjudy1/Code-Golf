@@ -91,10 +91,10 @@ if phase == 1:
     gameboard = np.zeros((42, 24))
     output = arcade.processInput(inputQ)
 
-    # process the output to show the board and count the block tiles
+    # process the output to show the board and occupied_count the block tiles
     for i in range(0, len(output), 3):
         gameboard[output[i], output[i+1]] = int(output[i+2])
-        if output[i+2] == 2:  # count block tiles
+        if output[i+2] == 2:  # occupied_count block tiles
             count += 1
 
     print("Block tiles: ", count)

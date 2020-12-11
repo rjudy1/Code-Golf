@@ -92,7 +92,7 @@ ind = 0
 sol = 100000 # set initial high
 center = 10000
 
-# count steps for each wire
+# occupied_count steps for each wire
 stepCount = [0, 0]
 # on second pass keep minimum
 steps = [[500000 for i in xs], [500000 for j in ys]]
@@ -146,10 +146,10 @@ ans = 100000
 for it in range(len(steps[0])):
     ans = min(ans, steps[0][it] + steps[1][it])
 
-# print either Manhattan or step count
+# print either Manhattan or step occupied_count
 if not flag:
     print("Closest Manhattan: ", sol)
     print("xs = ", xs)
     print("ys = ", ys)
 else:
-    print("Closest step count: ", ans)
+    print("Closest step occupied_count: ", ans)

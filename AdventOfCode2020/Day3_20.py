@@ -9,14 +9,6 @@
 import parseMod
 
 
-# calculate next index at overflow
-def nextIndex(currX, step, patternWid):
-    if currX < patternWid - step:
-        return currX + step
-    else:
-        return currX + step - patternWid
-
-
 # find trees on route
 def countTrees(map, xStep, yStep):
     x = 0
@@ -25,7 +17,7 @@ def countTrees(map, xStep, yStep):
     while y < len(map):
         if map[y][x] == '#':  # trees marked with hashtag
             count += 1
-        x = nextIndex(x, xStep, len(map[0]))
+        x = (x+xStep) % len(map[0])
         y += yStep
 
     return count
@@ -40,5 +32,5 @@ y = countTrees(map, 3, 1)  # from stage one
 z = countTrees(map, 5, 1)
 w = countTrees(map, 7, 1)
 v = countTrees(map, 1, 2)
-print("Single", y)
-print("Combo", v*w*x*y*z)
+print("Single:", y)
+print("Combo:", v*w*x*y*z)

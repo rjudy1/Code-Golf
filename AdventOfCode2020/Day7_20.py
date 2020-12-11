@@ -21,7 +21,7 @@ def arrayToString(array, delim=' '):
     return string
 
 
-# count the number of bags that could contain source
+# occupied_count the number of bags that could contain source
 def countContainers(source):
     global content_dict, count
 
@@ -39,7 +39,7 @@ def countContainers(source):
                 countContainers(bag)
 
 
-# count bags that could be contained in <number> <source> bags, recursive
+# occupied_count bags that could be contained in <number> <source> bags, recursive
 def countContains(source, number):
     global count, content_dict
 

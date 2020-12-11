@@ -79,7 +79,7 @@ for i in range(1639300, 1639400):
         amountsNeeded[reaction] = [0, 0]
     calculateCost(('FUEL', i))
 
-    # exit loop if needs more than available, store last acceptable fuel count
+    # exit loop if needs more than available, store last acceptable fuel occupied_count
     if amountsNeeded['ORE'][0] >= goal:
         fuelCount = i - 1
         break

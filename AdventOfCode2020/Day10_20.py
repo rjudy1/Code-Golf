@@ -2,7 +2,7 @@
 
 # Author:   Rachael Judy
 # Date:     12/10/2020
-# Purpose:  Find product of count voltage diff between each element in adapters - no duplicates
+# Purpose:  Find product of occupied_count voltage diff between each element in adapters - no duplicates
 #           Find total number of adapter arrangements that meet conditions
 #           Part 2 works if can remove max of three adapters in a row
 
@@ -37,7 +37,7 @@ for i in range(1, len(adapters) - 1):
         possibilities.append((adapters[i]))
 print("Possiblities: ", possibilities)
 
-# count how many triples occur - based on pattern there are no quadruples or more in sequence
+# occupied_count how many triples occur - based on pattern there are no quadruples or more in sequence
 triple_count = 0
 for p in range(len(possibilities)-2):
     if possibilities[p+2] - possibilities[p] == 2:

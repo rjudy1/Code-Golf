@@ -13,8 +13,8 @@ pwd_list = parseMod.readCSV_rowEl('data/2pswd.csv', ' ')
 numValid = 0
 for pswd in pwd_list:
     bounds = pswd[0].split('-')
-    mini = int(bounds[0])   # min count or index
-    maxi = int(bounds[1])   # max count or index
+    mini = int(bounds[0])   # min occupied_count or index
+    maxi = int(bounds[1])   # max occupied_count or index
     c = pswd[1][0]      # character looking for
 
     count = 0
@@ -25,13 +25,13 @@ for pswd in pwd_list:
         numValid += 1
 
 """ 
-    # For Part 1 - checking the char count
+    # For Part 1 - checking the char occupied_count
     for letter in password[2]:
         if letter == c:
-            count += 1
+            occupied_count += 1
 
 
-    if mini <= count <= maxi:
+    if mini <= occupied_count <= maxi:
         numValid += 1
 """
 

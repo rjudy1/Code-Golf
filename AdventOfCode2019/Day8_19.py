@@ -10,7 +10,7 @@ import numpy as np
 import parseMod
 
 
-# count occurrences of zeros, ones, twos
+# occupied_count occurrences of zeros, ones, twos
 def countTypes(numbers):
     zeros = 0
     ones = 0

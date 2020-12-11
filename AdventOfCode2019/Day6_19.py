@@ -6,7 +6,7 @@
 
 import parseMod
 
-# count orbits from a single key recursively
+# occupied_count orbits from a single key recursively
 def countOrbits(key, num, planets):
     if key != 'COM' and key is not None:
         num += 1
@@ -33,12 +33,12 @@ def buildPredecessorList(key, planets):
     return predList
 
 
-# count transfer from x to y by traveling to common predecessor
+# occupied_count transfer from x to y by traveling to common predecessor
 def countTransfers(x, y, planets):
     predX = buildPredecessorList(x, planets)
     predY = buildPredecessorList(y, planets)
 
-    # count how many transfers x will have to make to get to the common predecessor
+    # occupied_count how many transfers x will have to make to get to the common predecessor
     transfersX = 0
     found = False
 
