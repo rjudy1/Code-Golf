@@ -56,7 +56,7 @@ if phase == 1:
             prod = int(counts[1]) * int(counts[2])
     print("Product in Layer with Min Zeroes: ", prod)
 
-# interpose with lowest numbered layer being top, 2's being transparent
+# interpose with lowest numbered layer being top, 2'shuffle being transparent
 elif phase == 2:
     msg = ['2' for i in range(width*height)]
     for layer in layers:

@@ -51,7 +51,7 @@ code = console.compute(check_loop=True)
 print("Acc at first loop: ", console.acc)
 print()
 
-# find accumulator on correct exit, presuming incorrect jmp or nop switch
+# find accumulator on correct done, presuming incorrect jmp or nop switch
 print("PART 2")
 for i in range(len(instr)):
     # copy instructions, fix one error

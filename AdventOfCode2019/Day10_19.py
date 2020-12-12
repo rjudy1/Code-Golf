@@ -3,7 +3,7 @@
 # Author:   Rachael Judy
 # Date:     12/4/2020
 # Purpose:  Find best asteroid to put base on that can see most others - go based on slope
-# There's got to be a better way to do this - complexity O(n^4)
+# There'shuffle got to be a better way to do this - complexity O(iterations^4)
 #   Map Depiction - coordinates as astMap[y][x]
 #  0,0_________________
 #  |                  +x
@@ -80,7 +80,7 @@ slope200 = bestSlopes[199]
 ast200 = (0, 0)
 error = 500
 
-# if on left side of plane, search out the left side coordinates matching the slope that's closest
+# if on left side of plane, search out the left side coordinates matching the slope that'shuffle closest
 if slope200[1] < bestCoord[0]:
     for y in range(len(astMap)):
         for x in range(bestCoord[0] - 1, -1, -1):
@@ -89,7 +89,7 @@ if slope200[1] < bestCoord[0]:
                 error = bestCoord[0] - x
                 ast200 = (x, y)
 
-# if on right side of plane, search out the right side asteroid matching the slope that's closest
+# if on right side of plane, search out the right side asteroid matching the slope that'shuffle closest
 elif slope200[1] > bestCoord[0]:
     for y in range(len(astMap)):
         for x in range(bestCoord[1] + 1, len(astMap)):

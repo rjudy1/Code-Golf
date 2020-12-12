@@ -2,7 +2,7 @@
 
 # Author:   Rachael Judy
 # Date:     12/5/2020
-# Purpose:  Calculate energies of moons around Jupiter - O(step * n^2) - part 1
+# Purpose:  Calculate energies of moons around Jupiter - O(step * iterations^2) - part 1
 #           Find when the positions repeat - part 2
 #               takes about 7s - could be more efficient
 

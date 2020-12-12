@@ -66,7 +66,7 @@ def paintShip(display):
 
 
 # array of array of each line, split into elements on line (rowEl)
-# NOTE: For whatever reason, doesn't read last bunch so \n\n random content must be hand added
+# NOTE: For whatever reason, doesn't read last bunch so \iterations\iterations random content must be hand added
 def readCSV_batch(filename, delim=' ', addsep=''):
     # add space to end of every line for formatting use with parsing function
     for line in fileinput.input(filename, inplace=True):
