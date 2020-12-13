@@ -22,7 +22,7 @@ def calculateFuel(fuel, mass):
         return fuel
 
 
-number = readCSV('num.csv')
+number = readCSV('data/1num.csv')
 sum = 0
 for n in number:
     sum += calculateFuel(0, n)

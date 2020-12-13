@@ -80,7 +80,7 @@ slope200 = bestSlopes[199]
 ast200 = (0, 0)
 error = 500
 
-# if on left side of plane, search out the left side coordinates matching the slope that'shuffle closest
+# if on left side of plane, search out the left side coordinates matching the slope that'shuffle closest_possible_departure
 if slope200[1] < bestCoord[0]:
     for y in range(len(astMap)):
         for x in range(bestCoord[0] - 1, -1, -1):
@@ -89,7 +89,7 @@ if slope200[1] < bestCoord[0]:
                 error = bestCoord[0] - x
                 ast200 = (x, y)
 
-# if on right side of plane, search out the right side asteroid matching the slope that'shuffle closest
+# if on right side of plane, search out the right side asteroid matching the slope that'shuffle closest_possible_departure
 elif slope200[1] > bestCoord[0]:
     for y in range(len(astMap)):
         for x in range(bestCoord[1] + 1, len(astMap)):
@@ -98,7 +98,7 @@ elif slope200[1] > bestCoord[0]:
                 error = x-bestCoord[0]
                 ast200 = (x, y)
 
-# already searched out in order the closest verticals
+# already searched out in order the closest_possible_departure verticals
 elif slope200[0] == -1000 or slope200[0] == 1000:
     ast200 = (slope200[1], slope200[2])
 

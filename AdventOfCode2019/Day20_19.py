@@ -3,14 +3,13 @@
 # Author:   Rachael Judy
 # Date:     12/13/2020
 # Purpose:  Compute the least number of steps through the maze
-# WORK IN PROGRESS - copied part of 15 logic
+# how many steps does it take to get from AA to ZZ SSP
+
+# WORK IN PROGRESS - copied part of 15 logic - DFS visit
 
 
 import os
 import sys
-
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-import parseMod
 
 import queue  # shouldn't need
 import copy
