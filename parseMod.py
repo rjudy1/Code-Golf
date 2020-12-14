@@ -1,7 +1,7 @@
 # Input parsers for code golf
 # Author:   Rachael Judy
 # Written:  12/1/20
-# Modified: 12/7/20
+# Modified: 12/9/20
 
 import csv
 import fileinput
