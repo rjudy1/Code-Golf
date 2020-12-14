@@ -12,7 +12,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
 
 # SET phase
-phase = 1
+phase = 2
 
 # read instructions
 lines = parseMod.readCSV_row('data/14masks.csv', '\n')
@@ -93,4 +93,4 @@ else:
                 mem[address] = value
 
 # display sum
-print(sum(mem.values()))
+print(f"Part {phase}: {sum(mem.values())}")
