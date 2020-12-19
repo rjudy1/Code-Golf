@@ -4,7 +4,7 @@
 # Date:
 # Purpose:
 
-########## This is annoying input parsing for several and I'll come back to the 2018 challenges later #############
+########## I'll come back to the 2018 challenges later #############
 
 import copy
 import os

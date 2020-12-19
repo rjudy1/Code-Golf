@@ -16,7 +16,7 @@ import parseMod
 # param: target is tuple of (element, amount)
 # amountsNeeded has key name and value [using, spare]
 def calculateCost(target):
-    global reactionDict, amountsNeeded, outputDict  # dictionary of equation representations,
+    global reactionDict, amountsNeeded, outputDict  # dictionary of eq representations,
                                                     # amounts needed, output quantity for reactions
     if target[0] == 'X':  # end of reactions
         return
@@ -38,7 +38,7 @@ def calculateCost(target):
 
 # parse input
 reactions = parseMod.readCSV_rowEl('data/14reactions.csv')
-global reactionDict, amountsNeeded, outputDict  # dictionary of equation represenations and costs
+global reactionDict, amountsNeeded, outputDict  # dictionary of eq represenations and costs
 
 reactionDict = dict()
 outputDict = dict()

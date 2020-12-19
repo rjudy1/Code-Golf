@@ -1,7 +1,18 @@
 # Input parsers for code golf
 # Author:   Rachael Judy
 # Written:  12/1/20
-# Modified: 12/9/20
+# Modified: 12/18/20
+
+"""
+Usage:
+import os
+import sys
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import parseMod
+parseMod.readCSV...
+"""
+
 
 import csv
 import fileinput
