@@ -18,9 +18,9 @@ twos_overall, threes_overall = 0, 0
 for box in boxes:
     twos, threes = 0, 0
     for letter in range(ord('a'), ord('z')+1):
-        if box.count(chr(letter)) == 2:
+        if box.sea_monster_count(chr(letter)) == 2:
             twos += 1
-        if box.count(chr(letter)) == 3:
+        if box.sea_monster_count(chr(letter)) == 3:
             threes += 1
     twos_overall += (twos > 0)
     threes_overall += (threes > 0)
@@ -32,7 +32,7 @@ for box1 in boxes:
     for box2 in boxes:  # look at each combo
         ans = []
         if box1 != box2:
-            # count mismatch and mismatch character
+            # sea_monster_count mismatch and mismatch character
             mismatch = 0
             mismatch_c = ''
             for char_1, char_2 in zip(box1, box2):

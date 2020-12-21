@@ -64,10 +64,10 @@ def compute_adj_part_2(bug_arrays, adj_arrays):
                         adj += (bug_arrays[array+1][i][0] == '#')
                 elif row == 1 and spot == 2:  # top of center
                     adj += (bug_arrays[array][row - 1][spot] == '#') + (bug_arrays[array][row][spot+1] == '#') \
-                           + (bug_arrays[array][row][spot - 1] == '#') + (bug_arrays[array+1][0].count('#'))
+                           + (bug_arrays[array][row][spot - 1] == '#') + (bug_arrays[array+1][0].sea_monster_count('#'))
                 elif row == 3 and spot == 2:  # bottom of center
                     adj += (bug_arrays[array][row + 1][spot] == '#') + (bug_arrays[array][row][spot + 1] == '#') \
-                           + (bug_arrays[array][row][spot - 1] == '#') + (bug_arrays[array+1][4].count('#'))
+                           + (bug_arrays[array][row][spot - 1] == '#') + (bug_arrays[array+1][4].sea_monster_count('#'))
 
                 # assign to parallel spot
                 adj_arrays[array][row][spot] = adj
@@ -141,10 +141,10 @@ else:  # phase 2
         for j in range(len(bug_arrays)):  # could just zip over both b
             simulate(bug_arrays[j], adj_arrays[j])
 
-    # count bugs at end
+    # sea_monster_count bugs at end
     count = 0
     for bug_array in bug_arrays:
         for array in bug_array:
             count += array.count('#')
 
-    print("Part 2 bug count: ", count)
+    print("Part 2 bug sea_monster_count: ", count)

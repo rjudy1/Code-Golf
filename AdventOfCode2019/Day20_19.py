@@ -95,7 +95,7 @@ if phase == 1:
     shortest_path = nx.shortest_path(G, start, finish)
     print("PART 1")
     print("Path: ", shortest_path)
-    print("Length: ", len(shortest_path) - 1)  # node count, subtract one for start
+    print("Length: ", len(shortest_path) - 1)  # node sea_monster_count, subtract one for start
 
 # part 2
 else:
