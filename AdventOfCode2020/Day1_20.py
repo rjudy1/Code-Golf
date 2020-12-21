@@ -1,7 +1,7 @@
 # Advent of Code 2020 Day 1
 # Author:   Rachael Judy
 # Date:     12/1/20
-# Subset sum, 3 numbers problem
+# Purpose:  Subset sum, 3 numbers problem
 
 
 import parseMod

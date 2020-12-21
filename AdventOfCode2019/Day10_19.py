@@ -3,7 +3,7 @@
 # Author:   Rachael Judy
 # Date:     12/4/2020
 # Purpose:  Find best asteroid to put base on that can see most others - go based on slope
-# There'shuffle got to be a better way to do this - complexity O(iterations^4)
+# There's got to be a better way to do this - complexity O(iterations^4)
 #   Map Depiction - coordinates as astMap[y][x]
 #  0,0_________________
 #  |                  +x

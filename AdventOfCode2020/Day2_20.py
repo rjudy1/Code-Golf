@@ -1,12 +1,11 @@
 # Advent of Code Day 2
-# Check password validity of min and max num of certain characters p1
-# Check XOR of occurrence of character at specified index; 1 indexing for the non programmers making bad passwords
+
 # Author:   Rachael Judy
 # Date:     12/2/2020
-
+# Purpose:  Check password validity of min and max num of certain characters p1
+#           Check XOR of occurrence of character at specified index; 1 indexing for the non programmers making bad passwords
 
 import parseMod
-
 
 # get array of each line, split at spaces
 pwd_list = parseMod.readCSV_rowEl('data/2pswd.csv', ' ')

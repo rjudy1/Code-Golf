@@ -1,5 +1,8 @@
-# solution to 2019 P1
-# not updated to use parseMod
+# Advent of Code 2019 - Day 1
+
+# Author:   Rachael Judy
+# Date:     12/1/20
+# Purpose:  Calculate fuel needed, part 1, remove recursion
 import csv
 
 def readCSV(filename):
@@ -10,6 +13,7 @@ def readCSV(filename):
             for s in row:
                 num.append(int(s))
     return num
+
 
 def calculateFuel(fuel, mass):
     if mass <= 0:
