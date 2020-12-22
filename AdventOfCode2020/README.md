@@ -25,7 +25,7 @@ Solutions to the 2020 Advent of Code challenges
 19. recursive regex rules
 20. assemble map from corners, transformations
 21. sort through ingredients list, locating allergen ingredient pairs, count safe ingredient occurrences
-22. 
+22. card game, recursive and ordinary War version
 23. 
 24. 
 25. 
