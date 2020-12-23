@@ -1,7 +1,7 @@
 # Input parsers for code golf
 # Author:   Rachael Judy
 # Written:  12/1/20
-# Modified: 12/18/20
+# Modified: 12/23/20
 
 """
 Usage:
@@ -65,17 +65,6 @@ def readCSV_single(filename):
     return array
 
 
-# display the array as grid - for letter display
-def paintShip(display):
-    for row in display:
-        for el in row:
-            if el == 1:
-                print('}{', end='')
-            else:
-                print('  ', end='')
-        print()
-
-
 # array of array of each line, split into elements on line (rowEl)
 # NOTE: For whatever reason, doesn't read last bunch so \iterations\iterations random content must be hand added
 def readCSV_batch(filename, delim=' ', addsep=''):
@@ -100,7 +89,7 @@ def readCSV_batch(filename, delim=' ', addsep=''):
 
 
 # combine array elements that are strings into string, delim separated
-def arrayToString(array, delim=' '):
+def array_to_string(array, delim=' '):
     string = ''
     for x in array:
         string += str(x) + delim

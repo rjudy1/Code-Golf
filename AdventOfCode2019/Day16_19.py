@@ -24,7 +24,7 @@ new_elements = [0 for i in range(len(elements))]
 # set up working pattern
 og_pattern = [0, 1, 0, -1]
 new_pattern = []
-offset = int(parseMod.arrayToString(elements[0:7], ''))
+offset = int(parseMod.array_to_string(elements[0:7], ''))
 
 # part 1 - brute force
 for x in range(100):
@@ -42,7 +42,7 @@ for x in range(100):
     new_pattern = []  # reset the pattern for next phase
 
 # part 1 summary
-code = parseMod.arrayToString(elements[0:8], '')
+code = parseMod.array_to_string(elements[0:8], '')
 print("Part 1: ", code)
 
 
@@ -55,5 +55,5 @@ for x in range(100):
         elements[i - 1] = (elements[i - 1] + elements[i]) % 10
 
 # part 2 summary
-code = parseMod.arrayToString(elements[offset:offset+8], '')
+code = parseMod.array_to_string(elements[offset:offset + 8], '')
 print("Part 2: ", code)

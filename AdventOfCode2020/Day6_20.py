@@ -10,7 +10,6 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
 
 answers = parseMod.readCSV_batch('data/6answers.csv')
-print(answers)
 
 sumOr = 0
 sumAnd = 0

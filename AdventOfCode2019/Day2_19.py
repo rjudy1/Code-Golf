@@ -5,6 +5,7 @@
 #import os, sys
 #sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
+phase = 2
 
 
 def processInput(array):
@@ -26,8 +27,9 @@ solution = 0
 for i in range(100):
     for j in range(100):
         content = parseMod.readCSV('data/2num.csv', ',')
-        content[1] = i
-        content[2] = j
+        if phase == 2:
+            content[1] = i
+            content[2] = j
         a=processInput(content)
         if a[0] == 19690720:
             print(i)

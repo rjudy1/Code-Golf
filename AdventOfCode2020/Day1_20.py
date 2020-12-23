@@ -5,14 +5,15 @@
 
 
 import parseMod
-
+stage = 2
 
 array = parseMod.readCSV("data/1num.csv", '\n')
 found = False
 for i in array:
     for j in array:
         for k in array:
-            #k = 0 # uncomment this for stage 1
+            if stage == 1:
+                k = 0 # uncomment this for stage 1
             if i+j+k == 2020:
                 print(i, j, k, sep=',')
                 if k:

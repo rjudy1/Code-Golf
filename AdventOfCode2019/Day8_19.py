@@ -8,6 +8,7 @@
 import numpy as np
 
 import parseMod
+phase = 2
 
 
 # occupied_count occurrences of zeros, ones, twos
@@ -40,7 +41,6 @@ def printImage(image):
 
 # read each char as own item
 pixels = parseMod.readCSV_single('data/8pixels.csv')
-phase = 2
 height = 6
 width = 25
 layers = [pixels[150 * i:150 * (i + 1)] for i in range(int(len(pixels) / 150))]

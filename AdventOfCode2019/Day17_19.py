@@ -68,7 +68,7 @@ main_routine =['A', ',', 'B', ',', 'A', ',', 'C', ',', 'B', ',', 'C', ',', 'B', 
 A = ['L', ',', '1', '0', ',', 'L', ',', '6', ',', 'R', ',', '1', '0', '\n']  # L10, L6, R10
 B = ['R', ',', '6', ',', 'R', ',', '8', ',', 'R', ',', '8', ',', 'L', ',', '6', ',', 'R', ',', '8', '\n']
 C = ['L', ',', '1', '0', ',', 'R', ',', '8', ',', 'R', ',', '8', ',', 'L', ',', '1', '0', '\n']
-vid = ['iterations', '\n']  # no video, 10 - could process video
+vid = ['n', '\n']  # no video, 10 - could process video
 
 # put all in queue
 inputQ = queue.SimpleQueue()

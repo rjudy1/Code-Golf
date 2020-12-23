@@ -64,10 +64,10 @@ def compute_adj_part_2(bug_arrays, adj_arrays):
                         adj += (bug_arrays[array+1][i][0] == '#')
                 elif row == 1 and spot == 2:  # top of center
                     adj += (bug_arrays[array][row - 1][spot] == '#') + (bug_arrays[array][row][spot+1] == '#') \
-                           + (bug_arrays[array][row][spot - 1] == '#') + (bug_arrays[array+1][0].sea_monster_count('#'))
+                           + (bug_arrays[array][row][spot - 1] == '#') + (bug_arrays[array+1][0].count('#'))
                 elif row == 3 and spot == 2:  # bottom of center
                     adj += (bug_arrays[array][row + 1][spot] == '#') + (bug_arrays[array][row][spot + 1] == '#') \
-                           + (bug_arrays[array][row][spot - 1] == '#') + (bug_arrays[array+1][4].sea_monster_count('#'))
+                           + (bug_arrays[array][row][spot - 1] == '#') + (bug_arrays[array+1][4].count('#'))
 
                 # assign to parallel spot
                 adj_arrays[array][row][spot] = adj
@@ -147,4 +147,4 @@ else:  # phase 2
         for array in bug_array:
             count += array.count('#')
 
-    print("Part 2 bug sea_monster_count: ", count)
+    print("Part 2 bug count: ", count)
