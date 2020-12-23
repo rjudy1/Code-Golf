@@ -3,7 +3,7 @@
 # Author:   Rachael Judy
 # Date:     12/23/2020
 # Purpose:  Play repetitive cup shuffle game that finds the order after 100 shuffles. Then, expand the list to 1M count
-#           and 10M turns (takes about 12 seconds anaconda) - set inp for own use - LL class and list too slow
+#           and 10M turns (takes about 7 seconds pypy) - set inp for own use - LL class and list too slow
 
 def play(seed, count, shuffles):  # takes initial values, number of cups, number of shuffles
     # cups LL of number relationships in x : y where y is clockwise of x

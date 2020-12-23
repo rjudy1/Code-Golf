@@ -26,6 +26,6 @@ Solutions to the 2020 Advent of Code challenges
 20. assemble map from corners, transformations
 21. sort through ingredients list, locating allergen ingredient pairs, count safe ingredient occurrences
 22. card game, recursive and ordinary War version
-23. 
+23. numbered cup shuffling - pick the right data structure for a LL
 24. 
 25. 
