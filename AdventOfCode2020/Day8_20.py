@@ -35,7 +35,7 @@ class GameConsole:
             elif instruction[0] == 'acc':  # add to accumulator
                 self.acc += int(instruction[1])
                 self.pc += 1
-            elif instruction[0] == 'jmp':  # jump argument lines
+            elif instruction[0] == 'jmp':  # jump argument relationships
                 self.pc += int(instruction[1])
             elif instruction[0] == 'nop':  # go on, no operation
                 self.pc += 1

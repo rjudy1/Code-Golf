@@ -150,7 +150,7 @@ def get_key_to_key(G, keys, doors, start_points, start_points_nums):
 
 # kind of excessive, but computes next possible along path, yielding if blocked
 def find_next_possible_paths(key_to_key, path):
-    current_positions = path.current
+    current_positions = path.current_i
     for k0, v0 in key_to_key.items():
         if k0 & current_positions:
             for k1, v1 in v0.items():

@@ -68,7 +68,7 @@ bags_collected = []
 
 # go through each rule, placing outputs and inputs in content_dict
 for rule in rules:
-    # contains blank lines
+    # contains blank relationships
     if rule != '':
         bag_type = arrayToString(rule[0:2])
         content_dict[bag_type] = []

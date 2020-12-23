@@ -84,7 +84,7 @@ for dim in range(3):
 
         # see if match found
         match = True
-        for i in range(4):  # check all four moons in the current dimension
+        for i in range(4):  # check all four moons in the current_i dimension
             if moons_position[i][dim] != moons_position_initial[i][dim] \
                 or moons_velocity[i][dim] != moons_velocity_initial[i][dim]:
                 match = False

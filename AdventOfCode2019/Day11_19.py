@@ -2,7 +2,7 @@
 
 # Author:   Rachael Judy
 # Date:     12/4/2020
-# Purpose:  Painting robot inputs current color panel and outputs the color and direction to turn
+# Purpose:  Painting robot inputs current_i color panel and outputs the color and direction to turn
 # Created intcode_computer module for future use, eases storage
 
 

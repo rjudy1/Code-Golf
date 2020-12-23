@@ -161,7 +161,7 @@ for t_y in range(board_width_tiles):
         pattern.pop(0)
         pattern.pop()
 
-        # populate map with each element in the current tile
+        # populate map with each element in the current_i tile
         for y in range(len(picture_wedges[t_y][t_x].tile_pattern)):
             for x in range(len(picture_wedges[t_y][t_x].tile_pattern[0])):
                 ocean_map[t_y*8 + y].append(picture_wedges[t_y][t_x].tile_pattern[y][x])

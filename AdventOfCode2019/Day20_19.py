@@ -5,7 +5,7 @@
 # Purpose:  Compute the number of steps through maze AA to ZZ - phase 1 portals direct connect to same lettering
 #           - phase 2 portals on inside connect to a recursively nested maze to its outer ones
 # NOTE - modified input txt to force it to read whitespace after last character on line - look at NOTE comments to use
-#           on alternate maze - add a non . character to end of each line in the maze file so all lines are same length
+#           on alternate maze - add a non . character to end of each line in the maze file so all relationships are same length
 
 import os
 import sys
