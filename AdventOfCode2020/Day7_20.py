@@ -89,4 +89,3 @@ if phase == 1:
 else:
     countContains('shiny gold ', 1)
     print("#Bags that shiny gold could hold:", count)
-
