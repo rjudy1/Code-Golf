@@ -6,9 +6,7 @@
 #               Phase 1: has required fields
 #               Phase 2: check that fields meet conditions
 
-import csv
 import re
-import fileinput
 import sys, os
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))

@@ -1,7 +1,7 @@
 # Input parsers for code golf
 # Author:   Rachael Judy
 # Written:  12/1/20
-# Modified: 12/23/20
+# Modified: 12/25/20
 
 """
 Usage:
@@ -10,7 +10,7 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
-parseMod.readCSV...
+x = parseMod.readCSV...
 """
 
 
@@ -52,7 +52,7 @@ def readCSV_rowEl(filename, delim=' '):
     return rowEl
 
 
-# reads in as one big array
+# reads in as one big array of characters
 def readCSV_single(filename):
     array = []
     with open(filename) as file:
@@ -66,7 +66,7 @@ def readCSV_single(filename):
 
 
 # array of array of each line, split into elements on line (rowEl)
-# NOTE: For whatever reason, doesn't read last bunch so \iterations\iterations random content must be hand added
+# NOTE: For whatever reason, doesn't read last bunch so \n random content must be hand added
 def readCSV_batch(filename, delim=' ', addsep=''):
     # add space to end of every line for formatting use with parsing function
     for line in fileinput.input(filename, inplace=True):
@@ -93,4 +93,4 @@ def array_to_string(array, delim=' '):
     string = ''
     for x in array:
         string += str(x) + delim
-    return string
+    return ''.join(array)
