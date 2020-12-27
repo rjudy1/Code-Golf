@@ -1,0 +1,32 @@
+#ip 2
+seti 123 0 4
+bani 4 456 4
+eqri 4 72 4
+addr 4 2 2
+seti 0 0 2
+seti 0 1 4  # start here with r4 as 0 - L5
+bori 4 65536 1  # bitwise or with 16^4 or 0x10000 to r1 - loops to here
+seti 16031208 7 4  # set r4 (d) to 16031208
+bani 1 255 3  # bitwise or r1 with 0xFF to r3
+addr 4 3 4  # add r4 and r3 to r4
+bani 4 16777215 4  # bitwise and 4 with 16^6-1
+muli 4 65899 4  # multiply r4 with 65899
+bani 4 16777215 4  # bitwise and with 16^6-1
+gtir 256 1 3  # 0x100 > r1 to r3
+addr 3 2 2  # add r3 and r2 to r2, so might skip depending on above
+addi 2 1 2  # if here, skip next line
+seti 27 3 2  # goto instruction 28 (30 here)
+seti 0 9 3  # otherwise set r3 to 0
+addi 3 1 5  # add 1 to r3 to r5
+muli 5 256 5  # multiply r5 by 0x100
+gtrr 5 1 5  # check if r5 > 1 to r5
+addr 5 2 2  # add result to pointer, if so skip down
+addi 2 1 2  # if r5 <= 1, then skip next
+seti 25 7 2  #  from two above, goto line 26
+addi 3 1 3  # else increment r3
+seti 17 4 2  # goto line 18
+setr 3 1 1  # set r1 to r3
+seti 7 5 2  # send r2 to 8
+eqrr 4 0 3  # the check, only one that uses r0
+addr 3 2 2  # exit if they were equal, otherwise, print the r4
+seti 5 1 2  # goto line 6
