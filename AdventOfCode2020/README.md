@@ -3,13 +3,14 @@
 
 ### Usage
 This repo contains solutions to the Advent of Code 2020 challenges. The programs should all be general use.
-If you replace the input filename with your own input or replace in the data folder or the input variable in
+If you replace the input filename with your own input, in the data folder, or the input variable in
 the case of very short inputs, you can run with your inputs. Some also require changing of the part, stage,
-or phase variable to 1 and 2 to get the part you want, as the layout was modified as the contest progresswd. 
+or phase variable to 1 and 2 to get the part you want, as the layout was modified as the contest progressed. 
 
 The programs use the parseMod module and should be interpreted through anaconda to resolve the path names or the extra
-sys and module libraries may have to be used (see parseMod.py). Thus, you will need the new repo. None of the
-programs should take more than 30 seconds, generally less. Enjoy!
+sys and module libraries may have to be used (see parseMod.py). Most later programs account for this additional import.
+Thus, you will need the new repo. None of the programs should take more than 30 seconds, generally less, and otherwise
+specified. Enjoy!
 
 ### Topics
 1. find combinations of input numbers - subset sum : 0
@@ -30,7 +31,7 @@ programs should take more than 30 seconds, generally less. Enjoy!
 16. ticket input parsing, removal of invalid, comprehension from remainder : 4, annoying parsing
 17. simulate space based on adjacencies : 3
 18. operator precedence changes - stack based : 5, trippy
-19. recursive regex rules : 4, regexing ouches
+19. recursive regex rules : 4, regexing woes
 20. assemble map from corners, transformations : 5, fun but long rough debug
 21. sort through ingredients list, locating allergen ingredient pairs, count safe ingredient occurrences : 3, thinking
 22. card game, recursive and ordinary War version : 3

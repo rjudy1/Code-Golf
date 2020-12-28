@@ -1,14 +1,14 @@
 # Input parsers for code golf
 # Author:   Rachael Judy
 # Written:  12/1/20
-# Modified: 12/25/20
+# Modified: 12/28/20
 
 """
 Usage:
 import os
 import sys
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # to fix placement in folders
 import parseMod
 x = parseMod.readCSV...
 """
@@ -30,7 +30,7 @@ def readCSV(filename, delim=','):
 
 
 # array with each row as element in string form
-def readCSV_row(filename, delim=' '):
+def readCSV_row(filename, delim='\n'):
     array = readCSV_rowEl(filename, delim)
     finished = []
     for el in array:
