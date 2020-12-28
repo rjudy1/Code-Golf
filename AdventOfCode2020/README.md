@@ -3,8 +3,8 @@
 
 ### Usage
 This repo contains solutions to the Advent of Code 2020 challenges. The programs should all be general use.
-If you replace the input filename with your own input, in the data folder, or the input variable in
-the case of very short inputs, you can run with your inputs. Some also require changing of the part, stage,
+If you replace the input filename with your own input filename, in the data folder, or the input variable in
+the case of very short inputs, the program should solve on your input. Some also require changing of the part, stage,
 or phase variable to 1 and 2 to get the part you want, as the layout was modified as the contest progressed. 
 
 The programs use the parseMod module and should be interpreted through anaconda to resolve the path names or the extra

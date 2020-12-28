@@ -2,7 +2,7 @@
 
 # Author:   Rachael Judy
 # Date:     12/19/2020
-# Purpose:  Find messages that match rules - non-recursive p1 and recursive p2
+# Purpose:  Find messages that match rules - non-recursive p1 and recursive p2 - regexing
 
 import os
 import sys

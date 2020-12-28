@@ -87,7 +87,7 @@ print("Part 1: ", sum(evals))
 
 # part 2
 evals =[]
-operator_precedence['+'] = 2  # addition is higher precedence than multiplication now
+operator_precedence['+'] = 2  # addition is higher precedence than multiplication now, change precedence
 for equation in lines:
     evals.append(eval(equation, operator_precedence))
 
