@@ -54,14 +54,8 @@ def readCSV_rowEl(filename, delim=' '):
 
 # reads in as one big array of characters
 def readCSV_single(filename):
-    array = []
-    with open(filename) as file:
-        reader = csv.reader(file)
-        for row in reader:
-            for s in row:
-                for c in s:
-                    array.append(c)
-
+    inp = open(filename).read()
+    array = [c for c in inp]
     return array
 
 
@@ -86,11 +80,3 @@ def readCSV_batch(filename, delim=' ', addsep=''):
         batches.append(string)  # catch the last batch
 
     return batches
-
-
-# combine array elements that are strings into string, delim separated
-def array_to_string(array, delim=' '):
-    string = ''
-    for x in array:
-        string += str(x) + delim
-    return ''.join(array)
