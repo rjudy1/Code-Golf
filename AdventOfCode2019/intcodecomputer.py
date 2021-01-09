@@ -81,17 +81,11 @@ class Computer:
                     self.index += 2
 
             elif self.array[self.index] % 100 == 7:  # less than
-                if self.array[x] < self.array[y]:
-                    self.array[z] = 1
-                else:
-                    self.array[z] = 0
+                self.array[z] = int(self.array[x] < self.array[y])
                 self.index += 3
 
             elif self.array[self.index] % 100 == 8:  # equals
-                if self.array[x] == self.array[y]:
-                    self.array[z] = 1
-                else:
-                    self.array[z] = 0
+                self.array[z] = int(self.array[x] == self.array[y])
                 self.index += 3
 
             elif self.array[self.index] % 100 == 9:  # base + parameter
