@@ -1,0 +1,1 @@
+C:\Users\HP\OneDrive\Desktop\Code-Golf\AdventOfCode2021\target\debug\AdventOfCode2021.exe: C:\Users\HP\OneDrive\Desktop\Code-Golf\AdventOfCode2021\src\day01.rs C:\Users\HP\OneDrive\Desktop\Code-Golf\AdventOfCode2021\src\main.rs
