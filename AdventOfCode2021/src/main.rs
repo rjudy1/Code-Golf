@@ -18,7 +18,7 @@ fn main() -> std::io::Result<()> {
 
     //************************************
     // set these
-    let mut day = 2;
+    let mut day = 3;
     let mut stage = 1;
     // ***********************************
 
@@ -32,9 +32,9 @@ fn main() -> std::io::Result<()> {
     if day == 1 {
         day01::calculate(parser::get_input_num_col("Day01.txt", 2000), stage);
     } else if day == 2 {
-
+        day02::calculate(parser::get_input_string_col("Day02.txt", 1000), stage);
     } else if day == 3 {
-
+        day03::calculate(parser::get_input_comma_sep("Day03.txt", 1000), stage);
     } else if day == 4 {
 
     } else if day == 5 {
@@ -54,6 +54,16 @@ fn main() -> std::io::Result<()> {
     } else if day == 12 {
 
     } else if day == 13 {
+
+    } else if day == 14 {
+
+    } else if day == 15 {
+
+    } else if day == 16 {
+
+    } else if day == 17 {
+
+    } else if day == 18 {
 
     }
 
