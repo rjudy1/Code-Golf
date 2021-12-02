@@ -7,19 +7,11 @@ use std::io::prelude::*;
 use std::vec::Vec;
 
 pub fn calculate(numbers : Vec<String>, stage : i32) -> std::io::Result<()> {
-    // set stage to 1 or 2
-    let mut diff=1;
-    if stage==2 {
-        diff=3;
-    }
-
     let mut forw = 0;
     let mut depth = 0;
     let mut aim = 0;
-    println!("{}", numbers[4]);
 
     for i in 0..numbers.len() {
-        println!("{} {}", numbers[i], numbers[i].len());
         let change  = (numbers[i].chars().nth(numbers[i].len()-3).unwrap()).to_digit(10).unwrap();
         if numbers[i].chars().nth(0).unwrap() == 'f' {
             if stage == 1 {
