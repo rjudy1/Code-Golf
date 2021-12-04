@@ -71,3 +71,23 @@ pub fn get_input_comma_sep(filename: &str, size:usize) ->Vec<i32> {
     }
     return numbers
 }
+
+pub fn get_input_cols(filename: &str, size:usize) ->Vec<String> {
+    let path = Path::new(filename);
+    let f = match File::open(&filename) {
+        Err(why) => panic!("couldn't open {}: {}", path.display(), why),
+        Ok(file) => file,
+    };
+
+    let mut reader = BufReader::new(f);
+    let mut buffer : Vec<String> = Vec::new();// = vec![String::from('f'); size];
+    for i in 0..size {
+        let mut temp= String::new();
+        reader.read_line(&mut temp);
+        // drop the /r/n
+        temp.pop();
+        temp.pop();
+        buffer.push(temp);
+    }
+    return buffer
+}

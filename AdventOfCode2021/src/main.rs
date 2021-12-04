@@ -12,13 +12,15 @@ mod parser;
 mod day01;
 mod day02;
 mod day03;
+mod day04;
+mod day05;
 
 fn main() -> std::io::Result<()> {
     println!("Hello, world!");
 
     //************************************
     // set these
-    let mut day = 4;
+    let mut day = 5;
     let mut stage = 1;
     // ***********************************
 
@@ -36,9 +38,9 @@ fn main() -> std::io::Result<()> {
     } else if day == 3 {
         day03::calculate(parser::get_input_string_col("Day03.txt", 1000), stage);
     } else if day == 4 {
-        day04::calculate(parser::get_input_string_col("Day04.txt", 1000), stage);
+        day04::calculate(parser::get_input_string_col("Day04.txt", 601), stage);
     } else if day == 5 {
-
+        day05::calculate(parser::get_input_cols("Day05.txt", 1000), stage);
     } else if day == 6 {
 
     } else if day == 7 {
@@ -64,6 +66,20 @@ fn main() -> std::io::Result<()> {
     } else if day == 17 {
 
     } else if day == 18 {
+
+    } else if day == 19 {
+
+    } else if day == 20 {
+
+    } else if day == 21 {
+
+    } else if day == 22 {
+
+    } else if day == 23 {
+
+    } else if day == 24 {
+
+    } else if day == 25 {
 
     }
 
