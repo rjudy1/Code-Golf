@@ -1,7 +1,8 @@
 // Advent of Code 2021 Solutions
 // author: Rachael Judy
 // date: December 1, 2021
-// usage: change flagged day and stage to match current day; add whitespace to end of columns
+// usage: change flagged day and stage to match current day; add whitespace to end of columns;
+//          add size being given to parser
 
 use std::env;
 use std::io;
@@ -14,6 +15,7 @@ mod day02;
 mod day03;
 mod day04;
 mod day05;
+mod day06;
 
 fn main() -> std::io::Result<()> {
     println!("Hello, world!");
@@ -24,9 +26,8 @@ fn main() -> std::io::Result<()> {
     let mut stage = 1;
     // ***********************************
 
-
     let args: Vec<String> = env::args().collect();
-    if args.len() == 3 {
+    if args.len() == 4 {
         day = args[1].parse::<i32>().unwrap();
         stage = args[2].parse::<i32>().unwrap();
     }
@@ -40,9 +41,9 @@ fn main() -> std::io::Result<()> {
     } else if day == 4 {
         day04::calculate(parser::get_input_string_col("Day04.txt", 601), stage);
     } else if day == 5 {
-        day05::calculate(parser::get_input_cols("Day05.txt", 1000), stage);
+        day05::calculate(parser::get_input_cols("Day05.txt", 500), stage);
     } else if day == 6 {
-
+        day06::calculate(parser::get_input_cols("Day06.txt", 1000), stage);
     } else if day == 7 {
 
     } else if day == 8 {
