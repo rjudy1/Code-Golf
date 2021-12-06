@@ -16,13 +16,14 @@ mod day03;
 mod day04;
 mod day05;
 mod day06;
+mod day07;
 
 fn main() -> std::io::Result<()> {
     println!("Hello, world!");
 
     //************************************
     // set these
-    let mut day = 5;
+    let mut day = 7;
     let mut stage = 1;
     // ***********************************
 
@@ -43,9 +44,9 @@ fn main() -> std::io::Result<()> {
     } else if day == 5 {
         day05::calculate(parser::get_input_cols("Day05.txt", 500), stage);
     } else if day == 6 {
-        day06::calculate(parser::get_input_cols("Day06.txt", 1000), stage);
+        day06::calculate(parser::get_input_comma_sep("Day06.txt", 1000), stage);
     } else if day == 7 {
-
+        day07::calculate(parser::get_input_cols("Day07.txt", 1000), stage);
     } else if day == 8 {
 
     } else if day == 9 {

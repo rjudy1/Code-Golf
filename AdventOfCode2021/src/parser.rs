@@ -63,7 +63,7 @@ pub fn get_input_comma_sep(filename: &str, size:usize) ->Vec<i32> {
     let mut temp= String::new();
     reader.read_line(&mut temp);
 
-    let v: Vec<&str> = temp.split(',').collect();
+    let mut v: Vec<&str> = (&temp).split(',').collect();
 
     let mut numbers : Vec<i32> = vec![0; v.len()];
     for i in 0..v.len() {
