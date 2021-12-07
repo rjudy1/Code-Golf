@@ -1,6 +1,7 @@
 // day 1 of advent of code 2021
 // author: rachael judy
 // date: 1 dec 2021
+// count occurrences of increases
 
 use std::vec::Vec;
 

@@ -1,7 +1,7 @@
 // day 6 of advent of code 2021
 // author: rachael judy
 // date: 6 dec 2021
-// there's a better mathematical way to do this that isn't tied to 256
+// count fish at day n
 
 use std::io::prelude::*;
 use std::vec::Vec;

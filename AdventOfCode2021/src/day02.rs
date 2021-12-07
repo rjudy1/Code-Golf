@@ -1,6 +1,7 @@
 // day 2 of advent of code 2021
 // author: rachael judy
 // date: 2 dec 2021
+// submarine coordinates
 
 use std::io;
 use std::io::prelude::*;

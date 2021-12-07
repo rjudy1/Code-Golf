@@ -24,7 +24,7 @@ fn main() -> std::io::Result<()> {
     //************************************
     // set these
     let mut day = 7;
-    let mut stage = 1;
+    let mut stage = 2;
     // ***********************************
 
     let args: Vec<String> = env::args().collect();
@@ -46,7 +46,7 @@ fn main() -> std::io::Result<()> {
     } else if day == 6 {
         day06::calculate(parser::get_input_comma_sep("Day06.txt", 1000), stage);
     } else if day == 7 {
-        day07::calculate(parser::get_input_cols("Day07.txt", 1000), stage);
+        day07::calculate(parser::get_input_comma_sep("Day07.txt", 1000), stage);
     } else if day == 8 {
 
     } else if day == 9 {
