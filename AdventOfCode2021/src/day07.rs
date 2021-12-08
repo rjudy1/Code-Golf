@@ -14,7 +14,7 @@ pub fn calculate(inp : Vec<i32>, stage : i32) -> std::io::Result<()> {
     for i in 0..inp.iter().max().unwrap()+1 { // possible distances
         let mut distance = 0;
         for j in 0..inp.len() {
-            if stage == 1 { // one move costs one fuel
+            if stage == 1 { // one move costs one fuel, also equal to univariate median
                 distance += (i-inp[j]).abs() as i64;
             } else {        // each move costs one more fuel than previous
                 distance += (((i-inp[j]).abs() + 1) * (i-inp[j]).abs() / 2) as i64;

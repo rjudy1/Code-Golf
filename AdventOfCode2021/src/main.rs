@@ -17,14 +17,16 @@ mod day04;
 mod day05;
 mod day06;
 mod day07;
+mod day08;
+mod day09;
 
 fn main() -> std::io::Result<()> {
     println!("Hello, world!");
 
     //************************************
     // set these
-    let mut day = 7;
-    let mut stage = 2;
+    let mut day = 9;
+    let mut stage = 1;
     // ***********************************
 
     let args: Vec<String> = env::args().collect();
@@ -48,9 +50,9 @@ fn main() -> std::io::Result<()> {
     } else if day == 7 {
         day07::calculate(parser::get_input_comma_sep("Day07.txt", 1000), stage);
     } else if day == 8 {
-
+        day08::calculate(parser::get_input_cols("Day08.txt", 200), stage);
     } else if day == 9 {
-
+        day09::calculate(parser::get_input_string_col("Day09.txt", 1000), stage);
     } else if day == 10 {
 
     } else if day == 11 {
