@@ -19,6 +19,7 @@ mod day06;
 mod day07;
 mod day08;
 mod day09;
+mod day10;
 
 fn main() -> std::io::Result<()> {
     println!("Hello, world!");
@@ -52,9 +53,9 @@ fn main() -> std::io::Result<()> {
     } else if day == 8 {
         day08::calculate(parser::get_input_cols("Day08.txt", 200), stage);
     } else if day == 9 {
-        day09::calculate(parser::get_input_string_col("Day09.txt", 1000), stage);
+        day09::calculate(parser::get_input_cols("Day09.txt", 100), stage);
     } else if day == 10 {
-
+        day10::calculate(parser::get_input_cols("Day10.txt", 1000), stage);
     } else if day == 11 {
 
     } else if day == 12 {
