@@ -1,8 +1,9 @@
 // Advent of Code 2021 Solutions
 // author: Rachael Judy
 // date: December 1, 2021
-// usage: change flagged day and stage to match current day; add whitespace to end of columns;
-//          add size being given to parser
+// usage:   change flagged day and stage to match current day
+//          add size being given to parser line
+//      !!! make sure to add whitespace to last row if not a one liner csv
 
 use std::env;
 use std::io;
@@ -20,15 +21,16 @@ mod day07;
 mod day08;
 mod day09;
 mod day10;
+mod day11;
 
 fn main() -> std::io::Result<()> {
-    println!("Hello, world!");
-
     //************************************
     // set these
-    let mut day = 9;
+    let mut day = 10;
     let mut stage = 1;
     // ***********************************
+
+    println!("Hello, world! It's day {}!", day);
 
     let args: Vec<String> = env::args().collect();
     if args.len() == 4 {
@@ -55,9 +57,9 @@ fn main() -> std::io::Result<()> {
     } else if day == 9 {
         day09::calculate(parser::get_input_cols("Day09.txt", 100), stage);
     } else if day == 10 {
-        day10::calculate(parser::get_input_cols("Day10.txt", 1000), stage);
+        day10::calculate(parser::get_input_cols("Day10.txt", 110), stage);
     } else if day == 11 {
-
+        day11::calculate(parser::get_input_cols("Day11.txt", 1000), stage);
     } else if day == 12 {
 
     } else if day == 13 {

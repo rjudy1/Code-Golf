@@ -1,108 +1,49 @@
-// day 8 of advent of code 2021
+// day 10 of advent of code 2021
 // author: rachael judy
-// date: 8 dec 2021
-// decode the broken seven segs
+// date: 10 dec 2021
+// read characters on the stack and match open and close of <>, {}, [], ()
 
 use std::io::prelude::*;
 use std::vec::Vec;
 
-fn equals(a : Vec<char>, b : Vec<char>) -> bool {
-    if a.len() != b.len() { return false }
-    for i in 0..a.len() { if a[i]!=b[i] { return false } }
-    return true
-}
-
 pub fn calculate(inp : Vec<String>, stage : i32) -> std::io::Result<()> {
-    println!("Stage {}", stage);
-    // iterate through all messed up seven segs, and decode each row
-    let mut count_special = 0;
-    let mut sum = 0;
-    for i in 0..inp.len() { // iterate over every row
-        let parts : Vec<&str> = (&inp[i]).split_whitespace().collect();
-        let mut options:Vec<Vec<char>> = vec![vec!['a'; 0]; 10];
-
-        // match numbers by contents
-        // find the one, four, seven, eight seg
-        for j in 0..parts.len()-5 {
-            let mut x : Vec<char> = parts[j].chars().collect();
-            x.sort();
-            if parts[j].len() == 2 {options[1] = x.clone();}
-            if parts[j].len() == 3 {options[7] = x.clone();}
-            if parts[j].len() == 4 {options[4] = x.clone();}
-            if parts[j].len() == 7 {options[8] = x.clone();}
-        }
-
-        // find the three which is the only five digit with the one
-        // find the six which is the only six digit without the full one
-        for j in 0..parts.len()-5 {
-            let mut x : Vec<char> = parts[j].chars().collect();
-            x.sort();
-
-            if parts[j].len() == 5
-                && parts[j].contains(options[1][0]) && parts[j].contains(options[1][1]) {
-                options[3] = x.clone();
-            }
-            if parts[j].len() == 6
-                && (parts[j].contains(options[1][0])  && !parts[j].contains(options[1][1])
-                || !parts[j].contains(options[1][0]) && parts[j].contains(options[1][1])) {
-                options[6] = x.clone();
+    let mut scores2 : Vec<i64> = vec![0;0];
+    let mut close : Vec<char> = vec!['a';0];
+    for i in 0..inp.len() { // iterate through input lines
+        let mut stack : Vec<char> = Vec::new(); // check each line's validity
+        let line : Vec<char> = inp[i].chars().collect();
+        let mut errorline = false; // for part 2 to get incomplete lines
+        for el in 0..line.len() { // iterate through elements, pushing on stack
+            if stack.len() != 0 &&
+                (stack[stack.len()-1] == '{' && line[el] == '}' || stack[stack.len()-1] == '(' && line[el] == ')'
+                || stack[stack.len()-1] == '[' && line[el] == ']' || stack[stack.len()-1] == '<' && line[el] == '>') {
+                stack.pop();                        // pop element off if closure
+            } else if line[el] == '[' ||  line[el] == '{' || line[el] == '(' || line[el] == '<' {
+                stack.push(line[el]);         // push element on if opener
+            } else {
+                close.push(line[el]);         // note closure error if mismatch
+                errorline = true;                   // mark error for part 2
+                break;
             }
         }
-
-        // find the nine which is three plus an additional spot
-        // find the five which is the six missing one seg
-        for j in 0..parts.len()-5 {
-            let mut x : Vec<char> = parts[j].chars().collect();
-            x.sort();
-
-            if parts[j].len() == 6 && parts[j].contains(options[3][0])
-                && parts[j].contains(options[3][1]) && parts[j].contains(options[3][2])
-                && parts[j].contains(options[3][3]) && parts[j].contains(options[3][4]) {
-                options[9] = x.clone();
+        // for part 2 - if no error, score the line
+        if !errorline {
+            let mut s : i64 = 0;
+            while stack.len() != 0 {
+                s = 5*s + match stack.pop().unwrap() {'('=>1, '['=>2, '{'=>3, '<'=>4, other=>0};
             }
-            if parts[j].len() == 5 && options[6].contains(&x[0])
-                && options[6].contains(&x[1]) && options[6].contains(&x[2])
-                && options[6].contains(&x[3]) && options[6].contains(&x[4]) {
-                options[5] = x.clone();
-            }
-        }
-
-        // match the zero and two, basically what's left of that length
-        for j in 0..parts.len()-5 {
-            let mut x : Vec<char> = parts[j].chars().collect();
-            x.sort();
-
-            if parts[j].len() == 6 && !equals(x.clone(), options[6].clone())
-                && !equals(x.clone(), options[9].clone()) {
-                options[0] = x.clone();
-            }
-            if parts[j].len() == 5 && !equals(x.clone(),options[3].clone())
-                && !equals(x.clone(), options[5].clone()) {
-                options[2] = x.clone();
-            }
-        }
-
-        // result time
-        for j in parts.len()-4..parts.len() {
-            // stage 1 - count occurrences of 1, 4, 7, 8
-            count_special += match parts[j].len() {
-                2 | 3 | 4 | 7 => 1,
-                _ => 0
-            };
-
-            // match each found number to its encoded form
-            let mut x : Vec<char> = parts[j].chars().collect();
-            x.sort();
-            for k in 0..options.len() {
-                if equals(options[k].clone(), x.clone()) {
-                    sum += k as i32 * 10i32.pow((parts.len()-j-1) as u32);
-                    break;
-                }
-            }
+            scores2.push(s);
         }
     }
+    // score part 1 (sum value of first error characters)
+    let mut sum = close.iter().filter(|&n| *n == ')').count() * 3
+                      + close.iter().filter(|&n| *n == ']').count() * 57
+                      + close.iter().filter(|&n| *n == '}').count() * 1197
+                      + close.iter().filter(|&n| *n == '>').count() * 25137;
+    println!("Score (stage 1): {}", sum);
 
-    println!("Specials: {}", count_special);
-    println!("Sum: {}", sum);
+    // find middle score for part 2
+    scores2.sort();
+    println!("Score (stage 2): {}", scores2[((scores2.len()-1)/2)]);
     Ok(())
 }
