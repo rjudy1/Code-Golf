@@ -5,7 +5,6 @@
 
 use std::io::prelude::*;
 use std::vec::Vec;
-use std::cmp;
 
 fn branch(map : Vec<Vec<u32>>, x : usize, y : usize, chk: &mut Vec<(usize, usize)>) -> i32{
     let mut basin = 1; // count the one we're on now

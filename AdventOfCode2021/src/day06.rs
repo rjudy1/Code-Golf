@@ -5,7 +5,6 @@
 
 use std::io::prelude::*;
 use std::vec::Vec;
-use std::cmp;
 
 fn get_fish_at_day(inp : Vec<i32>, day : i32) -> Vec<i32>{
     let mut fish = inp.clone();

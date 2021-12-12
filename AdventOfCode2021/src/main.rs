@@ -22,11 +22,12 @@ mod day08;
 mod day09;
 mod day10;
 mod day11;
+mod day12;
 
 fn main() -> std::io::Result<()> {
     //************************************
     // set these
-    let mut day = 11;
+    let mut day = 12;
     let mut stage = 1;
     // ***********************************
 
@@ -61,7 +62,7 @@ fn main() -> std::io::Result<()> {
     } else if day == 11 {
         day11::calculate(parser::get_input_cols("Day11.txt", 10), stage);
     } else if day == 12 {
-
+        day12::calculate(parser::get_input_cols("Day12.txt", 21), stage);
     } else if day == 13 {
 
     } else if day == 14 {
