@@ -1,6 +1,6 @@
 // Advent of Code 2021 Solutions
 // author: Rachael Judy
-// date: December 1, 2021
+// date: December 13, 2021
 // usage:   change flagged day and stage to match current day
 //          add size being given to parser line
 //      !!! make sure to add whitespace to last row if not a one liner csv
@@ -23,11 +23,13 @@ mod day09;
 mod day10;
 mod day11;
 mod day12;
+mod day13;
+mod day14;
 
 fn main() -> std::io::Result<()> {
     //************************************
     // set these
-    let mut day = 12;
+    let mut day = 14;
     let mut stage = 1;
     // ***********************************
 
@@ -62,11 +64,11 @@ fn main() -> std::io::Result<()> {
     } else if day == 11 {
         day11::calculate(parser::get_input_cols("Day11.txt", 10), stage);
     } else if day == 12 {
-        day12::calculate(parser::get_input_cols("Day12.txt", 21), stage);
+        day12::calculate(parser::get_input_cols("Day12.txt", 21));
     } else if day == 13 {
-
+        day13::calculate(parser::get_input_cols("Day13.txt", 896));
     } else if day == 14 {
-
+        day14::calculate(parser::get_input_cols("Day14.txt", 1000));
     } else if day == 15 {
 
     } else if day == 16 {

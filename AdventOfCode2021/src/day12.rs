@@ -27,9 +27,7 @@ fn count_paths(u : &str, dest : &str, visited : HashMap<&str, i32>, adj : &Vec<(
     }
 }
 
-pub fn calculate(inp : Vec<String>, stage : i32) -> std::io::Result<()> {
-    println!("Stage {}", stage);
-
+pub fn calculate(inp : Vec<String>) -> std::io::Result<()> {
     // store adjacencies of graph, visited map, and points in input
     let mut points : Vec<&str> = Vec::new();
     let mut adj : Vec<(&str, &str)> = Vec::new();
@@ -56,16 +54,14 @@ pub fn calculate(inp : Vec<String>, stage : i32) -> std::io::Result<()> {
     let mut full_path_count = path_count; // will sum all the possible paths to here
     for i in 0..points.len() { // go through each point and use if a lowercase one
         let mut new_count = 0;
-        let mut adjcopy = adj.clone();
         let mut visitedi = visited_n.clone();
         if points[i].chars().nth(0).unwrap().is_ascii_lowercase()
             && points[i] != "start" && points[i] != "end" {
             *visitedi.get_mut(points[i]).unwrap() = 2; // give the single one two chances
         }
-        count_paths("start", "end", visitedi.clone(), &adjcopy, &mut new_count);
+        count_paths("start", "end", visitedi.clone(), &adj, &mut new_count);
         full_path_count += (new_count-path_count);
     }
     println!("Part 2: {} paths", full_path_count);
-
     Ok(())
 }
