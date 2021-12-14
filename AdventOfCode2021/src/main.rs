@@ -68,7 +68,7 @@ fn main() -> std::io::Result<()> {
     } else if day == 13 {
         day13::calculate(parser::get_input_cols("Day13.txt", 896));
     } else if day == 14 {
-        day14::calculate(parser::get_input_cols("Day14.txt", 1000));
+        day14::calculate(parser::get_input_cols("Day14.txt", 102));
     } else if day == 15 {
 
     } else if day == 16 {
