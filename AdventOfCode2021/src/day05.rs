@@ -3,7 +3,6 @@
 // date: 5 dec 2021
 // find overlaps in map
 
-use std::io::prelude::*;
 use std::vec::Vec;
 use std::cmp;
 

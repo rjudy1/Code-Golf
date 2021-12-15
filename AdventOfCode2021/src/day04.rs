@@ -3,7 +3,6 @@
 // date: 4 dec 2021
 // play bingo
 
-use std::io::prelude::*;
 use std::vec::Vec;
 
 fn score_board(boards : Vec<Vec<Vec<i32>>>, num : usize) -> i32 {
@@ -18,10 +17,10 @@ fn score_board(boards : Vec<Vec<Vec<i32>>>, num : usize) -> i32 {
     return sum
 }
 
-fn check_win_2(boards : Vec<Vec<Vec<i32>>>) -> (Vec<usize>) {
+fn check_win_2(boards : Vec<Vec<Vec<i32>>>) -> Vec<usize> {
     let mut winners: Vec<usize> = vec![0; 0];
-    let mut sum1 = 0;
-    let mut sum2 = 0;
+    let mut sum1;
+    let mut sum2;
 
     for i in 0..boards.len() {
         for j in 0..5 {
@@ -64,7 +63,7 @@ pub fn calculate(inp : Vec<String>, stage : i32) -> std::io::Result<()> {
 
     // set up board array
     for row in 2..inp.len() {
-        let mut row_nums : Vec<&str> = inp[row].split_whitespace().collect();
+        let row_nums : Vec<&str> = inp[row].split_whitespace().collect();
         if row_nums.len() == 0 {//on blank line, start new board
             board_num+=1;
             continue;
@@ -92,7 +91,7 @@ pub fn calculate(inp : Vec<String>, stage : i32) -> std::io::Result<()> {
             let num = check_win_2(boards.clone());
             if num.len()==1 {
                 // for num in 0..nums {
-                let mut sum = score_board(boards, num[0]);
+                let sum = score_board(boards, num[0]);
                 println!("{} wins; score: {}", num[0], sum * number);
                 break;
             }
@@ -102,7 +101,7 @@ pub fn calculate(inp : Vec<String>, stage : i32) -> std::io::Result<()> {
             let wins = check_win_2(boards.clone());
             for i in 0..wins.len() {
                 if wins[i] == loser { // loser set when only one remains to finish
-                    let mut sum = score_board(boards.clone(), i);
+                    let sum = score_board(boards.clone(), i);
                     println!("{} wins; score: {}", loser, number * sum);
                     return Ok(())
                 }

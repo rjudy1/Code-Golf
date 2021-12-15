@@ -3,7 +3,6 @@
 // date: 12 dec 2021
 // count paths through graphs
 
-use std::io::prelude::*;
 use std::vec::Vec;
 use std::collections::HashMap;
 
@@ -60,7 +59,7 @@ pub fn calculate(inp : Vec<String>) -> std::io::Result<()> {
             *visitedi.get_mut(points[i]).unwrap() = 2; // give the single one two chances
         }
         count_paths("start", "end", visitedi.clone(), &adj, &mut new_count);
-        full_path_count += (new_count-path_count);
+        full_path_count += new_count-path_count;
     }
     println!("Part 2: {} paths", full_path_count);
     Ok(())

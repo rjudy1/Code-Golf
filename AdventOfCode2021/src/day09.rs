@@ -3,7 +3,6 @@
 // date: 9 dec 2021
 // find the local minima and their basin sizes
 
-use std::io::prelude::*;
 use std::vec::Vec;
 
 fn branch(map : Vec<Vec<u32>>, x : usize, y : usize, chk: &mut Vec<(usize, usize)>) -> i32{
@@ -23,7 +22,7 @@ fn branch(map : Vec<Vec<u32>>, x : usize, y : usize, chk: &mut Vec<(usize, usize
     return basin;
 }
 
-pub fn calculate(inp : Vec<String>, stage : i32) -> std::io::Result<()> {
+pub fn calculate(inp : Vec<String>) -> std::io::Result<()> {
     let mut map = vec![vec![10; inp[0].len()+2]; inp.len()+2];
     for i in 0..inp.len() {
         map[i+1] = inp[i].chars().map(|c| c.to_digit(10).unwrap()).collect();

@@ -3,7 +3,6 @@
 // date: 13 dec 2021
 // find display code after folds
 
-use std::io::prelude::*;
 use std::vec::Vec;
 
 pub fn calculate(inp : Vec<String>) -> std::io::Result<()> {

@@ -1,13 +1,11 @@
 // Advent of Code 2021 Solutions
 // author: Rachael Judy
-// date: December 13, 2021
+// date: December 15, 2021
 // usage:   change flagged day and stage to match current day
 //          add size being given to parser line
 //      !!! make sure to add whitespace to last row if not a one liner csv
 
 use std::env;
-use std::io;
-use std::io::prelude::*;
 use std::vec::Vec;
 
 mod parser;
@@ -25,11 +23,13 @@ mod day11;
 mod day12;
 mod day13;
 mod day14;
+mod day15;
+mod day16;
 
 fn main() -> std::io::Result<()> {
     //************************************
     // set these
-    let mut day = 14;
+    let mut day = 16;
     let mut stage = 1;
     // ***********************************
 
@@ -41,38 +41,39 @@ fn main() -> std::io::Result<()> {
         stage = args[2].parse::<i32>().unwrap();
     }
 
+    let mut r : std::io::Result<()> = Ok(());
     if day == 1 {
-        day01::calculate(parser::get_input_num_col("Day01.txt", 2000), stage);
+        r = day01::calculate(parser::get_input_num_col("Day01.txt", 2000), stage);
     } else if day == 2 {
-        day02::calculate(parser::get_input_string_col("Day02.txt", 1000), stage);
+        r = day02::calculate(parser::get_input_string_col("Day02.txt", 1000), stage);
     } else if day == 3 {
-        day03::calculate(parser::get_input_string_col("Day03.txt", 1000), stage);
+        r = day03::calculate(parser::get_input_string_col("Day03.txt", 1000), stage);
     } else if day == 4 {
-        day04::calculate(parser::get_input_string_col("Day04.txt", 601), stage);
+        r = day04::calculate(parser::get_input_string_col("Day04.txt", 601), stage);
     } else if day == 5 {
-        day05::calculate(parser::get_input_cols("Day05.txt", 500), stage);
+        r = day05::calculate(parser::get_input_cols("Day05.txt", 500), stage);
     } else if day == 6 {
-        day06::calculate(parser::get_input_comma_sep("Day06.txt", 1000), stage);
+        r = day06::calculate(parser::get_input_comma_sep("Day06.txt"), stage);
     } else if day == 7 {
-        day07::calculate(parser::get_input_comma_sep("Day07.txt", 1000), stage);
+        r = day07::calculate(parser::get_input_comma_sep("Day07.txt"), stage);
     } else if day == 8 {
-        day08::calculate(parser::get_input_cols("Day08.txt", 200), stage);
+        r = day08::calculate(parser::get_input_cols("Day08.txt", 200), stage);
     } else if day == 9 {
-        day09::calculate(parser::get_input_cols("Day09.txt", 100), stage);
+        r = day09::calculate(parser::get_input_cols("Day09.txt", 100));
     } else if day == 10 {
-        day10::calculate(parser::get_input_cols("Day10.txt", 110), stage);
+        r = day10::calculate(parser::get_input_cols("Day10.txt", 110));
     } else if day == 11 {
-        day11::calculate(parser::get_input_cols("Day11.txt", 10), stage);
+        r = day11::calculate(parser::get_input_cols("Day11.txt", 10), stage);
     } else if day == 12 {
-        day12::calculate(parser::get_input_cols("Day12.txt", 21));
+        r = day12::calculate(parser::get_input_cols("Day12.txt", 21));
     } else if day == 13 {
-        day13::calculate(parser::get_input_cols("Day13.txt", 896));
+        r = day13::calculate(parser::get_input_cols("Day13.txt", 896));
     } else if day == 14 {
-        day14::calculate(parser::get_input_cols("Day14.txt", 102));
+        r = day14::calculate(parser::get_input_cols("Day14.txt", 102));
     } else if day == 15 {
-
+        r = day15::calculate(parser::get_input_cols("Day15.txt", 100), stage);
     } else if day == 16 {
-
+        r = day16::calculate(parser::get_input_cols("Day16.txt", 1000));
     } else if day == 17 {
 
     } else if day == 18 {
@@ -91,6 +92,11 @@ fn main() -> std::io::Result<()> {
 
     } else if day == 25 {
 
+    }
+
+    match r {
+        Ok(()) => print!(""),
+        Err(..) => print!("Run failed")
     }
 
     Ok(())

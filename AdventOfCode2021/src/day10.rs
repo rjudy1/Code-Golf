@@ -3,10 +3,9 @@
 // date: 10 dec 2021
 // read characters on the stack and match open and close of <>, {}, [], ()
 
-use std::io::prelude::*;
 use std::vec::Vec;
 
-pub fn calculate(inp : Vec<String>, stage : i32) -> std::io::Result<()> {
+pub fn calculate(inp : Vec<String>) -> std::io::Result<()> {
     let mut scores2 : Vec<i64> = vec![0;0];
     let mut close : Vec<char> = vec!['a';0];
     for i in 0..inp.len() { // iterate through input lines
@@ -30,13 +29,13 @@ pub fn calculate(inp : Vec<String>, stage : i32) -> std::io::Result<()> {
         if !errorline {
             let mut s : i64 = 0;
             while stack.len() != 0 {
-                s = 5*s + match stack.pop().unwrap() {'('=>1, '['=>2, '{'=>3, '<'=>4, other=>0};
+                s = 5*s + match stack.pop().unwrap() {'('=>1, '['=>2, '{'=>3, '<'=>4, _=>0};
             }
             scores2.push(s);
         }
     }
     // score part 1 (sum value of first error characters)
-    let mut sum = close.iter().filter(|&n| *n == ')').count() * 3
+    let sum = close.iter().filter(|&n| *n == ')').count() * 3
                       + close.iter().filter(|&n| *n == ']').count() * 57
                       + close.iter().filter(|&n| *n == '}').count() * 1197
                       + close.iter().filter(|&n| *n == '>').count() * 25137;

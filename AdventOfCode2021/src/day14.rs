@@ -3,7 +3,6 @@
 // date: 14 dec 2021
 // expand polymer internally by rules
 
-use std::io::prelude::*;
 use std::vec::Vec;
 use std::collections::HashMap;
 use std::cmp;
@@ -18,7 +17,7 @@ fn count(char_count : HashMap<char, i64>, pairs : HashMap<String, i64>) -> i64 {
 
     let mut min_val : i64 = 1000000000000000;
     let mut max_val : i64 = 0;
-    for (k, v) in char_count {
+    for (_k, v) in char_count {
         min_val = cmp::min(min_val, v);
         max_val = cmp::max(max_val, v);
     }
@@ -27,7 +26,7 @@ fn count(char_count : HashMap<char, i64>, pairs : HashMap<String, i64>) -> i64 {
 
 pub fn calculate(inp : Vec<String>) -> std::io::Result<()> {
     // set rules
-    let mut starter : String = inp[0].clone();
+    let starter : String = inp[0].clone();
     let mut rules : HashMap<String, char> = HashMap::new();
     for i in 2..inp.len() {
         let line : Vec<&str> = inp[i].split_whitespace().collect();

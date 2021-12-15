@@ -3,7 +3,6 @@
 // date: 11 dec 2021
 // expand flashes when over 10 per step
 
-use std::io::prelude::*;
 use std::vec::Vec;
 
 // recursive expansion of flashes
@@ -59,7 +58,7 @@ pub fn calculate(inp : Vec<String>, stage : i32) -> std::io::Result<()> {
         for i in 0..grid.len() {
             for j in 0..grid[0].len() {
                 if grid[i][j].0 > 9 { grid[i][j].0 = 0; } // reset greater than 9
-                count += (grid[i][j].1 as i32);
+                count += grid[i][j].1 as i32;
                 grid[i][j].1 = false;
             }
         }

@@ -3,7 +3,6 @@
 // date: 8 dec 2021
 // decode the broken seven segs
 
-use std::io::prelude::*;
 use std::vec::Vec;
 
 fn equals(a : Vec<char>, b : Vec<char>) -> bool {

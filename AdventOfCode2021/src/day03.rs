@@ -3,7 +3,6 @@
 // date: 3 dec 2021
 // count bits and find matches to the bit pattern
 
-use std::io::prelude::*;
 use std::vec::Vec;
 
 fn count_ones_and_zeros(inp : Vec<String>) -> (Vec<i32>, Vec<i32>){

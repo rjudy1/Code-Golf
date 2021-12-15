@@ -3,12 +3,11 @@
 // date: 6 dec 2021
 // count fish at day n
 
-use std::io::prelude::*;
 use std::vec::Vec;
 
 fn get_fish_at_day(inp : Vec<i32>, day : i32) -> Vec<i32>{
     let mut fish = inp.clone();
-    for i in 0..day {
+    for _i in 0..day {
         for j in 0..fish.len() {
             if fish[j] == 0 {
                 fish.push(8);
@@ -47,7 +46,7 @@ pub fn calculate(fish : Vec<i32>, stage : i32) -> std::io::Result<()> {
         println!("Fish at day 80: {}", fish80.len());
     } else {
         // gets fish count based on having a single fish with numbers 1-9
-        let mut x = get_count_at_days_256();
+        let x = get_count_at_days_256();
         let mut sum = 0;
         for i in 0..fish.len() {
             sum += x[fish[i] as usize];

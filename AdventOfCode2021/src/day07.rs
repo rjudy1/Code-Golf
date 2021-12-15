@@ -3,7 +3,6 @@
 // date: 7 dec 2021
 // calculate minimum distance point between all points
 
-use std::io::prelude::*;
 use std::vec::Vec;
 use std::cmp;
 

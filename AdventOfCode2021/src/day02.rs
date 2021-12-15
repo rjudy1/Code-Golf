@@ -3,8 +3,6 @@
 // date: 2 dec 2021
 // submarine coordinates
 
-use std::io;
-use std::io::prelude::*;
 use std::vec::Vec;
 
 pub fn calculate(numbers : Vec<String>, stage : i32) -> std::io::Result<()> {
