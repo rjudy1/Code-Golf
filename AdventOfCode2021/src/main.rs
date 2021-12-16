@@ -25,11 +25,12 @@ mod day13;
 mod day14;
 mod day15;
 mod day16;
+mod day17;
 
 fn main() -> std::io::Result<()> {
     //************************************
     // set these
-    let mut day = 16;
+    let mut day = 17;
     let mut stage = 1;
     // ***********************************
 
@@ -41,8 +42,10 @@ fn main() -> std::io::Result<()> {
         stage = args[2].parse::<i32>().unwrap();
     }
 
-    let mut r : std::io::Result<()> = Ok(());
-    if day == 1 {
+    let mut r: std::io::Result<()> = Ok(());
+    if day==0 {
+        r = day10::calculate(parser::get_input_cols("test_input.txt", 2000));
+    }else if day == 1 {
         r = day01::calculate(parser::get_input_num_col("Day01.txt", 2000), stage);
     } else if day == 2 {
         r = day02::calculate(parser::get_input_string_col("Day02.txt", 1000), stage);
@@ -73,9 +76,9 @@ fn main() -> std::io::Result<()> {
     } else if day == 15 {
         r = day15::calculate(parser::get_input_cols("Day15.txt", 100), stage);
     } else if day == 16 {
-        r = day16::calculate(parser::get_input_cols("Day16.txt", 1000));
+        r = day16::calculate(parser::get_input_cols("Day16.txt", 1));
     } else if day == 17 {
-
+        r = day17::calculate(parser::get_input_cols("Day17.txt", 1000));
     } else if day == 18 {
 
     } else if day == 19 {

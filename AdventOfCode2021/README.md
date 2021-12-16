@@ -18,7 +18,7 @@ Add additional whitespace for num col parser to read in
 13. display transparent paper image after folds
 14. expand polymer pairwise; buckets
 15. find best path through maze; djikstra bfs
-16. 
+16. parse packet hex strings with header and nested packets; recursion
 17. 
 18. 
 19. 
