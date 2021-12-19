@@ -27,11 +27,13 @@ mod day15;
 mod day16;
 mod day17;
 mod day18;
+mod day19;
+mod tester;
 
 fn main() -> std::io::Result<()> {
     //************************************
     // set these
-    let mut day = 18;
+    let mut day = 19;
     let mut stage = 1;
     // ***********************************
 
@@ -81,9 +83,9 @@ fn main() -> std::io::Result<()> {
     } else if day == 17 {
         r = day17::calculate(parser::get_input_cols("Day17.txt", 1));
     } else if day == 18 {
-        r = day18::calculate(parser::get_input_cols("Day18.txt", 1000));
+        r = day18::calculate(parser::get_input_cols("Day18.txt", 100));
     } else if day == 19 {
-
+        r = day19::calculate(parser::get_input_cols("Day19.txt", 100));
     } else if day == 20 {
 
     } else if day == 21 {
@@ -97,6 +99,10 @@ fn main() -> std::io::Result<()> {
     } else if day == 25 {
 
     }
+
+    // tester
+    r = tester::calculate(parser::get_input_cols("Day18.txt", 100));
+
 
     match r {
         Ok(()) => print!(""),
