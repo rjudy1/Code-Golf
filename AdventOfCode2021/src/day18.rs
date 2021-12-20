@@ -1,10 +1,107 @@
 // day 18 of advent of code 2021
 // author: rachael judy
 // date: 18 dec 2021
-// gamble on it never being bigger than 2 digits; 1 min runtime
+// two versions - short tree flatten and long string parse
+// gamble on it never being bigger than 2 digits; 1 min runtime for string parse
 
 use std::vec::Vec;
 use std::cmp;
+
+fn reduce_alt(pairs : &mut Vec<(i32, i32)>) {
+    // explode
+    let mut i = 0;
+    while i < pairs.len()-1 {
+        if pairs[i].1 == 5 {
+            if i == 0 { // first pair
+                pairs[i+2].0 += pairs[i+1].0;
+            } else if i == pairs.len()-2 { // last pair
+                pairs[i-1].0 += pairs[i].0;
+            } else { // all other pairs
+                pairs[i-1].0 += pairs[i].0;
+                pairs[i+2].0 += pairs[i+1].0;
+            }
+            // replace pair
+            pairs.insert(i, (0, pairs[i].1-1));
+            pairs.remove(i+1);
+            pairs.remove(i+1);
+        }
+        i+=1;
+    }
+    // split
+    for i in 0..pairs.len() {
+        if pairs[i].0 > 9 {
+            pairs.insert(i+1, ((pairs[i].0 + 1)/2, pairs[i].1+1));
+            pairs.insert(i+1, (pairs[i].0 / 2, pairs[i].1+1));
+            pairs.remove(i);
+            reduce_alt(pairs);  // recursive repeat of explosion checking
+            break;
+        }
+    }
+}
+
+fn insert_pair(pairs : &mut Vec<(i32, i32)>, line : String, drop : i32) {
+    let mut depth = 1+drop;
+    for j in 0..line.len() {
+        depth += (&(&line)[j..j + 1] == "[") as i32 - (&(&line)[j..j + 1] == "]") as i32;
+        if (&line)[j..j + 1].parse::<i32>().is_ok() {
+            pairs.push((line[j..j + 1].parse::<i32>().unwrap(), depth));
+        }
+    }
+}
+
+// find magnitude of the pairs
+fn sum_clean(stack : &mut Vec<(i32, i32)>) -> i32 {
+    let mut depth = 4;
+    while depth != 0 {
+        let mut i = 0;
+        while i < stack.len() {
+            if stack[i].1 == depth {
+                let x = stack.remove(i);
+                let y = stack.remove(i);
+                stack.insert(i, (3*x.0 + 2*y.0, x.1-1));
+                i = if i > 0 {i-1} else {0};
+            }
+            i+=1;
+        }
+        depth -= 1;
+    }
+    return stack.pop().unwrap().0  // return magnitude
+}
+
+pub fn calculate_clean(inp : Vec<String>) -> std::io::Result<()> {
+    // initialize array for mega
+    let mut pairs : Vec<(i32, i32)> = Vec::new(); // expand main pairs for first part
+    insert_pair(&mut pairs, inp[0].clone(), -1);
+    for i in 1..inp.len() {
+        // increase current depth
+        for j in 0..pairs.len() {
+            pairs[j].1 += 1;
+        }
+        // add next set of deeper values
+        insert_pair(& mut pairs, inp[i].clone(), 0);
+        reduce_alt(&mut pairs);
+    }
+    println!("sum: {}", sum_clean(&mut pairs));
+
+    let mut maxi = 0;
+    for i in 0..inp.len() {
+        for k in 0..inp.len() {
+            let mut pairs : Vec<(i32, i32)> = Vec::new();
+            if i != k {
+                insert_pair(& mut pairs, inp[i].clone(), 0);
+                insert_pair(& mut pairs, inp[k].clone(), 0);
+                reduce_alt(&mut pairs);
+                maxi = cmp::max(maxi, sum_clean(&mut pairs));
+            }
+        }
+    }
+    println!("max: {}", maxi);
+    Ok(())
+}
+
+//// ---------------------------------------------------------------------//////
+//// end actual clean solution
+//// ---------------------------------------------------------------------//////
 
 fn reduce(pair : String) -> String {
     // explode and split internally
@@ -105,13 +202,16 @@ fn sum(pair : String) -> i32 {
 }
 
 pub fn calculate(inp : Vec<String>) -> std::io::Result<()> {
+    // smart way
+    calculate_clean(inp.clone());
+
     let mut mega : String = inp[0].clone(); // mega pair
     for i in 1..inp.len() {
         mega = "[".to_string() + &mega + &",".to_string() + &inp[i].clone() + &"]".to_string();
         mega = reduce(mega.clone()); // reduce every time pair is expanded
     }
 
-    println!("Countdown to results...");
+    println!("Countdown to slow but same results...");
     let mut maxi = 0;
     for i in 0..inp.len() {
         for j in 0..inp.len() {
