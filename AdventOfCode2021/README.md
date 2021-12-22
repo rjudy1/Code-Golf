@@ -20,9 +20,9 @@ Add additional whitespace for num col parser to read in
 15. find best path through maze; djikstra bfs
 16. parse packet hex strings with header and nested packets; recursion
 17. parabolic discrete velocity/position; brute force loops with creative edges
-18. string parsing of special sums; parsing pain
-19. 
-20. 
+18. string parsing of special sums; parsing pain or smarter tree method (solution has calculate_clean and calculate as options to solve)
+19. 3D triangulation; 
+20. enhance image with key (sneaky flash); iterative
 21. 
 22. 
 23. 

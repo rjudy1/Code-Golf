@@ -4,7 +4,6 @@
 // two versions - short tree flatten and long string parse
 // gamble on it never being bigger than 2 digits; 1 min runtime for string parse
 
-use std::vec::Vec;
 use std::cmp;
 
 fn reduce_alt(pairs : &mut Vec<(i32, i32)>) {

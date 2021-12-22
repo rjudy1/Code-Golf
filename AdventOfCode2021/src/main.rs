@@ -28,6 +28,10 @@ mod day16;
 mod day17;
 mod day18;
 mod day19;
+mod day20;
+mod day21;
+mod day22;
+
 mod tester;
 
 fn main() -> std::io::Result<()> {
@@ -85,13 +89,13 @@ fn main() -> std::io::Result<()> {
     } else if day == 18 {
         r = day18::calculate(parser::get_input_cols("Day18.txt", 100));
     } else if day == 19 {
-        r = day19::calculate(parser::get_input_cols("Day19.txt", 100));
+        r = day19::calculate(parser::get_input_cols("Day19.txt", 868));
     } else if day == 20 {
-
+        r = day20::calculate(parser::get_input_cols("Day20.txt", 102));
     } else if day == 21 {
-
+        r = day21::calculate(parser::get_input_cols("Day21.txt", 2));
     } else if day == 22 {
-
+        r = day21::calculate(parser::get_input_cols("Day22.txt", 100));
     } else if day == 23 {
 
     } else if day == 24 {
@@ -101,8 +105,7 @@ fn main() -> std::io::Result<()> {
     }
 
     // tester
-    r = tester::calculate(parser::get_input_cols("Day18.txt", 100));
-
+    r = tester::calculate(parser::get_input_cols("test_input.txt", 100));
 
     match r {
         Ok(()) => print!(""),
