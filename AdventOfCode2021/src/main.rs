@@ -31,13 +31,15 @@ mod day19;
 mod day20;
 mod day21;
 mod day22;
-
+mod day23;
+mod day24;
+mod day25;
 mod tester;
 
 fn main() -> std::io::Result<()> {
     //************************************
     // set these
-    let mut day = 19;
+    let mut day = 23;
     let mut stage = 1;
     // ***********************************
 
@@ -95,13 +97,13 @@ fn main() -> std::io::Result<()> {
     } else if day == 21 {
         r = day21::calculate(parser::get_input_cols("Day21.txt", 2));
     } else if day == 22 {
-        r = day21::calculate(parser::get_input_cols("Day22.txt", 100));
+        r = day22::calculate(parser::get_input_cols("Day22.txt", 420));
     } else if day == 23 {
-
+        r = day23::calculate(parser::get_input_cols("Day22.txt", 100));
     } else if day == 24 {
-
+        r = day24::calculate(parser::get_input_cols("Day22.txt", 100));
     } else if day == 25 {
-
+        r = day25::calculate(parser::get_input_cols("Day22.txt", 100));
     }
 
     // tester

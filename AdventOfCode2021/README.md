@@ -23,8 +23,8 @@ Add additional whitespace for num col parser to read in
 18. string parsing of special sums; parsing pain or smarter tree method (solution has calculate_clean and calculate as options to solve)
 19. 3D triangulation; 
 20. enhance image with key (sneaky flash); iterative
-21. 
-22. 
+21. play around a board based on deterministic and then parallel universe dice; frequencies and weighting
+22. count cubes in a 3D space; use cuboids and track edges
 23. 
 24. 
 25. 
