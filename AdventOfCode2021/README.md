@@ -21,10 +21,10 @@ Add additional whitespace for num col parser to read in
 16. parse packet hex strings with header and nested packets; recursion
 17. parabolic discrete velocity/position; brute force loops with creative edges
 18. string parsing of special sums; parsing pain or smarter tree method (solution has calculate_clean and calculate as options to solve)
-19. 3D triangulation; 
+19. 3D triangulation; orient the beacons via rotations and positioning
 20. enhance image with key (sneaky flash); iterative
 21. play around a board based on deterministic and then parallel universe dice; frequencies and weighting
 22. count cubes in a 3D space; use cuboids and track edges
-23. 
-24. 
+23. towers of hanoi game; done by hand with help of simulator
+24. alu code; repeats for each digit in same pattern with slightly different numbers on lines 4,5, and 15; reverse engineer the code and store the max/min prefix per z at each stage to save space
 25. 

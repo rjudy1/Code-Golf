@@ -12,7 +12,7 @@ fn display(map : Vec<Vec<char>>) {
     let mut i = 0;
     for i in 0..map.len() {
         print!("{}\t", i);
-        for c in map[i] {
+        for c in &map[i] {
             print!("{}", c);
         }
         println!();
