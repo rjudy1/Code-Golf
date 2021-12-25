@@ -37,7 +37,7 @@ pub fn calculate(inp : Vec<String>) -> std::io::Result<()> {
     println!("Enter 'r' or 'x' at the first prompt to reset or exit, otherwise enter coords");
     display(map.clone());
     loop {
-        println!("Enter coordinates of char to move (zero indexed row col). ex. 3,10 : ");
+        println!("Enter letter and order (ex. A2) in reading order across board : ");
         let mut input = String::new();
         io::stdin().read_line(&mut input);
         // reset to starting position
@@ -50,11 +50,22 @@ pub fn calculate(inp : Vec<String>) -> std::io::Result<()> {
             break;
         }
         // get source coordinates
-        let mut line = input.split(',').collect::<Vec<&str>>();
-        let x0 = line[0].parse::<usize>().unwrap();
-        line[1] = &line[1][..line[1].len()-1];
-        let y0 = line[1].parse::<usize>().unwrap();
-        if x0 >= board_copy.len() || y0 >= board_copy[x0].len() || board_copy[x0][y0] == '#' {continue;}
+        let letter = input.chars().nth(0).unwrap();
+        let count = input.chars().nth(1).unwrap().to_digit(10).unwrap();
+        let mut copies = 0;
+        let (mut x0, mut y0) = (0, 0);
+        for i in 0..board_copy.len() {
+            for j in 0..board_copy[i].len() {
+                if board_copy[i][j] == letter {
+                    copies += 1;
+                    if copies == count {
+                        x0 = i;
+                        y0 = j;
+                        break;
+                    }
+                }
+            }
+        }
 
         // get destination coordinates
         println!("Enter where to move (zero indexed). ex. 5,10 : ");

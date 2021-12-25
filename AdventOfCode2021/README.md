@@ -27,4 +27,4 @@ Add additional whitespace for num col parser to read in
 22. count cubes in a 3D space; use cuboids and track edges
 23. towers of hanoi game; done by hand with help of simulator
 24. alu code; repeats for each digit in same pattern with slightly different numbers on lines 4,5, and 15; reverse engineer the code and store the max/min prefix per z at each stage to save space
-25. 
+25. east and south moving herds that only move into immediately visible open space
