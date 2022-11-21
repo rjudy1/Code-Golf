@@ -1,7 +1,7 @@
 # Input parsers for code golf
 # Author:   Rachael Judy
 # Written:  12/1/20
-# Modified: 12/28/20
+# Modified: 11/20/22
 
 """
 Usage:
@@ -14,9 +14,19 @@ x = parseMod.readCSV...
 """
 
 
+import aocd
 import csv
 import fileinput
 import sys
+
+# create data.csv file with the data for given day
+def createDataFile(year, day):
+    cookie = "53616c7465645f5f5bb83a61626d763169fd6291066972ad0a8815efdc0495ad90319c5f17495f97c183f42e69644dd0800b82fab928656da9e4afb9b959a846"
+    filename = "data/" + str(day).zfill(2) + "data.csv"
+    f = open(filename, 'w')
+    f.write(aocd.get_data(cookie, day, year))
+    f.close()
+
 
 # to break into array of numbers
 def readCSV(filename, delim=','):
