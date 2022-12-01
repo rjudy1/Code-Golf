@@ -15,6 +15,7 @@ parseMod.createDataFile(year=year, day=day)
 array = parseMod.readCSV_row("data/" + str(day).zfill(2) + "data.csv")
 
 
+
 if stage == 'a':
     pass
 else:
