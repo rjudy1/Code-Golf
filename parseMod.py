@@ -19,6 +19,13 @@ import csv
 import fileinput
 import sys
 
+cookie = "53616c7465645f5f5bb83a61626d763169fd6291066972ad0a8815efdc0495ad90319c5f17495f97c183f42e69644dd0800b82fab928656da9e4afb9b959a846"
+
+
+def submit(result, part='a', year=2022, day=1):
+    global cookie
+    aocd.submit(result, part=part, day=day, year=year, session=cookie)
+
 # create data.csv file with the data for given day
 def createDataFile(year, day):
     cookie = "53616c7465645f5f5bb83a61626d763169fd6291066972ad0a8815efdc0495ad90319c5f17495f97c183f42e69644dd0800b82fab928656da9e4afb9b959a846"
