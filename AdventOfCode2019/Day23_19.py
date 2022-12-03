@@ -15,7 +15,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
 
 # get program instructions
-instructions = parseMod.readCSV('data/23networks.csv')
+instructions = parseMod.readCSVInts('data/23networks.csv')
 
 # create fifty computers and give them their own addresses
 computers = []

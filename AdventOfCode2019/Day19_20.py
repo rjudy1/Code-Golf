@@ -15,7 +15,7 @@ import parseMod
 from intcodecomputer import Computer
 
 # read drone instructions - each run takes one coordinate pair
-instructions = parseMod.readCSV('data/19drone.csv')
+instructions = parseMod.readCSVInts('data/19drone.csv')
 
 # part 1 - find number of spaces affected in 50x50 range
 beam_map = [[0 for i in range(50)] for j in range(50)]

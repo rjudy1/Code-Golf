@@ -16,7 +16,7 @@ import parseMod
 # set part
 part = 2
 
-instructions = parseMod.readCSV('data/21jumper.csv')
+instructions = parseMod.readCSVInts('data/21jumper.csv')
 jumper = Computer(instructions)
 
 # part 1 pattern - (!A+!B+!C)D - prevents always jump if can for some reason, otherwise preemptive jump

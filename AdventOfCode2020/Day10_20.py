@@ -13,7 +13,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
 
 # get adapters
-adapters = parseMod.readCSV('data/10adapters.csv', '\n')
+adapters = parseMod.readCSVInts('data/10adapters.csv', '\n')
 adapters.sort()  # must go up, no duplicates
 print("Adapter Jolts: ", adapters)
 

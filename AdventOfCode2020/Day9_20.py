@@ -14,7 +14,7 @@ import parseMod
 
 
 # input numbers
-numbers = parseMod.readCSV('data/9numbers.csv', '\n')
+numbers = parseMod.readCSVInts('data/9numbers.csv', '\n')
 
 # initial preamble
 preamble = numbers[0:25]

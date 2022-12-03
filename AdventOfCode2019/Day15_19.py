@@ -80,7 +80,7 @@ def DFS_Visit(location, robot, depth):
 
 
 # input
-instructions = parseMod.readCSV('data/15droid.csv')
+instructions = parseMod.readCSVInts('data/15droid.csv')
 
 # create computer
 robot = intcodecomputer.Computer(instructions)

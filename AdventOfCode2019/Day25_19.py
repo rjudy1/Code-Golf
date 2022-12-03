@@ -29,7 +29,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
 
 # get ship instructions
-instructions = parseMod.readCSV('data/25robot.csv')
+instructions = parseMod.readCSVInts('data/25robot.csv')
 
 # set up queue and create droid
 input_q = queue.SimpleQueue()

@@ -36,7 +36,7 @@ def createDataFile(year, day):
 
 
 # to break into array of numbers
-def readCSV(filename, delim=','):
+def readCSVInts(filename, delim=','):
     num = []
     with open(filename) as file:
         reader = csv.reader(file, delimiter=delim)

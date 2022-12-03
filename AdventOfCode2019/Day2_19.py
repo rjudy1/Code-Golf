@@ -22,11 +22,11 @@ def processInput(array):
         index += 1
     return array
 
-content = parseMod.readCSV('data/2num.csv', ',')
+content = parseMod.readCSVInts('data/2num.csv', ',')
 solution = 0
 for i in range(100):
     for j in range(100):
-        content = parseMod.readCSV('data/2num.csv', ',')
+        content = parseMod.readCSVInts('data/2num.csv', ',')
         if phase == 2:
             content[1] = i
             content[2] = j

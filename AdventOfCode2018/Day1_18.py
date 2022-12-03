@@ -12,7 +12,7 @@ import math
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
 
-changes = parseMod.readCSV('data/1offset.csv')
+changes = parseMod.readCSVInts('data/1offset.csv')
 
 # part 1
 print("Part 1: ", sum(changes))

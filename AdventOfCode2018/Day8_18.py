@@ -9,7 +9,7 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
-inp = parseMod.readCSV('data/8tree.csv', ' ')
+inp = parseMod.readCSVInts('data/8tree.csv', ' ')
 
 global ptr
 ptr = 0  # pointer for collecting the data

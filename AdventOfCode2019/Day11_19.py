@@ -123,7 +123,7 @@ def paintShip(display):
 
 
 # get instructions
-instructions = parseMod.readCSV('data/11robot.csv', ',')
+instructions = parseMod.readCSVInts('data/11robot.csv', ',')
 for i in range(1000):
     instructions.append(0)
 

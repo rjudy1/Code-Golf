@@ -73,7 +73,7 @@ def drawTile(tilex, tiley, number, adjx=0, adjy=0):
 
 
 # input
-instructions = parseMod.readCSV('data/13game.csv')  # MODIFY TO 13gameMOD.csv for MOD VERSION
+instructions = parseMod.readCSVInts('data/13game.csv')  # MODIFY TO 13gameMOD.csv for MOD VERSION
 
 pygame.init()
 FPSCLOCK = pygame.time.Clock()

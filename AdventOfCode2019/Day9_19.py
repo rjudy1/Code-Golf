@@ -112,7 +112,7 @@ def processInput(array, inputQ, index=0, feedback=False):
         return output, array, halt
 
 
-instructions = parseMod.readCSV('data/9instr.csv', ',')
+instructions = parseMod.readCSVInts('data/9instr.csv', ',')
 
 inputQ = queue.SimpleQueue()
 inputQ.put(stage)

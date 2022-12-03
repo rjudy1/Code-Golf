@@ -7,7 +7,7 @@
 import parseMod
 stage = 2
 
-array = parseMod.readCSV("data/1num.csv", '\n')
+array = parseMod.readCSVInts("data/1num.csv", '\n')
 found = False
 for i in array:
     for j in array:

@@ -17,7 +17,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import parseMod
 
 # get input
-instructions = parseMod.readCSV('data/17robot.csv')
+instructions = parseMod.readCSVInts('data/17robot.csv')
 instructions_copy = copy.deepcopy(instructions)  # untouched version for part 2
 
 # part 1
