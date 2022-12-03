@@ -1,7 +1,7 @@
 # Advent of Code 2022 Day 3
 # Author:   Rachael Judy
 # Date:     12/3/22
-# Purpose:
+# Purpose:  Set intersection within row and between three rows
 
 import parseMod
 
@@ -12,16 +12,18 @@ stage = 'a'
 year = 2022
 
 parseMod.createDataFile(year=year, day=day)
-guide = parseMod.readCSV_rowEl("data/" + str(day).zfill(2) + "data.csv", ' ')
+rucksacks = parseMod.readCSV_row("data/" + str(day).zfill(2) + "data.csv")
 
-# ord('W') == 87, ord('@') == 64
+# ord(a)=97 -> 1, ord(A)=65 -> 26
+get_score = lambda ch: ord(ch) - 38 if ord(ch) < ord('a') else ord(ch) - 96
+
 if stage == 'a':
-    pass
+    score = sum(get_score((set(r[:len(r) // 2]) & set(r[len(r) // 2:])).pop()) for r in rucksacks)
 else:
-    pass
+    score = sum(get_score(set.intersection(*map(set, rucksacks[i:i+3])).pop()) for i in range(0, len(rucksacks), 3))
 
 if not ready:
-    print(f'result: \n{result}')
+    print(f'result: \n{score}')
 elif ready:
-    print("SUBMITTING RESULT: ", result)
-    parseMod.submit(result, part=stage, day=day, year=year)
+    print("SUBMITTING RESULT: ", score)
+    parseMod.submit(score, part=stage, day=day, year=year)
