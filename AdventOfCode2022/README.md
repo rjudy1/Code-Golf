@@ -5,4 +5,4 @@
 2. Rock, paper, scissors strategy guide options
 3. Set intersection within row and between three rows
 4. Subset and intersection checks
-5. 
+5. move stacks of crates either in batches or one at a time

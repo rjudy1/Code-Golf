@@ -2,6 +2,7 @@
 # Author:   Rachael Judy
 # Date:     12/4/22
 # Purpose:  Subset and intersection checks
+# - note that set is more concise but less efficient probably than brute force compares
 
 import parseMod
 
