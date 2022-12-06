@@ -1,22 +1,17 @@
-# Advent of Code 2022 Day 6
+# Advent of Code 2022 Day 7
 # Author:   Rachael Judy
-# Date:     12/6/22
-# Purpose:  shifting window of unique characters
+# Date:     12/7/22
+# Purpose:
 
 import parseMod
 
 stage = 'b'
-day = 6
+day = 7
 year = 2022
 
 parseMod.createDataFile(year=year, day=day)
 data = parseMod.readCSV_row("data/" + str(day).zfill(2) + "data.csv")
 
-
-def find_start(string, size):
-    for i in range(size-1, len(data[0])):
-        if len(set(string[i-size+1:i+1])) == size:
-            return i
 
 
 if stage == 'a':
