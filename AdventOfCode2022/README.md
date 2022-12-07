@@ -7,4 +7,6 @@
 4. Subset and intersection checks
 5. move stacks of crates either in batches or one at a time
 6. shifting window of unique characters
-7. 
+7. Determine file system from cd and ls commands (build tree), sum sizes of directories less than 1000000 
+(dfs setting up tree), determine the smallest file needed to delete for update
+8. 
