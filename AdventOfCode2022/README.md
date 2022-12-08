@@ -9,4 +9,5 @@
 6. shifting window of unique characters
 7. Determine file system from cd and ls commands (build tree), sum sizes of directories less than 1000000 
 (dfs setting up tree), determine the smallest file needed to delete for update
-8. 
+8. check visibility from outside and inside grove of trees (dumb approach)
+9. 
