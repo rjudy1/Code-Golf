@@ -11,3 +11,5 @@
 (dfs setting up tree), determine the smallest file needed to delete for update
 8. check visibility from outside and inside grove of trees (dumb approach)
 9. snake but tries to keep in the same col or row instead of simple following head
+10. Assembly-esque instructions to draw pixels
+11. 
