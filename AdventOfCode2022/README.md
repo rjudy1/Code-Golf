@@ -14,4 +14,5 @@
 10. Assembly-esque instructions to draw pixels
 11. passing numbers, have to reduce scale by mod of LCM of moduli (chinese remainder theorem ftw)
 12. djikstra maze
-13. 
+13. recursive comparison of nested lists
+14. 
