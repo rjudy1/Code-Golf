@@ -70,7 +70,9 @@ def check_captured(sensors, beacons, target, maximum_point=100000000, minimum_po
         total -= 1
     return total, range_captured
 
+print(f"part 1 test{check_captured(sensors,beacons,10)}")
 print(f"part 1 {check_captured(sensors,beacons,2000000)}")
+
 
 b_range = 4000000
 for i in range(b_range+1):
@@ -79,14 +81,18 @@ for i in range(b_range+1):
 
     if x[0] != b_range:
         for j in range(b_range+1):
+            found = False
             for r in x[1]:
-                if x
-            if exit:
+                if r[0] <= j <= r[1]:
+                    found = True
+                    break
+            if not found:
+                answer = (j, i)
+                exit = True
                 break
+    if exit: break
 
-
-
-result = check_captured()
+result =  4000000 * answer[0] + answer[1]
 print("SUBMITTING RESULT: ", result)
 print(f"Time: {time.time() - start}")
 parseMod.submit(result, part=stage, day=day, year=year)
