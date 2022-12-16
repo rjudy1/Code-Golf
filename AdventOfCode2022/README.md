@@ -16,4 +16,4 @@
 12. djikstra maze
 13. recursive comparison of nested lists
 14. simulate falling sand
-15. 
+15. optimizing iterations and structures

@@ -1,98 +1,97 @@
 # Advent of Code 2022 Day 15
 # Author:   Rachael Judy
 # Date:     12/15/22
-# Purpose:
+# Purpose:  optimizing iterations and structures
 
 import parseMod
 import time
 
-stage = 'a'
+stage = 'b'
 day = 15
 year = 2022
 parseMod.createDataFile(year=year, day=day)
 data = parseMod.readCSV_row("data/" + str(day).zfill(2) + "data.csv")
+start = time.time()
 
-# sensors will be a list of dictionaries representing the end points for each sensor
+
+class Range:
+    def __init__(self, left, right):
+        self.left = left
+        self.right = right
+
+    def __lt__(self, other):
+        if self.left == other.left:
+            return self.right > other.right
+        return self.left < other.left
+
+    def __getitem__(self, key):
+        return self.right if key else self.left
+
+    def __setitem__(self, key, value):
+        if key == 0:
+            self.left = value
+        else:
+            self.right = value
+
+
 sensors = []
 beacons = dict()
 for row in data:
     sensor = dict()
     sensorx, sensory = int(row.split(' ')[2][2:-1]), int(row.split(' ')[3][2:-1])
     beaconx, beacony = int(row.split(' ')[-2][2:-1]), int(row.split(' ')[-1][2:])
-    distance = abs(sensorx-beaconx) + abs(sensory-beacony)
-    for i in range(-1*distance, distance+1):
-        sensor[sensory + i] = (sensorx + -1 * (distance - abs(i)), sensorx + distance - abs(i))
+    distance = abs(sensorx - beaconx) + abs(sensory - beacony)
     beacons[beacony] = beaconx
-    sensors.append(sensor)
+    sensors.append((sensorx, sensory, distance))
 
-start = time.time()
 
-def check_captured(sensors, beacons, target, maximum_point=100000000, minimum_point=-100000000):
-    range_captured = []
+def check_captured(sensors, beacons, target, minimum_point=-100000000, maximum_point=100000000):
+    captured = []
     for sensor in sensors:
-        if sensor.get(target) is not None:
-            sensor[target] = (max(sensor[target][0], minimum_point), min(sensor[target][1], maximum_point))
-            captured = False
-            to_add = True
-            to_trash = []
-            for i in range(len(range_captured)):
-                # completely or partially contains the range
-                if range_captured[i][0] > sensor[target][0] and range_captured[i][1] < sensor[target][1]:
-                    to_trash.append(i)
-                    captured = True
+        if sensor[2] >= abs(target-sensor[1]):
+            xbounds = (max(sensor[0] - sensor[2] + abs(target - sensor[1]), minimum_point),
+                       min(sensor[0] + sensor[2] - abs(target - sensor[1]), maximum_point))
+            captured.append(Range(xbounds[0], xbounds[1]))
 
-                # starts in the middle of range but ends after
-                elif range_captured[i][0] <= sensor[target][0] <= range_captured[i][1] and range_captured[i][1] < sensor[target][1]:
-                    range_captured[i] = (range_captured[i][0], sensor[target][0]-1)
-                    captured = True
-
-                # ends in the middle of range but starts before
-                elif range_captured[i][0] > sensor[target][0] and range_captured[i][1] >= sensor[target][1] >= range_captured[i][0]:
-                    range_captured[i] = (sensor[target][1]+1, range_captured[i][1])
-                    captured = True
-
-                # completely contains the sensor range
-                elif range_captured[i][0] <= sensor[target][0] and range_captured[i][1] >= sensor[target][1]:
-                    to_add = False
-                    captured = True
-
-            to_trash.sort()
-            to_trash.reverse()
-            for k in to_trash:
-                range_captured.pop(k)
-            if to_add:
-                range_captured.append(sensor[target])
+    # clean ranges
+    captured.sort()
+    index = 0
+    while index < len(captured):
+        x = captured[index][1]
+        while index+1 < len(captured) and captured[index+1][1] <= x:
+            captured.pop(index+1)
+        if index < len(captured) - 1:
+            if captured[index][1] >= captured[index+1][0]:
+                captured[index][1] = captured[index + 1][0] - 1
+        index += 1
 
     total = 0
-    for (a, b) in range_captured:
-        total += b - a + 1
+    for c in captured:
+        total += c[1]-c[0] + 1
     if beacons.get(target) is not None:
         total -= 1
-    return total, range_captured
-
-print(f"part 1 test{check_captured(sensors,beacons,10)}")
-print(f"part 1 {check_captured(sensors,beacons,2000000)}")
+    return total, captured
 
 
-b_range = 4000000
-for i in range(b_range+1):
-    x = check_captured(sensors, beacons, i)
-    exit = False
+if stage == 'a':
+    result = check_captured(sensors, beacons, 2000000)
+else:
+    b_range = 4000000
+    for i in range(b_range + 1):
+        count, captured_space = check_captured(sensors, beacons, i, 0, b_range)
+        found_solution = False
 
-    if x[0] != b_range:
-        for j in range(b_range+1):
-            found = False
-            for r in x[1]:
-                if r[0] <= j <= r[1]:
-                    found = True
+        if i % 500000 == 0: print(i)
+        if count != b_range + 1 and beacons.get(i) is None:
+            # skipping endpoints currently 0 and b_range+1 or b_range
+            for j in range(len(captured_space)-1):
+                if captured_space[j+1][0] - captured_space[j][1] != 1:
+                    answer = (captured_space[j+1][0]-1, i)
+                    found_solution = True
                     break
-            if not found:
-                answer = (j, i)
-                exit = True
-                break
-    if exit: break
+        if found_solution: break
+    result = 4000000 * answer[0] + answer[1]
 
-result =  4000000 * answer[0] + answer[1]
-print("SUBMITTING RESULT: ", result)
 print(f"Time: {time.time() - start}")
+print("SUBMITTING RESULT: ", result)
 parseMod.submit(result, part=stage, day=day, year=year)
