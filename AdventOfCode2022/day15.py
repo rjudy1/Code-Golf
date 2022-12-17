@@ -1,7 +1,7 @@
 # Advent of Code 2022 Day 15
 # Author:   Rachael Judy
 # Date:     12/15/22
-# Purpose:  optimizing iterations and structures
+# Purpose:  optimizing iterations and structures - still 30s-ish  slow
 
 import parseMod
 import time
@@ -37,7 +37,6 @@ class Range:
 sensors = []
 beacons = dict()
 for row in data:
-    sensor = dict()
     sensorx, sensory = int(row.split(' ')[2][2:-1]), int(row.split(' ')[3][2:-1])
     beaconx, beacony = int(row.split(' ')[-2][2:-1]), int(row.split(' ')[-1][2:])
     distance = abs(sensorx - beaconx) + abs(sensory - beacony)

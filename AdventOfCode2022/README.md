@@ -17,3 +17,5 @@
 13. recursive comparison of nested lists
 14. simulate falling sand
 15. optimizing iterations and structures
+16. djikstra preliminary filter and memoize, then two actors
+17. 
