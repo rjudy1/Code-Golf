@@ -18,4 +18,6 @@
 14. simulate falling sand
 15. optimizing iterations and structures
 16. djikstra preliminary filter and memoize, then two actors
-17. 
+17. straight simulate tetris placement until repetition, then finish after repeats
+18. compute surface area given points and then only exposed SA by taking border and inside SA of that
+19. 

@@ -24,13 +24,13 @@ def countTrees(map, xStep, yStep):
 
 
 # read in map to array
-map = parseMod.readCSV_row('data/3maps.csv')
+vmap = parseMod.readCSV_row('data/3maps.csv')
 
 # compute trees on given paths
-x = countTrees(map, 1, 1)
-y = countTrees(map, 3, 1)  # from stage one
-z = countTrees(map, 5, 1)
-w = countTrees(map, 7, 1)
-v = countTrees(map, 1, 2)
+x = countTrees(vmap, 1, 1)
+y = countTrees(vmap, 3, 1)  # from stage one
+z = countTrees(vmap, 5, 1)
+w = countTrees(vmap, 7, 1)
+v = countTrees(vmap, 1, 2)
 print("Single:", y)
 print("Combo:", v*w*x*y*z)

@@ -2,6 +2,7 @@
 # Author:   Rachael Judy
 # Date:     12/18/22
 # Purpose:  compute surface area given points and then only exposed SA by taking border and inside SA of that
+# Note: doing list might have been faster instead of in set searching
 
 import parseMod
 import time
