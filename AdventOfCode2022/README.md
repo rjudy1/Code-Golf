@@ -13,11 +13,14 @@
 9. snake but tries to keep in the same col or row instead of simple following head
 10. Assembly-esque instructions to draw pixels
 11. passing numbers, have to reduce scale by mod of LCM of moduli (chinese remainder theorem ftw)
-12. djikstra maze
+12. djikstra elevation maze
 13. recursive comparison of nested lists
-14. simulate falling sand
-15. optimizing iterations and structures
+14. simulate falling sand (key of maintaining previous path up to last)
+15. optimizing iterations and structures (positions in massive grid where beacons could and couldn't be)
 16. djikstra preliminary filter to map, dfs with memoization of sequences, then find best combos in cache
 17. straight simulate tetris placement until repetition, then finish after repeats
 18. compute surface area given points and then only exposed SA by taking border and inside SA of that
-19. circular list of numbers shifting
+19. maximize geode collection with linear programming (learning about pulp) (why day 16 again, \*cry\*)
+20. circular list of numbers shifting
+21. given values and operations down tree, compute value of root function, backtrack to humn for b (might be \*FAVORITE\* so far)
+22. 

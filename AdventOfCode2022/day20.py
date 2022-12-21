@@ -33,6 +33,7 @@ def mix_numbers(nums, times=1, decryption_key=1):
             if ptr != n:
                 neighbor[list(neighbor.keys())[list(neighbor.values()).index(n)] % len(nums)] = neighbor[n]
                 neighbor[n], neighbor[ptr] = neighbor[ptr], n
+
     return render_state()
 
 
