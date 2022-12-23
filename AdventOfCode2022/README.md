@@ -23,4 +23,4 @@
 19. maximize geode collection with linear programming (learning about pulp) (why day 16 again, \*cry\*)
 20. circular list of numbers shifting
 21. given values and operations down tree, compute value of root function, backtrack to humn for b (might be \*FAVORITE\* so far)
-22. 
+22. travel map with wraparound to non blank and then actually folds into cube (will solve all inputs but not technially generic)
