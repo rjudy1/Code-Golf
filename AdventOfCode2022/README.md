@@ -24,3 +24,5 @@
 20. circular list of numbers shifting
 21. given values and operations down tree, compute value of root function, backtrack to humn for b (might be \*FAVORITE\* so far)
 22. travel map with wraparound to non blank and then actually folds into cube (will solve all inputs but not technially generic)
+23. keep spreading out elves until sufficiently spaced given scatter rules
+24. 
