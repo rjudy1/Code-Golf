@@ -97,3 +97,10 @@ def readCSV_batch(filename, delim=' ', addsep=''):
         batches.append(string)  # catch the last batch
 
     return batches
+
+
+def to_base(n, base):
+    s = ''
+    while n:
+        s, n = str(n % base) + s, int(n/base)
+    return s
