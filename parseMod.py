@@ -19,7 +19,7 @@ import csv
 import fileinput
 import sys
 
-cookie = "53616c7465645f5f5bb83a61626d763169fd6291066972ad0a8815efdc0495ad90319c5f17495f97c183f42e69644dd0800b82fab928656da9e4afb9b959a846"
+cookie = "53616c7465645f5f2b358a46873ae20a056f8fab6a674e5bc7981d8b36d3c139b06f499ea49d5b30ff3e3c413a4bb14c30c93851205e295a3cd01dcb0b05253f"
 
 
 def submit(result, part='a', year=2022, day=1):
@@ -28,7 +28,6 @@ def submit(result, part='a', year=2022, day=1):
 
 # create data.csv file with the data for given day
 def createDataFile(year, day):
-    cookie = "53616c7465645f5f5bb83a61626d763169fd6291066972ad0a8815efdc0495ad90319c5f17495f97c183f42e69644dd0800b82fab928656da9e4afb9b959a846"
     filename = "data/" + str(day).zfill(2) + "data.csv"
     f = open(filename, 'w')
     f.write(aocd.get_data(cookie, day, year))

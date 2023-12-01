@@ -32,7 +32,7 @@ specified. Enjoy!
 17. simulate space based on adjacencies : 3
 18. operator precedence changes - stack based : 5, trippy
 19. recursive regex rules : 4, regexing woes
-20. assemble map from corners, transformations : 5, fun but long rough debug
+20. assemble map from corners, transformations (cute dragon) : 5, fun but long rough debug
 21. sort through ingredients list, locating allergen ingredient pairs, count safe ingredient occurrences : 3, thinking
 22. card game, recursive and ordinary War version : 3
 23. numbered cup shuffling - pick the right data structure for a LL : 3, time consuming to choose wrong

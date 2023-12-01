@@ -4,9 +4,9 @@ import requests
 import sys
 
 
-year = 2022
-board = 1501977
-cookie_string = "YOUR COOKIE HERE"
+year = 2023
+board = 1027137#1501977
+cookie_string = "53616c7465645f5f2b358a46873ae20a056f8fab6a674e5bc7981d8b36d3c139b06f499ea49d5b30ff3e3c413a4bb14c30c93851205e295a3cd01dcb0b05253f"
 
 
 def print_member(member):

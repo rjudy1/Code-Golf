@@ -194,6 +194,8 @@ for ocean_map in possible_maps:  # check each possible map for sea monsters
                     break
             sea_monster_count += 1 if match else 0
     if sea_monster_count != 0:  # if monsters found on this map, exit
+        for row in ocean_map:
+            print(''.join(row))
         break
 total_hashtags = sum(row.count('#') for row in ocean_map)
 
