@@ -67,4 +67,4 @@ print("")
 for member in members:
     print_member(member)
 
-input()
+# input()
