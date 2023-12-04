@@ -1,7 +1,7 @@
 # Advent of Code 2023 Day 4
 # Author:   Rachael Judy
 # Date:     12/4/23
-# Purpose:
+# Purpose:  scratchcard scoring based on match count
 
 from collections import defaultdict
 
