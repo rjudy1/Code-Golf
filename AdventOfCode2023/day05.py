@@ -1,7 +1,7 @@
 # Advent of Code 2023 Day 5
 # Author:   Rachael Judy
 # Date:     12/5/23
-# Purpose:  multiple dictionary mappings, divide into groupings for efficiency, not the most efficent, could collapse
+# Purpose:  multiple dictionary mappings, divide into groupings for efficiency, not the most efficient, could collapse
 #           and iteratively fill but idc anymore
 
 import parseMod
@@ -37,7 +37,6 @@ def get_value(source, map):
     for key in map:
         if key <= source < key + map[key][1]:
             return map[key][0] + source - key
-    return source
 
 
 # group regions from 0 to 2 * max(seeds) to sections of locations (inclusive at both ends for each group)

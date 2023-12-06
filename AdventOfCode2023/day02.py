@@ -1,7 +1,7 @@
 # Advent of Code 2023 Day 2
 # Author:   Rachael Judy
 # Date:     12/2/23
-# Purpose:
+# Purpose:  is game possible with set number of dice, how many dice needed to be possible
 
 import parseMod
 
