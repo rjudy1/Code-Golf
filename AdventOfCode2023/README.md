@@ -8,4 +8,6 @@
 5. Multiple dictionary pass through mappings (1 to 1), split into ranges (could assign to ranges instead of repropagating)
 6. Find whole numbers between quadratic roots of -t^2 + race_time * t - race_record_distance (for once, no horrible parsing)
 7. Poker ordering of hands with five of a kind down to high card, twist of wildcard joker
+8. Count steps in following graph to ZZZ and then from all ending in A to something simultaneously ending in Z
+9. 
 
