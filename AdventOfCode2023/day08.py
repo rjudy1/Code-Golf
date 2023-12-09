@@ -9,7 +9,7 @@ import parseMod
 
 ready = True
 day = 8
-stage = 'b'
+stage = 'a'
 year = 2023
 
 parseMod.createDataFile(year=year, day=day)
@@ -26,8 +26,6 @@ if stage == 'a':
     while position != 'ZZZ':
         position = graph[position][lr_to_dir(array[0][0][steps % len(array[0][0])])]
         steps += 1
-        if steps % len(array[0][0]) == 0 and position == 'AAA':
-            print(steps)
     result = steps
 else:
     positions = list(filter(lambda a: a[2] == 'A', graph))  # positions ending with A
