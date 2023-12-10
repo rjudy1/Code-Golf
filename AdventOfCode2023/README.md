@@ -10,5 +10,4 @@
 7. Poker ordering of hands with five of a kind down to high card, twist of wildcard joker
 8. Count steps in following graph to ZZZ and then from all ending in A to something simultaneously ending in Z
 9. propagate difference of each line of values until line of zeroes, then backpropagate from end and beginning
-10. 
-
+10. find main loop in a mess of pipes and find area enclosed by loop (expand and bfs, shoelace might be better)
