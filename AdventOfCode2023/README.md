@@ -13,4 +13,4 @@
 10. Find main loop in a mess of pipes and find area enclosed by loop (expand and bfs, shoelace might be better)
 11. Calculate manhattan distance between galaxies with empty rows/cols expanding
 12. Nonograms with incomplete patterns, try possible placements of groups and count working versions
-13. 
+13. Find reflecting line, then alternate reflecting line made possible by one change

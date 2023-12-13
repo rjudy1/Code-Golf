@@ -77,7 +77,7 @@ def readCSV_single(filename):
 
 # array of array of each line, split into elements on line (rowEl)
 # NOTE: For whatever reason, doesn't read last bunch so \n random content must be hand added
-def readCSV_batch(filename, delim=' ', addsep=''):
+def readCSV_batch(filename):
     # add space to end of every line for formatting use with parsing function
     for line in fileinput.input(filename, inplace=True):
         sys.stdout.write("{} \n".format(line.rstrip()))
@@ -96,6 +96,25 @@ def readCSV_batch(filename, delim=' ', addsep=''):
         batches.append(string)  # catch the last batch
 
     return batches
+
+
+def readCSV_chunk(filename):  # spaced by newline between each section
+    # add space to end of every line for formatting use with parsing function
+    for line in fileinput.input(filename, inplace=True):
+        sys.stdout.write("{} \n".format(line.rstrip()))
+
+    batches = []
+    array = readCSV_row(filename)
+    last_split = 0
+    for idx, row in enumerate(array):
+        if row.strip() == '':
+            batches.append([val.strip() for val in array[last_split:idx]])
+            last_split = idx + 1
+    batches.append([val.strip() for val in array[last_split:]])
+    return batches
+
+
+
 
 
 def to_base(n, base):

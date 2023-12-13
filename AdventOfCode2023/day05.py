@@ -12,7 +12,7 @@ stage = 'b'
 year = 2023
 
 parseMod.createDataFile(year=year, day=day)
-array = parseMod.readCSV_batch("data/" + str(day).zfill(2) + "data.csv", delim='\n')
+array = parseMod.readCSV_batch("data/" + str(day).zfill(2) + "data.csv")
 seeds = [int(i) for i in array[0].strip().split(' ')[1:]]
 
 
