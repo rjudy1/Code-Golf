@@ -14,3 +14,5 @@
 11. Calculate manhattan distance between galaxies with empty rows/cols expanding
 12. Nonograms with incomplete patterns, try possible placements of groups and count working versions
 13. Find reflecting line, then alternate reflecting line made possible by one change
+14. Roll rocks fully in direction based on rotation; look for pattern of states
+15. 
