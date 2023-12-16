@@ -15,4 +15,5 @@
 12. Nonograms with incomplete patterns, try possible placements of groups and count working versions
 13. Find reflecting line, then alternate reflecting line made possible by one change
 14. Roll rocks fully in direction based on rotation; look for pattern of states
-15. 
+15. Hashing operation applied to assign labels and values into boxes
+16. Fire beams of light through mirrors, store number of spaces beam passes through

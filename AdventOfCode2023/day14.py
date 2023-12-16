@@ -2,7 +2,7 @@
 # Author:   Rachael Judy
 # Date:     12/14/23
 # Purpose:  roll rocks fully in direction based on rotation; look for pattern of states
-# not optimal, come back and make it not simulate the whole thing and hunt for pattern
+# not optimal, could improve with clean tilt, rotate pattern and count Os to a # or edge, not doing it today though
 
 import parseMod
 
@@ -15,7 +15,7 @@ parseMod.createDataFile(year=year, day=day)
 data = parseMod.readCSV_row("data/" + str(day).zfill(2) + "data.csv")
 
 
-def slide(state, direction):
+def slide(state, direction):  # instead of manually iterating each, count Os to # and stack them to make O(N^2)
     map_copy = [[state[i][j] if state[i][j] == '#' else '.' for j, col in enumerate(row)] for i, row in
                 enumerate(state)]
     dirs = {'N': (-1, 0), 'S': (1, 0), 'E': (0, 1), 'W': (0, -1)}
