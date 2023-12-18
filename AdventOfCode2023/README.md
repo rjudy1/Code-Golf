@@ -17,3 +17,5 @@
 14. Roll rocks fully in direction based on rotation; look for pattern of states
 15. Hashing operation applied to assign labels and values into boxes
 16. Fire beams of light through mirrors, store number of spaces beam passes through
+17. Shoelace formula for area inside polygon
+18. 
