@@ -18,4 +18,5 @@
 15. Hashing operation applied to assign labels and values into boxes
 16. Fire beams of light through mirrors, store number of spaces beam passes through
 17. Shoelace formula for area inside polygon
-18. 
+18. Split ranges based on sequential conditionals
+19. 
