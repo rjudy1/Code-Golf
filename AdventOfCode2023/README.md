@@ -17,6 +17,8 @@
 14. Roll rocks fully in direction based on rotation; look for pattern of states
 15. Hashing operation applied to assign labels and values into boxes
 16. Fire beams of light through mirrors, store number of spaces beam passes through
-17. Shoelace formula for area inside polygon
-18. Split ranges based on sequential conditionals
-19. 
+17. Djikstra with constraints of min 3 consecutive steps in a direction, 4<=streak<10 for b,
+18. Shoelace formula for area inside polygon
+19. Split ranges based on sequential conditionals
+20. Conjunctions and flip flops to settle for 1000 button presses, then until rx gets 1
+21. 
