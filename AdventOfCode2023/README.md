@@ -21,4 +21,6 @@
 18. Shoelace formula for area inside polygon
 19. Split ranges based on sequential conditionals
 20. Conjunctions and flip flops to settle for 1000 button presses, then until rx gets 1
-21. 
+21. Find positions possible at exact number of steps, then with infinite grid
+22. Drop straight blocks at various 3D orientations and determine which blocks can be removed and cost of removing others
+23. 
