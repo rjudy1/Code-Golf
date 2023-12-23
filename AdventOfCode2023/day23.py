@@ -2,7 +2,7 @@
 # Author:   Rachael Judy
 # Date:     12/23/23
 # Purpose:  DFS traversal of routes with momentum term
-# Did I brute force part 2 and just wait until printing slowed? Maybe. Am I going to fix it? Probably later.
+# Did I brute force part 2 and just wait until printing slowed? Maybe. Am I going to fix it with graph contraction? Probably later.
 
 import sys
 sys.setrecursionlimit(10000)
