@@ -98,6 +98,11 @@ def manhattan(a, b):
 #                     final_spots += 1
 
 
+# note relationship: direct adjacencies will correspond to points reachable by middle edge, diagonals will b points reachable
+# by corner
+# draw giant diamonds, checking maybe from edge to one on each side for reachable points plus whoever is the diamond
+# as either direct adjacent or diagonal adjacent
+
 # 22201698
 if not ready:
     print(f'result: \n{result}')
