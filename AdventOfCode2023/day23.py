@@ -12,7 +12,7 @@ import parseMod
 
 ready = True
 day = 23
-stage = 'a'  # 6390
+stage = 'b'  # 6390
 year = 2023
 
 parseMod.createDataFile(year=year, day=day)
