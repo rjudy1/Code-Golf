@@ -24,4 +24,5 @@
 21. Find positions possible at exact number of steps, then with infinite grid
 22. Drop straight blocks at various 3D orientations and determine which blocks can be removed and cost of removing others
 23. DFS traversal of routes with momentum term
-24. 
+24. Find hailstone paths that collide and create hailstone to collide with all
+25. Find three connections to cut that split the ports into two groups, visualize with graphviz
