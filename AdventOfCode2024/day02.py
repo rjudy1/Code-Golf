@@ -1,7 +1,6 @@
-# Advent of Code 2023 Day 2
+# Advent of Code 2024 Day 2
 # Author:   Rachael Judy
-# Date:     12/1/24
-# Purpose:
+# Purpose:  Filter reports of increasing/decreasing in bounds, brute force
 
 import parseMod
 import copy

@@ -1,4 +1,4 @@
-## Advent of Code 2022 in Python
+## Advent of Code 2023 in Python
 
 ### Challenges
 1. First and last digit/spelled out digit on each line is value, sum values
