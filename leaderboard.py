@@ -4,9 +4,9 @@ import requests
 import sys
 
 
-year = 2023
+year = 2024
 board = 1027137
-cookie_string = "53616c7465645f5f2b358a46873ae20a056f8fab6a674e5bc7981d8b36d3c139b06f499ea49d5b30ff3e3c413a4bb14c30c93851205e295a3cd01dcb0b05253f"
+cookie_string = "53616c7465645f5f1974654587f84dac73952178aa2cd98dbda4716900978a2ba52114079f31bb1aed7e9fb4d867e4f39b6d15a52b618d620ace9157c6d2ced5"
 
 
 def print_member(member):
