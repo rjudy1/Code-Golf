@@ -2,6 +2,7 @@
 # Author:   Rachael Judy
 # Written:  12/1/20
 # Modified: 11/20/22
+# TODO: fix this file as the reading is kind of sloppy
 
 """
 Usage:
@@ -112,9 +113,6 @@ def readCSV_chunk(filename):  # spaced by newline between each section
             last_split = idx + 1
     batches.append([val.strip() for val in array[last_split:]])
     return batches
-
-
-
 
 
 def to_base(n, base):
