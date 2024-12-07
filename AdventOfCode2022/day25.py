@@ -5,6 +5,7 @@
 
 import parseMod
 import time
+import numpy as np
 
 stage = 'a'
 day = 25
@@ -16,7 +17,7 @@ start = time.time()
 # map both ways and total, then convert back to base 5 shifted
 base5s = {'2': 2, 2: '2', '1': 1, 1: '1', '0': 0, 0: '0', '-': -1, -1: '-', '=': -2, -2: '='}
 total = sum(sum(5 ** (len(row)-1-i) * base5s[row[i]] for i in range(len(row))) for row in data)
-base5_total = [0] + [int(x) for x in parseMod.to_base(total, 5)]
+base5_total = [0] + [int(x) for x in np.base_repr(total, base=5)]
 for i in range(len(base5_total)-1, -1, -1):
     if base5_total[i] > 2:
         base5_total[i] = base5s[base5_total[i] - 5]

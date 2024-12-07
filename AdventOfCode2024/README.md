@@ -6,4 +6,6 @@
 3. look for regex patterns matching "mul\(\d+,\d+\)", "do\(\)", "don't\(\)" and process (did i build a giant state machine that solved both parts before just using the regex library in the refactor? maybe)
 4. find patterns in word search (kinda boring scan of grid)
 5. given instructions and ordering, build DAG with predecessors, validate and fix order
-6. 
+6. discover path through map with right turns, see where single obstacles create loop, brute force with a path follow optimization
+7. find combination of operators (+,*,||) that make equations work (exponential horrificness)
+8. 

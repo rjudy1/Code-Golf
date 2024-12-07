@@ -28,7 +28,7 @@ def submit(result, part='a', year=2022, day=1):
     aocd.submit(result, part=part, day=day, year=year, session=cookie)
 
 # create data.csv file with the data for given day
-def createDataFile(year, day):
+def createDataFile(year, day) -> None:
     filename = "data/" + str(day).zfill(2) + "data.csv"
     f = open(filename, 'w')
     f.write(aocd.get_data(cookie, day, year))
@@ -36,7 +36,7 @@ def createDataFile(year, day):
 
 
 # to break into array of numbers
-def readCSVInts(filename, delim=','):
+def readCSVInts(filename, delim=',') -> [int]:
     num = []
     with open(filename) as file:
         reader = csv.reader(file, delimiter=delim)
@@ -113,10 +113,3 @@ def readCSV_chunk(filename):  # spaced by newline between each section
             last_split = idx + 1
     batches.append([val.strip() for val in array[last_split:]])
     return batches
-
-
-def to_base(n, base):
-    s = ''
-    while n:
-        s, n = str(n % base) + s, int(n/base)
-    return s
