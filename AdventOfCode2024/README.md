@@ -7,5 +7,5 @@
 4. find patterns in word search (kinda boring scan of grid)
 5. given instructions and ordering, build DAG with predecessors, validate and fix order
 6. discover path through map with right turns, see where single obstacles create loop, brute force with a path follow optimization
-7. find combination of operators (+,*,||) that make equations work (exponential horrificness)
+7. find combination of operators (+,*,||) that make equations work with BFT search (take that, exponential)
 8. 

@@ -34,7 +34,7 @@ def eval(eq, op_prec):
             num_stack.append(int(s))  # add the internal number to num_stack
 
         elif s[-1] == ')':  # if found a closing parenthesis
-            num_stack.append(int(s[:s.index(')')]))  # append the number before the chain of these
+            num_stack.append(int(s[:s.ind(')')]))  # append the number before the chain of these
             while s[-1] == ')':  # back up the chain
                 s = s[:-1]
 

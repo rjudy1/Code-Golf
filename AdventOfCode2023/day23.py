@@ -46,7 +46,7 @@ best = 0   # global variable for keeping a display since the actual NP problem d
 slope_dict = {'>': 1j, '<': -1j, 'v': 1, '^': -1, '.': 0}
 if stage == 'b':
     slope_dict = {'>': 0, '<': 0, 'v': 0, '^': 0, '.': 0}
-result = dfs(data[0].index('.') * 1j, 0)
+result = dfs(data[0].ind('.') * 1j, 0)
 
 if not ready:
     print(f'result: \n{result}')

@@ -17,8 +17,8 @@ ingredients_list = parseMod.readCSV_row('data/21ingredients.csv', '\n')
 # parse input to allergens dictionary
 allergen_dict = {}  # will have allergen : list of list of ingredients
 for food in ingredients_list:
-    allergens = food[food.index("(")+len("contains "):-1].split()
-    ingredients = food[:food.index("(")].split()
+    allergens = food[food.ind("(") + len("contains "):-1].split()
+    ingredients = food[:food.ind("(")].split()
     for a in range(len(allergens)):  # strip off the spare commas in allergen list
         allergens[a] = allergens[a].strip(",")
 

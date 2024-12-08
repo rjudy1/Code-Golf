@@ -50,7 +50,7 @@ else:
             if saved_states.index(state_str) in cycling:
                 break
             else:
-                cycling.add(saved_states.index(state_str))
+                cycling.add(saved_states.ind(state_str))
         else:
             saved_states.append(state_str)
     # get index of what will be the final state and convert back to list

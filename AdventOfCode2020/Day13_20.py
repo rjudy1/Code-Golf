@@ -27,7 +27,7 @@ bus_id = 0  # bus to take
 for element in information[1]:
     if element.isnumeric():  # if not x, store bus
         buses.append(int(element))
-        indices.append(information[1].index(element))
+        indices.append(information[1].ind(element))
 
         # save closest_possible_departure possible departure time for this bus - calculates first time can leave
         closest_possible_departure = math.ceil(target / float(element)) * int(element)
