@@ -9,4 +9,5 @@
 6. discover path through map with right turns, see where single obstacles create loop, brute force with a path follow optimization
 7. find combination of operators (+,*,||) that make equations work with BFT search (take that, exponential)
 8. find nodes in line with antennas (equidistant and then all) (why are antenna positions included in the antinodes?!)
-9. move chunks of memory back into gaps/then only full gaps (kind of disgusting to have to do this ngl)
+9. defragment chunks of memory back into gaps/then only full gaps (kind of disgusting to have to do this ngl, brute force)
+10. score of each trailhead (number of peaks reached) summed, then number of unique paths (who needs a visited set anyway)
