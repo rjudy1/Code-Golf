@@ -11,3 +11,5 @@
 8. find nodes in line with antennas (equidistant and then all) (why are antenna positions included in the antinodes?!)
 9. defragment chunks of memory back into gaps/then only full gaps (kind of disgusting to have to do this ngl, brute force)
 10. score of each trailhead (number of peaks reached) summed, then number of unique paths (who needs a visited set anyway)
+11. track counts for each stone type which changes according to rules over the number of blinks (way overcomplicated the approach here but it's fine now)
+12. 
