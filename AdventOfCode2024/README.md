@@ -14,4 +14,6 @@
 11. track counts for each stone type which changes according to rules over the number of blinks (way overcomplicated the approach here/got distracted but it's fine now)
 12. find area and perimeter/number of sides (corners) of regions in a grid
 13. solve two variable system of equations (kind to have made pairs of buttons linearly independent and i guess estimate 100 for a was just for the combinatorial brute force people?)
-14. 
+14. track robot positions in grid, look for Christmas tree (wth is a Christmas tree shape?, look for unique positions for all?)
+15. 
+
