@@ -33,6 +33,7 @@ def createDataFile(year, day) -> None:
     f = open(filename, 'w')
     f.write(aocd.get_data(cookie, day, year))
     f.close()
+    return filename
 
 
 # to break into array of numbers

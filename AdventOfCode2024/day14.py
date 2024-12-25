@@ -1,7 +1,7 @@
 # Advent of Code 2024 Day 14
 # Author:   Rachael Judy
 # Purpose:  track robot positions in grid, look for Christmas tree (wth is a Christmas tree shape?, look for unique positions for all?)
-
+# TODO: clean up improve, look for lowest entropy for part b
 
 import csv
 
@@ -25,7 +25,7 @@ result = 0
 row_limit = 103
 col_limit = 101
 
-move = 100
+moves = 100
 for move in range(100000):
     quadrant_robots = [0, 0, 0, 0]
     import numpy as np
@@ -51,10 +51,10 @@ for move in range(100000):
         print(move)
 
     # print(move)
-    # for i in range(len(grid)):
-    #     for j in range(len(grid[0])):
-    #         print(int(grid[i,j]),end='')
-    #     print()
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                print(int(grid[i,j]),end='')
+            print()
 
 import math
 result = math.prod(quadrant_robots)
