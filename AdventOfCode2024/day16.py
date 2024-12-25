@@ -1,7 +1,7 @@
 # Advent of Code 2024 Day 16
 # Author:   Rachael Judy
 # Purpose:  djikstra plus tracking of multiple possible best paths
-# so slow with the repeated search, clean this up
+# so slow with the repeated search, clean this up for single dfs in map
 
 import collections
 import csv

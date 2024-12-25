@@ -7,7 +7,7 @@ import parseMod
 
 ready = True
 day = 9
-stage = 'a'
+stage = 'b'
 year = 2024
 
 parseMod.createDataFile(year=year, day=day)
@@ -58,7 +58,7 @@ else:  # defragment whole blocks
                     gap[0] += blocks[i][1]
                 break
 
-result = sum(memory[i] * i if memory[i] != -1 else 0 for i in range(len(memory)))
+result = sum(memory[i] * i for i in range(len(memory)) if memory[i] != -1)
 if not ready:
     print(f'result: \n{result}')
 elif ready:
