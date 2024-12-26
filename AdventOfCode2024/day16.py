@@ -1,7 +1,6 @@
 # Advent of Code 2024 Day 16
 # Author:   Rachael Judy
-# Purpose:  djikstra plus tracking of multiple possible best paths
-# so slow with the repeated search, clean this up for single dfs in map
+# Purpose:  djikstra, then dfs of cost map to find nodes on shortest paths
 
 import collections
 import csv
@@ -10,83 +9,56 @@ import parseMod
 
 ready = True
 day = 16
-stage = 'b'
+stage = 'b'  # 130536, 1024
 year = 2024
 
 parseMod.createDataFile(year=year, day=day)
 costs = collections.defaultdict(lambda: math.inf)
-map = collections.defaultdict(str)
+graph = collections.defaultdict(str)
 with open("data/" + str(day).zfill(2) + "data.csv") as file:
-    reader = csv.reader(file)
-    for i, row in enumerate(reader):
+    for i, row in enumerate(csv.reader(file)):
         for j, col in enumerate(row[0]):
-            map[complex(i,j)] = col
+            graph[complex(i, j)] = col
             if col == 'S':
-                queue = collections.deque([(complex(i,j), 1j)])
-                costs[(complex(i,j), 1j)] = 0
+                queue = collections.deque([(complex(i, j), 1j)])
+                costs[(complex(i, j), 1j)] = 0
 
-# bfs (no early termination?)
-directions = {1j, -1, -1j, 1}
-# visited = set()  # position, direction
-end_scores = set()
-
+# djikstra to find least cost path to the end states
+end_scores = collections.defaultdict(set)
 while queue:
-    # rotation will be multiplication by j or -j
     position, dir = queue.popleft()
-    if map[position] == 'E':
-        end_scores.add(costs[(position,dir)])
-    if map[position + dir] != '#' and costs[(position+dir, dir)] > costs[(position, dir)]+1: #  not referencing visited?
-        # visited.add((position+dir, dir))
-        queue.append((position+dir, dir))
-        costs[(position+dir, dir)] = costs[(position, dir)]+1
-    if costs[(position, dir*1j)] > costs[(position, dir)]+1000:
-        # visited.add((position, dir*1j))
-        costs[(position, dir*1j)] = min(costs[(position, dir*1j)], costs[(position, dir)]+1000)
-        queue.append((position, dir*1j))
-    if costs[(position, dir*-1j)] > costs[(position, dir)]+1000:
-        # visited.add((position, dir*-1j))
-        costs[(position, dir*-1j)] = min(costs[(position, dir*-1j)], costs[(position, dir)]+1000)
-        queue.append((position, dir*-1j))
+    if graph[position] == 'E':
+        end_scores[costs[(position, dir)]].add((position, dir))
+    if graph[position + dir] != '#' and costs[(position + dir, dir)] > costs[(position, dir)] + 1:  # move forward
+        queue.append((position + dir, dir))
+        costs[(position + dir, dir)] = costs[(position, dir)] + 1
+    for turn in {1j, -1j}:
+        if costs[(position, dir * turn)] > costs[(position, dir)] + 1000:  # turn right
+            costs[(position, dir * turn)] = min(costs[(position, dir * turn)], costs[(position, dir)] + 1000)
+            queue.append((position, dir * turn))
 
-print(end_scores)
-result = min(end_scores)
+# dfs cost map from end, taking only paths with viable reductions, to find nodes on shortest paths
+nodes_on_best_path = set()
+if stage == 'b':
+    def dfs(current_path):
+        pos, dir = current_path[-1]
+        if graph[pos] == 'S' and dir == 1j:  # if made it to start viably, add nodes to collection
+            nodes_on_best_path.update({p for (p, d) in current_path})
+            return
+        if costs[pos - dir, dir] + 1 == costs[pos, dir]:  # step back
+            current_path.append((pos - dir, dir))
+            dfs(current_path)
+            current_path.pop()
+        for turn in {-1j, 1j}:
+            if costs[pos, dir * turn] + 1000 == costs[pos, dir]:  # turn
+                current_path.append((pos, dir * turn))
+                dfs(current_path)
+                current_path.pop()
 
-# retrace best path(s)
-# start from end and walk backward (anytime score goes down?)
-# iterate all paths without the adjustment and see which ones lead to the min score
+    for end_state in end_scores[min(end_scores)]:
+        dfs([end_state])
 
-on_path = set()
-for (pos, dir) in costs:
-    if costs[(pos,dir)] > result:
-        continue
-    # check if this will be on the best path
-    queue = collections.deque([(pos,dir)])
-    new_costs = collections.defaultdict(lambda: math.inf)
-    new_costs[(pos,dir)] = costs[(pos, dir)]
-    end_scores = set()
-
-    while queue:
-        # rotation will be multiplication by j or -j
-        position, dir = queue.popleft()
-        if map[position] == 'E':
-            end_scores.add(new_costs[(position, dir)])
-        if map[position + dir] != '#' and new_costs[(position + dir, dir)] > new_costs[
-            (position, dir)] + 1 and new_costs[(position, dir)] + 1 <= result:  # not referencing visited?
-            # visited.add((position+dir, dir))
-            queue.append((position + dir, dir))
-            new_costs[(position + dir, dir)] = new_costs[(position, dir)] + 1
-        if map[position + dir*1j] != '#' and new_costs[(position, dir * 1j)] > new_costs[(position, dir)] + 1000 and new_costs[(position, dir)] + 1000 <= result:
-            # visited.add((position, dir*1j))
-            new_costs[(position, dir * 1j)] = min(new_costs[(position, dir * 1j)], new_costs[(position, dir)] + 1000)
-            queue.append((position, dir * 1j))
-        if map[position + dir*-1j] != '#' and new_costs[(position, dir * -1j)] > new_costs[(position, dir)] + 1000 and new_costs[(position, dir)] + 1000 <= result:
-            # visited.add((position, dir*-1j))
-            new_costs[(position, dir * -1j)] = min(new_costs[(position, dir * -1j)], new_costs[(position, dir)] + 1000)
-            queue.append((position, dir * -1j))
-    print(len(on_path))
-    if end_scores and min(end_scores) == result:
-        on_path.add(pos)
-result = len(on_path)
+result = min(end_scores) if stage == 'a' else len(nodes_on_best_path)
 
 if not ready:
     print(f'result: \n{result}')
