@@ -17,12 +17,13 @@
 14. track robot positions in grid, look for Christmas tree (wth is a Christmas tree shape?)
 15. robot pushing single and double boxes
 16. djikstra, then dfs of cost map to find nodes on shortest paths
-17. 
+17. alu sim and then find register A value for quine (not the fastest part b with the solver, generalized only for aoc valid inputs not any input register/program format)
 18. bfs the increasingly dangerous maze
 19. find out if patterns possible from subpatterns 
 20. count start-end defined cheats through walls for 1 or <20 steps that lead to saving 100+ steps
 21. 
 22. find secret numbers from series of operations, locate series of changes leading to highest payout
 23. 3-clique containing historian, then maximal clique (np-hard, why not)
-24. 
+24. run simulation of wires, then correct errors in the ripple carry adder (alphabetize what)
+25. check if keys will fit in lock holes (not necessarily perfect match though)
 
