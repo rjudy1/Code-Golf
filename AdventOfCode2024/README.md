@@ -21,7 +21,7 @@
 18. bfs the increasingly dangerous maze
 19. find out if patterns possible from subpatterns 
 20. count start-end defined cheats through walls for 1 or <20 steps that lead to saving 100+ steps
-21. 
+21. recursively find series of buttons to push a series of keypads buttons to enter code
 22. find secret numbers from series of operations, locate series of changes leading to highest payout
 23. 3-clique containing historian, then maximal clique (np-hard, why not)
 24. run simulation of wires, then correct errors in the ripple carry adder (alphabetize what)
