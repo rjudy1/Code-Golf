@@ -1,8 +1,6 @@
 # Advent of Code 2017 Day 4
 # Author:   Rachael Judy
-# Purpose:
-
-import numpy as np
+# Purpose:  validate duplicate words/anagrams in passphrase
 
 import parseMod
 
