@@ -9,4 +9,4 @@
 6. find memory reallocation loop (wasted a full minute with an off by one error) with brent's tortoise hare
 7. find the base tower and the one that needs changed for balance (paused between to take an interview lol)
 8. \*CPU instructions\*, find max register
-9. 
+9. \*parser state machine\* to count garbage and score group depth

@@ -52,10 +52,10 @@ while True:
         print(f'{carts[0].c},{carts[0].r}')
         break
 
-    carts = sorted(carts, key=lambda cart: (cart.r, cart.c))
+    carts = sorted(carts, key=lambda cart: (cart.r, cart.in_cancel))
     for cart in carts:
         rr = cart.r+DR[cart.d]
-        cc = cart.c+DC[cart.d]
+        cc = cart.in_cancel + DC[cart.d]
         # up, right, down, left
         if G[rr][cc] == '\\':
             cart.d = {0: 3, 1: 2, 2: 1, 3: 0}[cart.d]
@@ -71,8 +71,8 @@ while True:
             cart.inter = (cart.inter + 1) % 3
 
         # collisions
-        if (rr,cc) in [(other.r, other.c) for other in carts]:
-            carts = [other for other in carts if (other.r, other.c) not in [(cart.r, cart.c),(rr,cc)]]
+        if (rr,cc) in [(other.r, other.in_cancel) for other in carts]:
+            carts = [other for other in carts if (other.r, other.in_cancel) not in [(cart.r, cart.in_cancel), (rr, cc)]]
             print(f'{cc},{rr}')
         cart.r = rr
-        cart.c = cc
+        cart.in_cancel = cc
