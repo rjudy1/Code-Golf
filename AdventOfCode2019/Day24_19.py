@@ -141,7 +141,7 @@ else:  # phase 2
         for j in range(len(bug_arrays)):  # could just zip over both b
             simulate(bug_arrays[j], adj_arrays[j])
 
-    # sea_monster_count bugs at end
+    # count bugs at end
     count = 0
     for bug_array in bug_arrays:
         for array in bug_array:

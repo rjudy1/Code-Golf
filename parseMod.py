@@ -50,24 +50,12 @@ def readCSVInts(filename, delim=',') -> [int]:
 # array with each row as element in string form
 def readCSV_row(filename, delim='\n'):
     array = readCSV_rowEl(filename, delim)
-    finished = []
-    for el in array:
-        for item in el:
-            finished.append(item)
-    return finished
-
+    return [item for el in array for item in el]
 
 # array of array of each line, split into elements on line (rowEl)
 def readCSV_rowEl(filename, delim=' '):
-    rowEl = []
     with open(filename) as file:
-        reader = csv.reader(file, delimiter=delim)
-        for row in reader:
-            temp = []
-            for s in row:
-                temp.append(s)
-            rowEl.append(temp)
-    return rowEl
+        return [[s for s in row] for row in csv.reader(file, delimiter=delim)]
 
 
 # reads in as one big array of characters

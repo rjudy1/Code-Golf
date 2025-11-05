@@ -12,3 +12,5 @@
 9. \*parser state machine\* to count garbage and score group depth
 10. perform knot hash and convert output of extended hash to hex (not terrible delay between stages for multitasking)
 11. 
+12. connected components size and count
+13. 

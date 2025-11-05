@@ -19,12 +19,12 @@ for suggestion in recommendations:
     position = suggestion[2].strip(':').split(',')  # third argument is position of top left
     dimensions = suggestion[3].split('x')  # fourth argument is dimension
 
-    # increment the sea_monster_count on section being covered
+    # increment the count on section being covered
     for y in range(int(position[1]), int(position[1]) + int(dimensions[1])):
         for x in range(int(position[0]), int(position[0]) + int(dimensions[0])):
             fabric[y][x] += 1
 
-# sea_monster_count how many have more than one claims
+# count how many have more than one claims
 count_overlaps = 0
 for y in range(len(fabric)):
     for x in range(len(fabric[0])):

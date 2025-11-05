@@ -182,7 +182,7 @@ for o_map in copy.deepcopy(possible_maps):
         o_map = list(zip(*o_map[::-1]))
         possible_maps.append(o_map)
 
-# sea_monster_count the number of sea monsters
+# count the number of sea monsters
 sea_monster_count = 0
 for ocean_map in possible_maps:  # check each possible map for sea monsters
     for y in range(len(ocean_map)-2):  # check every position

@@ -41,7 +41,7 @@ for allergen in allergen_dict:
 for allergy_set in allergen_dict.values():
     all_set = set(all_set - allergy_set)
 
-# sea_monster_count the appearances of useful ingredients
+# count the appearances of useful ingredients
 count = 0
 for line in ingredients_list:
     for ingr in all_set:

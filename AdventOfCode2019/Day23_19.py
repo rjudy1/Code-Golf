@@ -45,7 +45,7 @@ while True:
             input_queues[outputs[i][j]].put(outputs[i][j+1])
             input_queues[outputs[i][j]].put(outputs[i][j+2])
 
-    # put -1 values in the empty queue, sea_monster_count how many empty values were used
+    # put -1 values in the empty queue, count how many empty values were used
     count = 0
     for i in range(len(computers)):
         if input_queues[i].empty():

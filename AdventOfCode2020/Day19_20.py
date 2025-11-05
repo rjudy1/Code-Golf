@@ -59,4 +59,4 @@ rules_dict[11] = [[42, 31], [42, 11, 31]]
 # at least one rule 42 (line 61, followed by infinitely possible nested 42...31 - rep 5 should be sufficient (line 62)
 the_regex_2 = re.compile(f"^(?:{build_re(42)})+?(" + \
                          "|".join(f"(?:{build_re(42)}){{{n}}}(?:{build_re(31)}){{{n}}}" for n in range(1, 5)) + ")$")
-print("Part 2: ", sum(map(bool, map(the_regex_2.match, messages))))  # sea_monster_count the number of matches
+print("Part 2: ", sum(map(bool, map(the_regex_2.match, messages))))  # count the number of matches
