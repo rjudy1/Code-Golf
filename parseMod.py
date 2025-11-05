@@ -2,7 +2,7 @@
 # Author:   Rachael Judy
 # Written:  12/1/20
 # Modified: 11/20/22
-# TODO: fix this file as the reading is kind of sloppy
+# TODO: fix this file as the reading is kind of sloppy/inefficient/not-pythonic
 
 """
 Usage:
@@ -65,6 +65,7 @@ def readCSV_single(filename):
     return array
 
 
+############# Any below were specific to a certain day and I'll refactor processing eventually ############
 # array of array of each line, split into elements on line (rowEl)
 # NOTE: For whatever reason, doesn't read last bunch so \n random content must be hand added
 def readCSV_batch(filename):
