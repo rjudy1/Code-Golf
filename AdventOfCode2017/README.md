@@ -10,3 +10,5 @@
 7. find the base tower and the one that needs changed for balance (paused between to take an interview lol)
 8. \*CPU instructions\*, find max register
 9. \*parser state machine\* to count garbage and score group depth
+10. perform knot hash and convert output of extended hash to hex (not terrible delay between stages for multitasking)
+11. 
