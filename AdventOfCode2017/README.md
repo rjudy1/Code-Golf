@@ -13,4 +13,4 @@
 10. perform knot hash and convert output of extended hash to hex (not terrible delay between stages for multitasking)
 11. hex coordinates (3D, sort of)
 12. connected components size and count (did bfs manually and then remembered networkx)
-13. 
+13. moving scanners catching along top file
