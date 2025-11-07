@@ -14,3 +14,5 @@
 11. hex coordinates (3D, sort of)
 12. connected components size and count (did bfs manually and then remembered networkx)
 13. moving scanners catching along top file
+14. count used spaces in grid from hashed key (knot hash day 10b) (I should really stop doing these while doing something else, it's cutting into the splits)
+15. 
