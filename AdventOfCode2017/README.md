@@ -15,4 +15,6 @@
 12. connected components size and count (did bfs manually and then remembered networkx)
 13. moving scanners catching along top file
 14. count used spaces in grid from hashed key (knot hash day 10b) (I should really stop doing these while doing something else, it's cutting into the splits)
-15. 
+15. generators (story and implementation)
+16. letters in patterns, cycle detection (why do I even bother with splits if I'm going to solve while in meetings)
+17. 
