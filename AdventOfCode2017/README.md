@@ -19,4 +19,5 @@
 16. letters in patterns, cycle detection (why do I even bother with splits if I'm going to solve while in meetings)
 17. circular buffer (linked list) adding after input steps and tracking after 2017 and 0
 18. \*mini assembly coroutines\* (very not generalized)
-19. 
+19. follow the graphic path
+20. 

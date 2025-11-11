@@ -2,7 +2,7 @@
 # Author:   Rachael Judy
 # Written:  12/1/20
 # Modified: 11/20/22
-# TODO: fix this file as the reading is kind of sloppy/inefficient/not-pythonic
+# TODO: fix this file eventually as the reading is kind of sloppy/inefficient/not-pythonic, also don't really need to create the file and then read from it every time
 
 """
 Usage:
@@ -28,7 +28,7 @@ def submit(result, part='a', year=2022, day=1):
     aocd.submit(result, part=part, day=day, year=year, session=cookie)
 
 # create data.csv file with the data for given day
-def createDataFile(year, day) -> None:
+def createDataFile(year, day) -> None:  # don't actually need to pull the data file, could just get data
     filename = "data/" + str(day).zfill(2) + "data.csv"
     f = open(filename, 'w')
     f.write(aocd.get_data(cookie, day, year))
