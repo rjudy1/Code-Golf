@@ -1,23 +1,35 @@
 # Advent of Code 2017 Day 20
 # Author:   Rachael Judy
-# Purpose:
+# Purpose:  3D particle dynamics (acc dominates for a) and elimination by collision in space (b)
 
-import aocd
-cookie = "53616c7465645f5f7df37d5a46729ceb401f8df250b10bd89afd30d3af863f3a75562dee1baf1789cdee18196cb7eec992ca4d14fd8bc1e488cf55a2d20cb9b9"
+import re
+from collections import namedtuple, Counter
 
 import parseMod
 
 ready = True
 day = 20
-stage = 'a'
+stage = 'b'
 year = 2017
 
-# parseMod.createDataFile(year=year, day=day)
-# data = parseMod.readCSV_row("data/" + str(day).zfill(2) + "data.csv")
-data = aocd.get_data(cookie, day, year)
+data = parseMod.readCSV_row("data/" + str(day).zfill(2) + "data.csv", )
 
+Particle = namedtuple('Particle', ['pos', 'vel', 'acc'])
+particles = [Particle(tuple(map(int, m[:3])), tuple(map(int, m[3:6])), tuple(map(int, m[6:9]))) for line in data
+             for m in [re.findall(r'-?\d+', line)] ]
+if stage == 'a':
+    # particle with smallest acceleration, with ties broken by velocity, with ties broken by position
+    result = min(range(len(particles)), key=lambda i: (sum(map(abs, particles[i].acc)), sum(map(abs, particles[i].vel)), sum(map(abs, particles[i].pos))))
+else:
+    def move_particle(particle):
+        new_v = tuple(v + a for v, a in zip(particle.vel, particle.acc))
+        return Particle(tuple(p + v for p, v in zip(particle.pos, new_v)), new_v, particle.acc)
+    for _ in range(100):  # assume this is enough, could find the equations pairwise but must account for time of hit
+        counts = Counter(p.pos for p in particles)
+        particles = [move_particle(p) for p in particles if counts[p.pos] == 1]
+    result = len(particles)
 
-
+# 150,657
 if not ready:
     print(f'result: \n{result}')
 elif ready:

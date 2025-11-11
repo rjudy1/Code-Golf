@@ -20,4 +20,5 @@
 17. circular buffer (linked list) adding after input steps and tracking after 2017 and 0
 18. \*mini assembly coroutines\* (very not generalized)
 19. follow the graphic path
-20. 
+20. 3D particle dynamics (acc dominates for a) and elimination by collision in space (b)
+21. 
