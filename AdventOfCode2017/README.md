@@ -22,5 +22,6 @@
 19. follow the graphic path
 20. 3D particle dynamics (acc dominates for a) and elimination by collision in space (b)
 21. 
-22. 
+22. simulation of virus spread with nodes changing state upon encounter (suspiciously easy)
 23. count composites in a range (disguised as jumbled assembly)
+24. 
