@@ -29,7 +29,6 @@ else:
         particles = [move_particle(p) for p in particles if counts[p.pos] == 1]
     result = len(particles)
 
-# 150,657
 if not ready:
     print(f'result: \n{result}')
 elif ready:

@@ -22,3 +22,5 @@
 19. follow the graphic path
 20. 3D particle dynamics (acc dominates for a) and elimination by collision in space (b)
 21. 
+22. 
+23. count composites in a range (disguised as jumbled assembly)

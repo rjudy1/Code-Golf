@@ -1,8 +1,8 @@
 # Input parsers for code golf
 # Author:   Rachael Judy
 # Written:  12/1/20
-# Modified: 11/20/22
 # TODO: fix this file eventually as the reading is kind of sloppy/inefficient/not-pythonic, also don't really need to create the file and then read from it every time
+# maybe for 2025 aoc I'll just use the library aocd as intended
 
 """
 Usage:
