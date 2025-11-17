@@ -21,7 +21,8 @@
 18. \*mini assembly coroutines\* (very not generalized)
 19. follow the graphic path
 20. 3D particle dynamics (acc dominates for a) and elimination by collision in space (b)
-21. 
+21. expanding array art (technically doesn't work on example because the instructions are incomplete)
 22. simulation of virus spread with nodes changing state upon encounter (suspiciously easy)
 23. count composites in a range (disguised as jumbled assembly)
-24. 
+24. build highest strength bridge with two sided nodes (memoized dfs with bitmask)
+25. process formatted pseudocode for fixed steps

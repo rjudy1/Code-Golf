@@ -3,20 +3,22 @@
 # Purpose:
 
 
-import parseMod
+import aocd
 
 ready = False
 day = 1
 stage = 'a'
-year = 2017
+cookie = "53616c7465645f5fdddf3faeb0ffae0151d986703ba15bbbee335172a12424b99eea671c06fcd0a3bd4d52dc48a8a9b4341130ddac5b7e74860eab128bc20c4d"  # also should read this from environ technically
 
-parseMod.createDataFile(year=year, day=day)
-data = parseMod.readCSV_single("data/" + str(day).zfill(2) + "data.csv")
+data = aocd.get_data(cookie, day, 2025)
+
+print(data)
 
 
 
-if not ready:
-    print(f'result: \n{result}')
-elif ready:
-    print("SUBMITTING RESULT: ", result)
-    parseMod.submit(result, part=stage, day=day, year=year)
+
+
+print(f'result: \n{result}; ready={ready}')
+if ready:
+    aocd.submit(result, part=stage, day=day, year=2025, session=cookie)
+

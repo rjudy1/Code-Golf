@@ -20,7 +20,7 @@ import csv
 import fileinput
 import sys
 
-cookie = "53616c7465645f5f7df37d5a46729ceb401f8df250b10bd89afd30d3af863f3a75562dee1baf1789cdee18196cb7eec992ca4d14fd8bc1e488cf55a2d20cb9b9"  # also should read this from environ technically
+cookie = "53616c7465645f5fdddf3faeb0ffae0151d986703ba15bbbee335172a12424b99eea671c06fcd0a3bd4d52dc48a8a9b4341130ddac5b7e74860eab128bc20c4d"  # also should read this from environ technically
 
 
 def submit(result, part='a', year=2022, day=1):
