@@ -2,7 +2,6 @@
 # Author:   Rachael Judy
 # Purpose:  follow turn and move instructions, tracking visited
 
-
 import parseMod
 
 ready = False
