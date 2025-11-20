@@ -10,7 +10,7 @@ stage = 'a'
 year = 2015
 
 parseMod.createDataFile(year=year, day=day)
-data = parseMod.readCSV_row("data/" + str(day).zfill(2) + "data.csv")
+data = parseMod.readCSV_row('data/' + str(day).zfill(2) + 'data.csv')
 
 result = sum(2*(x*y + x*z + y*z) + min(x*y, y*z, x*z) if stage == 'a' else 2*min(x+y, y+z, x+z) + x*y*z
              for x, y, z in (map(int, line.split('x')) for line in data))
@@ -18,5 +18,5 @@ result = sum(2*(x*y + x*z + y*z) + min(x*y, y*z, x*z) if stage == 'a' else 2*min
 if not ready:
     print(f'result: \n{result}')
 elif ready:
-    print("SUBMITTING RESULT: ", result)
+    print('SUBMITTING RESULT: ', result)
     parseMod.submit(result, part=stage, day=day, year=year)

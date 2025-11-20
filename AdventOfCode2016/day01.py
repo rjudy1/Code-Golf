@@ -10,7 +10,7 @@ stage = 'a'
 year = 2016
 
 parseMod.createDataFile(year=year, day=day)
-data = [x.strip() for x in parseMod.readCSV_rowEl("data/" + str(day).zfill(2) + "data.csv", ',')[0]]
+data = [x.strip() for x in parseMod.readCSV_rowEl('data/' + str(day).zfill(2) + 'data.csv', ',')[0]]
 
 pos, dir, visited = 0+0j, -1, {0}
 for instr in data:
@@ -29,5 +29,5 @@ result = abs(pos.real) + abs(pos.imag) if stage == 'a' else result
 if not ready:
     print(f'result: \n{result}')
 elif ready:
-    print("SUBMITTING RESULT: ", result)
+    print('SUBMITTING RESULT: ', result)
     parseMod.submit(result, part=stage, day=day, year=year)
