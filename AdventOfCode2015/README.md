@@ -5,4 +5,6 @@
 2. surface area + min surface slack, min perimeter + volume (aah reading comprehension)
 3. visited locations from steps
 4. md5 hash pre+int beginning with 5 and 6 zeros (again, could parallelize search)
-5. 
+5. match strings to certain rules
+6. change chunks of values in array
+7. 
