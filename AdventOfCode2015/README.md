@@ -7,4 +7,4 @@
 4. md5 hash pre+int beginning with 5 and 6 zeros (again, could parallelize search)
 5. match strings to certain rules
 6. change chunks of values in array
-7. 
+7. trace through circuit (no feedback, try and remember to erase the set value for b already present)
