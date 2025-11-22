@@ -9,4 +9,5 @@
 6. change chunks of values in array
 7. trace through circuit (no feedback, try and remember to erase the set value for b already present)
 8. match and compact/encode escape sequences
-9. 
+9. brute force a hamiltonian tour because why not
+10. look and say sequence (caching could help for more iterations)
