@@ -8,3 +8,5 @@
 5. match strings to certain rules
 6. change chunks of values in array
 7. trace through circuit (no feedback, try and remember to erase the set value for b already present)
+8. match and compact/encode escape sequences
+9. 
