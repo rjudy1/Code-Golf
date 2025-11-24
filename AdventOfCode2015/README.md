@@ -11,3 +11,4 @@
 8. match and compact/encode escape sequences
 9. brute force a hamiltonian tour because why not
 10. look and say sequence (caching could help for more iterations)
+11. 
