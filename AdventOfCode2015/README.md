@@ -14,3 +14,6 @@
 11. incrementing alphabetic strings
 12. process flattened json to sum numbers and numbers not in a red object
 13. score happiest permutation of seating input + self
+14. reindeer positions with rest and speed cycles (paused to writeup video call)
+15. mixed integer maximization of score s.t. calorie and ingredient limit (brute force combos)
+16. 
