@@ -11,4 +11,6 @@
 8. match and compact/encode escape sequences
 9. brute force a hamiltonian tour because why not
 10. look and say sequence (caching could help for more iterations)
-11. 
+11. incrementing alphabetic strings
+12. process flattened json to sum numbers and numbers not in a red object
+13. score happiest permutation of seating input + self
