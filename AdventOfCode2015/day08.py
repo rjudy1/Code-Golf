@@ -6,7 +6,7 @@ import re
 
 import parseMod
 
-ready = False  # 1371,2117
+ready = True  # 1371,2117
 day = 8
 stage = 'a'
 year = 2015

@@ -12,7 +12,7 @@ stage = 'b'
 year = 2015
 
 parseMod.createDataFile(year=year, day=day)
-data = parseMod.readCSV_row('data/' + str(day).zfill(2) + 'data.csv')
+data = parseMod.readCSV_row(f'data/{day:02d}data.csv')
 
 result = sum(1 for ln in data if re.match(re.compile(r'^(?!.*(?:ab|cd|pq|xy))(?=(?:.*[aeiou]){3,})(?=.*([a-z])\1)[a-z]*$' if stage == 'a' else r'^(?=.*([a-z]{2}).*\1)(?=.*([a-z]).\2)[a-z]*$'), ln))
 

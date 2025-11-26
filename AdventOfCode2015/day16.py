@@ -12,7 +12,7 @@ stage = 'b'
 year = 2015
 
 parseMod.createDataFile(year=year, day=day)
-data = parseMod.readCSV_rowEl('data/' + str(day).zfill(2) + 'data.csv')
+data = parseMod.readCSV_rowEl(f'data/{day:02d}data.csv')
 
 template = {'children': 3, 'cats': 7, 'samoyeds': 2, 'pomeranians': 3, 'akitas': 0, 'vizslas': 0, 'goldfish': 5, 'trees': 3, 'cars': 2, 'perfumes': 1}
 cmp = {'cats': op.gt, 'trees': op.gt, 'pomeranians': op.lt, 'goldfish': op.lt} if stage == 'b' else {}

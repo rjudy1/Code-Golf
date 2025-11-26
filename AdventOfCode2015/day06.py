@@ -12,7 +12,7 @@ stage = 'a'
 year = 2015
 
 parseMod.createDataFile(year=year, day=day)
-data = parseMod.readCSV_rowEl('data/' + str(day).zfill(2) + 'data.csv', ' ')
+data = parseMod.readCSV_rowEl(f'data/{day:02d}data.csv', ' ')
 
 lights = np.zeros((1000, 1000))
 for line in data:

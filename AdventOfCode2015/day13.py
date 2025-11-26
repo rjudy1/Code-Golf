@@ -13,7 +13,7 @@ stage = 'b'
 year = 2015
 
 parseMod.createDataFile(year=year, day=day)
-data = parseMod.readCSV_rowEl('data/' + str(day).zfill(2) + 'data.csv')
+data = parseMod.readCSV_rowEl(f'data/{day:02d}data.csv')
 
 hw = defaultdict(int, {(r[0], r[-1].strip('.')): -int(r[3]) if r[2] == 'lose' else int(r[3]) for r in data})
 pp = {r[0] for r in data}

@@ -12,7 +12,7 @@ stage = 'b'
 year = 2015
 
 parseMod.createDataFile(year=year, day=day)
-data = parseMod.readCSV_rowEl('data/' + str(day).zfill(2) + 'data.csv')
+data = parseMod.readCSV_rowEl(f'data/{day:02d}data.csv')
 
 Reindeer = namedtuple('Reindeer', ['speed', 'speed_t', 'cycle'])
 rd = {l[0]: Reindeer(int(l[3]), int(l[6]), int(l[6]) + int(l[13])) for l in data}

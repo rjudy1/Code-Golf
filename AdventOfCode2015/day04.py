@@ -12,7 +12,7 @@ stage = 'b'
 year = 2015
 
 parseMod.createDataFile(year=year, day=day)
-data = parseMod.readCSV_row('data/' + str(day).zfill(2) + 'data.csv')[0]
+data = parseMod.readCSV_row(f'data/{day:02d}data.csv')[0]
 
 pre = data.encode()
 for i in range(1_000_000_000):

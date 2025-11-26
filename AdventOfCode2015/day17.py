@@ -12,7 +12,7 @@ stage = 'a'
 year = 2015
 
 parseMod.createDataFile(year=year, day=day)
-data = parseMod.readCSVInts('data/' + str(day).zfill(2) + 'data.csv')
+data = parseMod.readCSVInts(f'data/{day:02d}data.csv')
 
 result = 0
 for i in range(len(data)+1):

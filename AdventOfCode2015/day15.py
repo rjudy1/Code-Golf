@@ -13,7 +13,7 @@ stage = 'a'
 year = 2015
 
 parseMod.createDataFile(year=year, day=day)
-data = parseMod.readCSV_rowEl('data/' + str(day).zfill(2) + 'data.csv')
+data = parseMod.readCSV_rowEl(f'data/{day:02d}data.csv')
 
 stats = np.array([[int(row[i].strip(',')) for i in range(2, 11, 2)] for row in data])
 result = max(int(np.prod([max(0, np.dot(stats[:, r], [*x, 100-sum(x)])) for r in range(4)]))

@@ -12,7 +12,7 @@ stage = 'b'
 year = 2015
 
 parseMod.createDataFile(year=year, day=day)
-data = parseMod.readCSV_row('data/' + str(day).zfill(2) + 'data.csv')[0]
+data = parseMod.readCSV_row(f'data/{day:02d}data.csv')[0]
 
 for _ in range(40 if stage=='a' else 50):
     data = ''.join(f"{len(list(group))}{digit}" for digit, group in itertools.groupby(data))
