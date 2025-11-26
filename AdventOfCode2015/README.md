@@ -16,4 +16,5 @@
 13. score happiest permutation of seating input + self
 14. reindeer positions with rest and speed cycles (paused to writeup video call)
 15. mixed integer maximization of score s.t. calorie and ingredient limit (brute force combos)
-16. 
+16. find match to template characteristics (could just do by hand/parse while reading to save space)
+17. count combos/min count combos of containers storing 150 units (could efficient DP or add early sorted skip)
