@@ -19,3 +19,4 @@
 16. find match to template characteristics (could just do by hand/parse while reading to save space)
 17. count combos/min count combos of containers storing 150 units (could efficient DP or add early sorted skip)
 18. 100 steps of conways (a minute lost because initial state has to be fixed too)
+19. expand/reduce string molecule patterns to target (final solution relies on aoc specific tree grammar but included dfs of search space code for generality even if horrible state space explosion)
