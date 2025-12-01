@@ -21,3 +21,4 @@
 18. 100 steps of conways (a minute lost because initial state has to be fixed too)
 19. expand/reduce string molecule patterns to target (final solution relies on aoc specific tree grammar but included dfs of search space code for generality even if horrible state space explosion)
 20. count house gifts from elves that deliver only to multiples of their id (slow :\\)
+21. boss battle min win, max loss based on hitpoints, defense

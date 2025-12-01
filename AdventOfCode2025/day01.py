@@ -1,24 +1,22 @@
 # Advent of Code 2025 Day 1
 # Author:   Rachael Judy
-# Purpose:
-
+# Purpose:  count turns of 100 tick dial that land on/pass zero
 
 import aocd
+from mycookie import cookie
 
-ready = False
+ready = True
 day = 1
-stage = 'a'
-cookie = "53616c7465645f5fdddf3faeb0ffae0151d986703ba15bbbee335172a12424b99eea671c06fcd0a3bd4d52dc48a8a9b4341130ddac5b7e74860eab128bc20c4d"  # also should read this from environ technically
+stage = 'b'
 
-data = aocd.get_data(cookie, day, 2025)
+data = aocd.get_data(cookie, day, 2025).split('\n')
 
-print(data)
-
-
-
-
+p, result = 50, 0
+for t in data:
+    p += (dp := -int(t[1:]) if t[0] == 'L' else int(t[1:]))
+    result += stage == 'a' and p % 100 == 0 or (stage == 'b' and (p <= 0 or p >= 100)) * (abs(p) // 100 + (0 >= p != dp))
+    p %= 100
 
 print(f'result: \n{result}; ready={ready}')
 if ready:
     aocd.submit(result, part=stage, day=day, year=2025, session=cookie)
-
