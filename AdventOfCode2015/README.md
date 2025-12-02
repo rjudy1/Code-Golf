@@ -24,4 +24,5 @@
 21. boss battle min win, max loss based on hitpoints, defense
 22. wizard battle min win with different spells (annoying ordering details dijkstra, could A*/memoize more)
 23. super basic cpu (concerningly simple for a day 23)
-24. 
+24. find min size, min prod of 3/4 equal weight groups
+25. diagonal population based only on previous value (what self-respecting human starts at 1,1 instead of 0,0)
