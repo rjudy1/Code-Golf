@@ -22,3 +22,6 @@
 19. expand/reduce string molecule patterns to target (final solution relies on aoc specific tree grammar but included dfs of search space code for generality even if horrible state space explosion)
 20. count house gifts from elves that deliver only to multiples of their id (slow :\\)
 21. boss battle min win, max loss based on hitpoints, defense
+22. wizard battle min win with different spells (annoying ordering details dijkstra, could A*/memoize more)
+23. super basic cpu (concerningly simple for a day 23)
+24. 
