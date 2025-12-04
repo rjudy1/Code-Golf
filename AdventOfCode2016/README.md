@@ -11,3 +11,6 @@
 8. circular shift rows/columns (only a can be auto submitted, b must be visually inspected)
 9. recursive expansion of compressed repetitions in string
 10. bots passing to fixed neighbors based on magnitude, find output bot and specific interaction (not particularly clever but works)
+11. 
+12. basic cpu
+13. 
