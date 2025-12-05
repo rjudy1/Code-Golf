@@ -5,4 +5,4 @@
 2. sum invalid ids that are composed of repeating sequences of digits (SUM not COUNT, multitasking for the L)
 3. find largest two/twelve digit number formable by pulling from string of numbers without changing order (really not my best look at speed this week)
 4. remove rolls with less than four neighbors repeatedly
-5. 
+5. count numbers in input ranges and inputs in input ranges (new policy: if suspect off by one, just resubmit with new guess, ranges don't start at zero)

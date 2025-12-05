@@ -13,4 +13,8 @@
 10. bots passing to fixed neighbors based on magnitude, find output bot and specific interaction (not particularly clever but works)
 11. 
 12. basic cpu
-13. 
+
+
+20. find numbers < 2**32 that are not in the listed ranges
+
+23. basic cpu + toggle instruction + reverse engineer the assembly (deconstruction assumes same program except key constants)
