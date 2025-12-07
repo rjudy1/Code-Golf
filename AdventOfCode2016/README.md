@@ -11,10 +11,18 @@
 8. circular shift rows/columns (only a can be auto submitted, b must be visually inspected)
 9. recursive expansion of compressed repetitions in string
 10. bots passing to fixed neighbors based on magnitude, find output bot and specific interaction (not particularly clever but works)
-11. 
-12. basic cpu
-
-
+11. bfs min steps to move items to a top floor without keeping invalid pairs together per step (kind of annoying)
+12. basic assembly
+13. 
+14. 
+15. 
+16. 
+17. 
+18. 
+19. 
 20. find numbers < 2**32 that are not in the listed ranges
-
-23. basic cpu + toggle instruction + reverse engineer the assembly (deconstruction assumes same program except key constants)
+21. 
+22. 
+23. d12 assembly + toggle; reverse engineer the assembly (deconstruction assumes same program except key constants)
+24. 
+25. d12 assembly + d23 tgl + out

@@ -1,6 +1,6 @@
 # Advent of Code 2016 Day 12
 # Author:   Rachael Judy
-# Purpose:  basic cpu
+# Purpose:  basic assembly
 
 import parseMod
 

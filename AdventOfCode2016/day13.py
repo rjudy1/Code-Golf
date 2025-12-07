@@ -1,19 +1,19 @@
-# Advent of Code 2016 Day 23
+# Advent of Code 2016 Day 13
 # Author:   Rachael Judy
-# Purpose:  assembly + toggle; reverse engineer the assembly
-
-import math
+# Purpose:
 
 import parseMod
 
 ready = True
-day = 23
-stage = 'b'
+day = 13
+stage = 'a'
 year = 2016
 
 parseMod.createDataFile(year=year, day=day)
 data = parseMod.readCSV_rowEl('data/' + str(day).zfill(2) + 'data.csv', ' ')
-result = math.factorial(7 if stage == 'a' else 12) + int(data[19][1]) * int(data[20][1])
+
+
+
 
 print(f'result: \n{result}')
 if ready:
