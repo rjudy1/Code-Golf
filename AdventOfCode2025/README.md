@@ -8,3 +8,5 @@
 5. count numbers in input ranges and inputs in input ranges (new policy: if suspect off by one, just resubmit with new guess, ranges don't start at zero)
 6. line and entire input transposed reverse polish
 7. count path splits and unique paths to end (using cache to restrain global count increments is hacky and inconsistent)
+8. greedily connect nodes by distance until circuit reaches certain size/becomes single connected component (fyi nx size != len, fscope)
+9. 
