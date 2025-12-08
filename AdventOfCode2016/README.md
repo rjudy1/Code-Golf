@@ -13,7 +13,7 @@
 10. bots passing to fixed neighbors based on magnitude, find output bot and specific interaction (not particularly clever but works)
 11. bfs min steps to move items to a top floor without keeping invalid pairs together per step (kind of annoying)
 12. basic assembly
-13. 
+13. infinite positive maze min steps to target and distinct reachable locations
 14. 
 15. 
 16. 

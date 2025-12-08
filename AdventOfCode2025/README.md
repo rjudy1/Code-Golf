@@ -7,3 +7,4 @@
 4. remove rolls with less than four neighbors repeatedly
 5. count numbers in input ranges and inputs in input ranges (new policy: if suspect off by one, just resubmit with new guess, ranges don't start at zero)
 6. line and entire input transposed reverse polish
+7. count path splits and unique paths to end (using cache to restrain global count increments is hacky and inconsistent)
