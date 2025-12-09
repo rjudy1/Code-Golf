@@ -9,4 +9,5 @@
 6. line and entire input transposed reverse polish
 7. count path splits and unique paths to end (using cache to restrain global count increments is hacky and inconsistent)
 8. greedily connect nodes by distance until circuit reaches certain size/becomes single connected component (fyi nx size != len, fscope)
-9. 
+9. find largest rectangle with opposite corners in input and then rectangle within polygon formed from input (interesting shape you've got there)
+10. 

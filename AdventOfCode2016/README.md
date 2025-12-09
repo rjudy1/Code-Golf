@@ -19,7 +19,7 @@
 16. 
 17. 
 18. 
-19. 
+19. josephus problem k=2 and k=3
 20. find numbers < 2**32 that are not in the listed ranges
 21. 
 22. 
