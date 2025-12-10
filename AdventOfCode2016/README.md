@@ -14,7 +14,7 @@
 11. bfs min steps to move items to a top floor without keeping invalid pairs together per step (kind of annoying)
 12. basic assembly
 13. infinite positive maze min steps to target and distinct reachable locations
-14. 
+14. 64th index such that md5 hash of salt+index contains a triple then a quintuple in the next 1000 hashes
 15. 
 16. 
 17. 
