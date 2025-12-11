@@ -16,7 +16,7 @@
 13. infinite positive maze min steps to target and distinct reachable locations
 14. 64th index such that md5 hash of salt+index contains a triple then a quintuple in the next 1000 hashes
 15. 
-16. 
+16. bit-twiddling expansions and compaction
 17. 
 18. 
 19. josephus problem k=2 and k=3
