@@ -12,4 +12,4 @@
 9. find largest rectangle with opposite corners in input and then rectangle within polygon formed from input (interesting shape you've got there)
 10. solve for x such that Vx = target or joltage with operation either toggle or increment 
 11. count all paths from source to dest nodes in a graph (prepping to shortcut with the library did not pay off, just memoize and don't get distracted)
-12. 
+12. tetris required number of different presents in fixed size spaces (the presents are all liquid, faked out by talk of rotation and flipping NP-hard)
