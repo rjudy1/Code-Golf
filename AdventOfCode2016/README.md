@@ -18,7 +18,7 @@
 15. 
 16. bit-twiddling expansions and compaction
 17. 
-18. 
+18. expanding automata
 19. josephus problem k=2 and k=3
 20. find numbers < 2**32 that are not in the listed ranges
 21. 
