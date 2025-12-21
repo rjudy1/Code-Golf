@@ -15,14 +15,14 @@
 12. basic assembly
 13. infinite positive maze min steps to target and distinct reachable locations
 14. 64th index such that md5 hash of salt+index contains a triple then a quintuple in the next 1000 hashes
-15. 
+15. disc dropping through rotating gaps (chinese remainder theorem again)
 16. bit-twiddling expansions and compaction
-17. 
+17. navigate dynamic maze based on md5 hash of instruction sequence
 18. expanding automata
 19. josephus problem k=2 and k=3
 20. find numbers < 2**32 that are not in the listed ranges
 21. 
 22. 
 23. d12 assembly + toggle; reverse engineer the assembly (deconstruction assumes same program except key constants)
-24. 
+24. hamiltonian circuit
 25. d12 assembly + d23 tgl + out
