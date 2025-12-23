@@ -22,7 +22,7 @@
 19. josephus problem k=2 and k=3
 20. find numbers < 2**32 that are not in the listed ranges
 21. 
-22. 
+22. in grid of moveable/nonmovable chunks, find initial viable swaps and slide target piece into position (for general case with capacities instead of 0/1/impossible, state space would explode)
 23. d12 assembly + toggle; reverse engineer the assembly (deconstruction assumes same program except key constants)
 24. hamiltonian circuit
 25. d12 assembly + d23 tgl + out
