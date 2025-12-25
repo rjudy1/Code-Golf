@@ -12,7 +12,7 @@
 9. recursive expansion of compressed repetitions in string
 10. bots passing to fixed neighbors based on magnitude, find output bot and specific interaction (not particularly clever but works)
 11. bfs min steps to move items to a top floor without keeping invalid pairs together per step (kind of annoying)
-12. basic assembly
+12. basic assembly (fibonacci + add)
 13. infinite positive maze min steps to target and distinct reachable locations
 14. 64th index such that md5 hash of salt+index contains a triple then a quintuple in the next 1000 hashes
 15. disc dropping through rotating gaps (chinese remainder theorem again)
@@ -21,8 +21,8 @@
 18. expanding automata
 19. josephus problem k=2 and k=3
 20. find numbers < 2**32 that are not in the listed ranges
-21. 
+21. scrambling and unscrambling operations on string
 22. in grid of moveable/nonmovable chunks, find initial viable swaps and slide target piece into position (for general case with capacities instead of 0/1/impossible, state space would explode)
-23. d12 assembly + toggle; reverse engineer the assembly (deconstruction assumes same program except key constants)
-24. hamiltonian circuit
+23. d12 assembly + toggle; reverse engineer the assembly (deconstruction assumes same program except key constants, factorial + multiplication)
+24. hamiltonian path and circuit
 25. d12 assembly + d23 tgl + out
