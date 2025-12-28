@@ -4,9 +4,9 @@
 
 import parseMod
 
-ready = True
+ready = False
 day = 12
-stage = 'b'
+stage = 'a'
 year = 2016
 
 parseMod.createDataFile(year=year, day=day)
@@ -22,6 +22,12 @@ while 0 <= pc < len(data):
         case 'jnz': pc += (get_val(data[pc][2])-1) * (get_val(data[pc][1])!=0)
     pc += 1
 result = reg['a']
+
+# equivalent to the assembly
+# a, b = 1, 1
+# for i in range(33 if stage == 'b' else 26):  # dth fibonacci
+#     a, b = b + a, a
+# result = a + int(data[16][1]) * int(data[17][1])
 
 print(f'result: \n{result}')
 if ready:
