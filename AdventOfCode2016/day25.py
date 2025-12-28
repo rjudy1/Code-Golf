@@ -9,7 +9,7 @@ day = 25
 stage = 'a'
 year = 2016
 
-parseMod.createDataFile(year=year, day=day)
+# parseMod.createDataFile(year=year, day=day)
 data = parseMod.readCSV_rowEl('data/' + str(day).zfill(2) + 'data.csv', ' ')
 
 def clock_signal_found(a, min_repetitions=25):
@@ -37,6 +37,10 @@ def clock_signal_found(a, min_repetitions=25):
 
 result = 0
 while not clock_signal_found(result): result += 1
+
+# closed form solution - pattern of 101010... > b*c from initial loop
+# b, c = int(data[1][1]), int(data[2][1])
+# result = (patt if (patt := int((len(bin(b*c))-2)//2*'10', 2)) >= b*c else 4*patt+2) - b*c
 
 print(f'result: \n{result}')
 if ready:
